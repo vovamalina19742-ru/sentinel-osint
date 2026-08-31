@@ -3,7 +3,7 @@ pub mod plugins;
 
 use error::{AppError, Result};
 use plugins::phash::{compare_images_bytes, compute_phash_from_bytes, ImageComparisonResult};
-use plugins::sidecar::{run_investigation, InvestigationDossier};
+use plugins::sidecar::{execute_maigret, run_investigation, InvestigationDossier, ProfileFinding};
 
 #[tauri::command]
 fn check_target(target: String) -> Result<String> {
@@ -20,6 +20,14 @@ async fn start_investigation(
     target_type: String,
 ) -> Result<InvestigationDossier> {
     run_investigation(app, target, target_type).await
+}
+
+#[tauri::command]
+async fn investigate_username(
+    app: tauri::AppHandle,
+    username: String,
+) -> std::result::Result<Vec<ProfileFinding>, String> {
+    execute_maigret(&app, &username).await
 }
 
 #[tauri::command]
@@ -88,6 +96,7 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             check_target,
             start_investigation,
+            investigate_username,
             compute_phash,
             compare_images
         ])

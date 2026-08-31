@@ -146,3 +146,54 @@ export async function startInvestigationIPC(
     },
   };
 }
+
+export interface ProfileFinding {
+  platform: string;
+  url: string;
+  exists: boolean;
+}
+
+export interface ProgressEvent {
+  stage: string;
+  percent: number;
+  current_service: string;
+}
+
+export async function investigateUsernameIPC(
+  username: string,
+  onProgress?: (event: ProgressEvent) => void
+): Promise<ProfileFinding[]> {
+  if (typeof window !== 'undefined' && '__TAURI_INTERNALS__' in window) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    const { listen } = await import('@tauri-apps/api/event');
+    let unlisten: (() => void) | undefined;
+    if (onProgress) {
+      unlisten = await listen<ProgressEvent>('investigation-progress', (e) => {
+        onProgress(e.payload);
+      });
+    }
+    try {
+      return await invoke<ProfileFinding[]>('investigate_username', { username });
+    } finally {
+      if (unlisten) unlisten();
+    }
+  }
+
+  // Эмуляция для браузера
+  if (onProgress) {
+    onProgress({ stage: 'Инициализация Maigret', percent: 10, current_service: 'Запуск подпроцесса' });
+    await new Promise((r) => setTimeout(r, 300));
+    onProgress({ stage: 'Сканирование профилей', percent: 50, current_service: 'Telegram, GitHub...' });
+    await new Promise((r) => setTimeout(r, 400));
+    onProgress({ stage: 'Завершено', percent: 100, current_service: 'Готово' });
+  }
+
+  return [
+    { platform: 'Telegram', url: `https://t.me/${username}`, exists: true },
+    { platform: 'GitHub', url: `https://github.com/${username}`, exists: true },
+    { platform: 'Habr', url: `https://habr.com/ru/users/${username}`, exists: true },
+    { platform: 'Instagram', url: `https://instagram.com/${username}`, exists: false },
+    { platform: 'Steam', url: `https://steamcommunity.com/id/${username}`, exists: true },
+  ];
+}
+
