@@ -22,6 +22,7 @@ thiserror = "2"
 tokio = { version = "1", features = ["full"] }
 uuid = { version = "1", features = ["v4"] }
 chrono = { version = "0.4", features = ["serde"] }
+rusqlite = { version = "0.33", features = ["bundled"] }
 
 [features]
 default = ["custom-protocol"]

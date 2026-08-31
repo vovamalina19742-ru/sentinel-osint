@@ -12,6 +12,9 @@ pub enum AppError {
     #[error("Storage/Database error: {0}")]
     DatabaseError(String),
 
+    #[error("Serialization error: {0}")]
+    SerializationError(String),
+
     #[error("Network/Timeout error: {0}")]
     NetworkError(String),
 }

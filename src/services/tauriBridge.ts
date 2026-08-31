@@ -197,3 +197,76 @@ export async function investigateUsernameIPC(
   ];
 }
 
+export interface InvestigationHistoryItem {
+  id: string;
+  target: string;
+  target_type: string;
+  trust_score: number;
+  summary: string;
+  created_at: string;
+}
+
+export async function saveDossierIPC(dossier: InvestigationDossier): Promise<void> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    await invoke('save_investigation_dossier', { dossier });
+    return;
+  }
+
+  // LocalStorage fallback for browser sandbox
+  try {
+    const key = 'sentinel_history';
+    const existing: InvestigationHistoryItem[] = JSON.parse(localStorage.getItem(key) || '[]');
+    const filtered = existing.filter((item) => item.id !== dossier.id);
+    const updated: InvestigationHistoryItem[] = [
+      {
+        id: dossier.id,
+        target: dossier.target,
+        target_type: dossier.target_type,
+        trust_score: dossier.trust_score,
+        summary: dossier.summary,
+        created_at: dossier.created_at,
+      },
+      ...filtered,
+    ].slice(0, 50);
+    localStorage.setItem(key, JSON.stringify(updated));
+  } catch (err) {
+    console.error('LocalStorage save error:', err);
+  }
+}
+
+export async function getHistoryIPC(limit = 20): Promise<InvestigationHistoryItem[]> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<InvestigationHistoryItem[]>('get_investigation_history', { limit });
+  }
+
+  // LocalStorage fallback
+  try {
+    const key = 'sentinel_history';
+    const items: InvestigationHistoryItem[] = JSON.parse(localStorage.getItem(key) || '[]');
+    return items.slice(0, limit);
+  } catch {
+    return [];
+  }
+}
+
+export async function deleteDossierIPC(id: string): Promise<boolean> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<boolean>('delete_investigation_dossier', { id });
+  }
+
+  // LocalStorage fallback
+  try {
+    const key = 'sentinel_history';
+    const existing: InvestigationHistoryItem[] = JSON.parse(localStorage.getItem(key) || '[]');
+    const updated = existing.filter((item) => item.id !== id);
+    localStorage.setItem(key, JSON.stringify(updated));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+

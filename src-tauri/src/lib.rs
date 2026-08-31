@@ -2,8 +2,10 @@ pub mod error;
 pub mod plugins;
 
 use error::{AppError, Result};
+use plugins::db::{delete_dossier, get_history, save_dossier, DbState, InvestigationHistoryItem};
 use plugins::phash::{compare_images_bytes, compute_phash_from_bytes, ImageComparisonResult};
 use plugins::sidecar::{execute_maigret, run_investigation, InvestigationDossier, ProfileFinding};
+use tauri::State;
 
 #[tauri::command]
 fn check_target(target: String) -> Result<String> {
@@ -89,16 +91,51 @@ fn base64_decode(input: &str) -> std::result::Result<Vec<u8>, String> {
     Ok(out)
 }
 
+#[tauri::command]
+fn save_investigation_dossier(
+    db: State<DbState>,
+    dossier: InvestigationDossier,
+) -> Result<()> {
+    let conn = db.conn.lock().map_err(|e| AppError::DatabaseError(e.to_string()))?;
+    save_dossier(&conn, &dossier)
+}
+
+#[tauri::command]
+fn get_investigation_history(
+    db: State<DbState>,
+    limit: Option<u32>,
+) -> Result<Vec<InvestigationHistoryItem>> {
+    let conn = db.conn.lock().map_err(|e| AppError::DatabaseError(e.to_string()))?;
+    get_history(&conn, limit.unwrap_or(20))
+}
+
+#[tauri::command]
+fn delete_investigation_dossier(
+    db: State<DbState>,
+    id: String,
+) -> Result<bool> {
+    let conn = db.conn.lock().map_err(|e| AppError::DatabaseError(e.to_string()))?;
+    delete_dossier(&conn, &id)
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    let db = DbState::new_file("sentinel_investigations.db").unwrap_or_else(|_| {
+        DbState::new_in_memory().expect("In-memory SQLite fallback failed")
+    });
+
     tauri::Builder::default()
+        .manage(db)
         .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![
             check_target,
             start_investigation,
             investigate_username,
             compute_phash,
-            compare_images
+            compare_images,
+            save_investigation_dossier,
+            get_investigation_history,
+            delete_investigation_dossier
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

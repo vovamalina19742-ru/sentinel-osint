@@ -11,16 +11,21 @@ import {
   RefreshCw,
   Download,
   Printer,
+  Database,
+  Trash2,
+  Clock,
   FileText,
   Sparkles,
   Zap,
 } from 'lucide-react';
 import { TargetType, InvestigationDossier, ImageComparisonResult, InvestigationStep } from './types/dossier';
-import { compareImagesIPC, startInvestigationIPC, isTauriEnvironment } from './services/tauriBridge';
+import { compareImagesIPC, startInvestigationIPC, isTauriEnvironment, saveDossierIPC, getHistoryIPC, deleteDossierIPC, InvestigationHistoryItem } from './services/tauriBridge';
 import { InvestigationProgress } from './components/InvestigationProgress';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'osint' | 'phash'>('osint');
+  const [activeTab, setActiveTab] = useState<'osint' | 'phash' | 'history'>('osint');
+  const [historyItems, setHistoryItems] = useState<InvestigationHistoryItem[]>([]);
+  const [loadingHistory, setLoadingHistory] = useState(false);
 
   // OSINT State
   const [target, setTarget] = useState('');
@@ -38,6 +43,28 @@ export default function App() {
   const [comparing, setComparing] = useState(false);
   const [comparisonResult, setComparisonResult] = useState<ImageComparisonResult | null>(null);
 
+
+  const loadHistory = async () => {
+    setLoadingHistory(true);
+    try {
+      const items = await getHistoryIPC(50);
+      setHistoryItems(items);
+    } catch (err) {
+      console.error('History load error:', err);
+    } finally {
+      setLoadingHistory(false);
+    }
+  };
+
+  const handleDeleteHistory = async (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    try {
+      await deleteDossierIPC(id);
+      setHistoryItems((prev) => prev.filter((item) => item.id !== id));
+    } catch (err) {
+      console.error('Delete error:', err);
+    }
+  };
 
   // Dynamic Trust Score calculation
   const calculateDynamicScore = (d: InvestigationDossier): number => {
@@ -122,6 +149,7 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
         setCurrentService(step.platform);
       });
       setDossier(result);
+      await saveDossierIPC(result);
     } catch (err) {
       console.error('Investigation error:', err);
     } finally {
@@ -254,6 +282,18 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
           >
             <Camera className="w-3.5 h-3.5" />
             Анти-скам pHash DCT-II
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab('history');
+              loadHistory();
+            }}
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
+              activeTab === 'history' ? 'bg-primary text-white shadow' : 'text-zinc-400 hover:text-zinc-200'
+            }`}
+          >
+            <Database className="w-3.5 h-3.5" />
+            История (SQLite)
           </button>
         </div>
 
@@ -448,7 +488,7 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
               </section>
             )}
           </div>
-        ) : (
+        ) : activeTab === 'phash' ? (
           /* TAB 2: pHash DCT-II Visual Scanner */
           <div className="space-y-6 animate-in fade-in duration-200">
             <section className="bg-card border border-border rounded-2xl p-6 shadow-xl space-y-6">
@@ -597,7 +637,82 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
               )}
             </section>
           </div>
-        )}
+        ) : activeTab === 'history' ? (
+          /* TAB 3: SQLite History View */
+          <div className="space-y-6 animate-in fade-in duration-200">
+            <section className="bg-card border border-border rounded-2xl p-6 shadow-xl space-y-4">
+              <div className="flex items-center justify-between border-b border-border/80 pb-4">
+                <div className="flex items-center gap-2.5">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                    <Database className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h2 className="text-base font-semibold text-zinc-100">Локальная база расследований (SQLite)</h2>
+                    <p className="text-xs text-zinc-400">Автономное шифрованное хранение собранных досье с мгновенным доступом.</p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={loadHistory}
+                  className="px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                >
+                  <Clock className="w-3.5 h-3.5" />
+                  Обновить
+                </button>
+              </div>
+
+              {loadingHistory ? (
+                <div className="py-12 text-center text-xs text-zinc-400">Загрузка базы данных...</div>
+              ) : historyItems.length === 0 ? (
+                <div className="py-12 text-center text-xs text-zinc-500">
+                  База пуста. Проведите хотя бы одно расследование, и досье автоматически сохранится здесь.
+                </div>
+              ) : (
+                <div className="space-y-2.5">
+                  {historyItems.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center justify-between p-4 rounded-xl bg-zinc-900/60 hover:bg-zinc-900 border border-border transition-colors group"
+                    >
+                      <div className="flex items-center gap-3 truncate">
+                        <span className={`text-base font-bold font-mono px-2.5 py-1 rounded-lg ${
+                          item.trust_score >= 80
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                            : item.trust_score >= 50
+                            ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
+                            : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
+                        }`}>
+                          {item.trust_score}%
+                        </span>
+                        <div className="truncate">
+                          <div className="flex items-center gap-2">
+                            <span className="font-semibold text-sm text-zinc-100">{item.target}</span>
+                            <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 border border-zinc-700">
+                              {item.target_type}
+                            </span>
+                          </div>
+                          <p className="text-xs text-zinc-400 truncate mt-0.5">{item.summary}</p>
+                          <span className="text-[10px] text-zinc-500 font-mono block mt-1">
+                            {new Date(item.created_at).toLocaleString('ru-RU')}
+                          </span>
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={(e) => handleDeleteHistory(item.id, e)}
+                        className="p-2 rounded-lg text-zinc-500 hover:text-rose-400 hover:bg-rose-500/10 transition-colors opacity-0 group-hover:opacity-100"
+                        title="Удалить запись"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
+          </div>
+        ) : null}
       </main>
     </div>
   );
