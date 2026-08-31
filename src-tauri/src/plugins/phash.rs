@@ -141,3 +141,29 @@ pub fn compare_images_bytes(bytes1: &[u8], bytes2: &[u8]) -> Result<ImageCompari
         verdict,
     })
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_hamming_distance() {
+        let h1: u64 = 0b1010;
+        let h2: u64 = 0b1110;
+        assert_eq!(hamming_distance(h1, h2), 1);
+    }
+
+    #[test]
+    fn test_identical_hash_similarity() {
+        let h: u64 = 0x123456789ABCDEF0;
+        assert_eq!(hamming_distance(h, h), 0);
+        assert_eq!(similarity_percent(0), 100.0);
+    }
+
+    #[test]
+    fn test_similarity_percent_thresholds() {
+        assert!(similarity_percent(3) >= 95.0);
+        assert!(similarity_percent(8) >= 87.0);
+        assert!(similarity_percent(14) >= 78.0);
+    }
+}

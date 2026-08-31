@@ -14,7 +14,6 @@ fn check_target(target: String) -> Result<String> {
 
 #[tauri::command]
 fn compute_phash(image_base64: String) -> Result<String> {
-    use std::io::Read;
     let clean_b64 = image_base64.split(',').last().unwrap_or(&image_base64);
     
     // Decode base64
