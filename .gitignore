@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+target/
+.venv/
+venv/
+__pycache__/
+
+# Tauri & Rust build artifacts
+src-tauri/target/
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+
+# Local databases & Investigation caches (CRITICAL FOR PRIVACY)
+*.db
+*.sqlite
+*.sqlite3
+data/
+logs/
+dossiers/
+
+# Secrets & environment
+.env
+*.token
+*.key
+*.secret
+credentials.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
