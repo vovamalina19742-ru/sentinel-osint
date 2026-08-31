@@ -31,9 +31,9 @@ export interface InvestigationDossier {
 export interface ImageComparisonResult {
   hash1: string;
   hash2: string;
-  hammingDistance: number;
-  similarityPercent: number;
-  isDuplicate: boolean;
-  riskSeverity: RiskSeverity;
+  hamming_distance: number;
+  similarity_percent: number;
+  is_duplicate: boolean;
+  risk_severity: RiskSeverity;
   verdict: string;
 }
