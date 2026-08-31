@@ -27,3 +27,13 @@ export interface InvestigationDossier {
   profiles: SocialProfile[];
   rawFindings: Record<string, unknown>;
 }
+
+export interface ImageComparisonResult {
+  hash1: string;
+  hash2: string;
+  hammingDistance: number;
+  similarityPercent: number;
+  isDuplicate: boolean;
+  riskSeverity: RiskSeverity;
+  verdict: string;
+}
