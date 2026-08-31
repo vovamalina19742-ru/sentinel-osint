@@ -12,8 +12,9 @@ import {
   Sparkles,
   Zap,
 } from 'lucide-react';
-import { TargetType, InvestigationDossier, ImageComparisonResult } from './types/dossier';
-import { compareImagesIPC, isTauriEnvironment } from './services/tauriBridge';
+import { TargetType, InvestigationDossier, ImageComparisonResult, InvestigationStep } from './types/dossier';
+import { compareImagesIPC, startInvestigationIPC, isTauriEnvironment } from './services/tauriBridge';
+import { InvestigationProgress } from './components/InvestigationProgress';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<'osint' | 'phash'>('osint');
@@ -23,6 +24,9 @@ export default function App() {
   const [targetType, setTargetType] = useState<TargetType>('username');
   const [dossier, setDossier] = useState<InvestigationDossier | null>(null);
   const [loading, setLoading] = useState(false);
+  const [steps, setSteps] = useState<InvestigationStep[]>([]);
+  const [progressPercent, setProgressPercent] = useState(0);
+  const [currentMessage, setCurrentMessage] = useState('');
 
   // pHash Image Scanner State
   const [img1, setImg1] = useState<string | null>(null);
@@ -30,37 +34,32 @@ export default function App() {
   const [comparing, setComparing] = useState(false);
   const [comparisonResult, setComparisonResult] = useState<ImageComparisonResult | null>(null);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!target.trim()) return;
+    if (!target.trim() || loading) return;
 
     setLoading(true);
-    setTimeout(() => {
-      setDossier({
-        id: crypto.randomUUID(),
-        target,
-        targetType,
-        trustScore: 82,
-        createdAt: new Date().toISOString(),
-        summary: `Автоматическое расследование по цели "${target}". Найдено 4 связанных профиля, 1 предупреждение о повторной активности.`,
-        redFlags: [
-          {
-            id: 'rf-1',
-            source: 'pHash Engine',
-            title: 'Уникальность медиа-файлов',
-            description: 'Повторных совпадений фото в базе известных скам-паттернов не обнаружено.',
-            severity: 'low',
-          },
-        ],
-        profiles: [
-          { platform: 'GitHub', url: `https://github.com/${target}`, exists: true },
-          { platform: 'Telegram', url: `https://t.me/${target}`, exists: true },
-          { platform: 'Reddit', url: `https://reddit.com/user/${target}`, exists: false },
-        ],
-        rawFindings: { engine: 'Sentinel-OSINT Core v0.1' },
+    setDossier(null);
+    setSteps([]);
+    setProgressPercent(0);
+    setCurrentMessage('Запуск поисковых агентов...');
+
+    try {
+      const result = await startInvestigationIPC(target, targetType, (step) => {
+        setSteps((prev) => {
+          // Avoid duplicate ids
+          const filtered = prev.filter((s) => s.id !== step.id);
+          return [...filtered, step];
+        });
+        setProgressPercent(step.progress_percent);
+        setCurrentMessage(step.message);
       });
+      setDossier(result);
+    } catch (err) {
+      console.error('Investigation error:', err);
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>, slot: 1 | 2) => {
@@ -78,7 +77,7 @@ export default function App() {
   };
 
   const runPhashComparison = async () => {
-    if (!img1 || !img2) return;
+    if (!img1 || !img2 || comparing) return;
     setComparing(true);
     try {
       const res = await compareImagesIPC(img1, img2);
@@ -91,7 +90,6 @@ export default function App() {
   };
 
   const loadSamplePreset = () => {
-    // Generate sample SVG images
     const makeSvgBase64 = (color: string, label: string) => {
       const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
         <rect width="100%" height="100%" fill="${color}"/>
@@ -165,7 +163,7 @@ export default function App() {
                 <div className="flex items-center justify-between">
                   <label className="text-sm font-medium text-zinc-300">Целевой объект расследования</label>
                   <div className="flex items-center gap-1.5 bg-zinc-900 border border-border p-1 rounded-lg text-xs">
-                    {(['username', 'phone', 'email', 'image', 'listing_url'] as TargetType[]).map((type) => (
+                    {(['username', 'email', 'phone', 'image', 'listing_url'] as TargetType[]).map((type) => (
                       <button
                         key={type}
                         type="button"
@@ -185,7 +183,11 @@ export default function App() {
                     type="text"
                     value={target}
                     onChange={(e) => setTarget(e.target.value)}
-                    placeholder="Введите никнейм, номер телефона (+373...), email или ссылку..."
+                    placeholder={
+                      targetType === 'email'
+                        ? 'Введите email для проверки по 120+ сайтам (Holehe)...'
+                        : 'Введите никнейм для сбора цифрового следа (Maigret)...'
+                    }
                     className="w-full h-12 pl-11 pr-32 rounded-xl bg-zinc-900/80 border border-zinc-700/80 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-zinc-100 placeholder:text-zinc-500"
                   />
                   <Search className="w-5 h-5 text-zinc-500 absolute left-3.5 top-3.5" />
@@ -197,7 +199,7 @@ export default function App() {
                     {loading ? (
                       <>
                         <span className="w-3 h-3 rounded-full border-2 border-white/30 border-t-white animate-spin"></span>
-                        Анализ...
+                        Сбор данных...
                       </>
                     ) : (
                       <>Собрать досье</>
@@ -207,13 +209,23 @@ export default function App() {
               </form>
             </section>
 
-            {dossier && (
+            {/* Real-time Streaming Progress Bar */}
+            {loading && (
+              <InvestigationProgress
+                steps={steps}
+                progressPercent={progressPercent}
+                currentMessage={currentMessage}
+              />
+            )}
+
+            {/* Dossier Results */}
+            {dossier && !loading && (
               <section className="space-y-6 animate-in fade-in duration-300">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-card border border-border rounded-xl p-5 flex items-center justify-between">
                     <div>
                       <p className="text-xs text-zinc-400">Рейтинг доверия (Trust Score)</p>
-                      <p className="text-3xl font-bold text-emerald-400 mt-1">{dossier.trustScore}%</p>
+                      <p className="text-3xl font-bold text-emerald-400 mt-1">{dossier.trust_score}%</p>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                       <CheckCircle2 className="w-6 h-6" />
@@ -235,7 +247,7 @@ export default function App() {
                   <div className="bg-card border border-border rounded-xl p-5 flex items-center justify-between">
                     <div>
                       <p className="text-xs text-zinc-400">Красные флаги / Риски</p>
-                      <p className="text-3xl font-bold text-zinc-100 mt-1">{dossier.redFlags.length}</p>
+                      <p className="text-3xl font-bold text-zinc-100 mt-1">{dossier.red_flags.length}</p>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
                       <AlertTriangle className="w-6 h-6" />
@@ -243,12 +255,18 @@ export default function App() {
                   </div>
                 </div>
 
+                {/* Summary Banner */}
+                <div className="p-4 rounded-xl bg-zinc-900/60 border border-border text-xs text-zinc-300 leading-relaxed">
+                  <span className="font-semibold text-primary block mb-1">Сводка аналитического отчёта:</span>
+                  {dossier.summary}
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-card border border-border rounded-xl p-5 space-y-3">
                     <h3 className="font-semibold text-sm flex items-center gap-2 text-zinc-200">
                       <Globe className="w-4 h-4 text-primary" /> Обнаруженные аккаунты
                     </h3>
-                    <div className="space-y-2">
+                    <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
                       {dossier.profiles.map((p, i) => (
                         <div key={i} className="flex items-center justify-between p-2.5 rounded-lg bg-zinc-900/60 border border-border text-xs">
                           <span className="font-medium">{p.platform}</span>
@@ -266,10 +284,10 @@ export default function App() {
 
                   <div className="bg-card border border-border rounded-xl p-5 space-y-3">
                     <h3 className="font-semibold text-sm flex items-center gap-2 text-zinc-200">
-                      <AlertTriangle className="w-4 h-4 text-amber-400" /> Проверка безопасности
+                      <AlertTriangle className="w-4 h-4 text-amber-400" /> Факторы риска и верификация
                     </h3>
                     <div className="space-y-2">
-                      {dossier.redFlags.map((rf) => (
+                      {dossier.red_flags.map((rf) => (
                         <div key={rf.id} className="p-3 rounded-lg bg-zinc-900/60 border border-border text-xs space-y-1">
                           <div className="flex items-center justify-between">
                             <span className="font-medium text-zinc-200">{rf.title}</span>
@@ -278,6 +296,7 @@ export default function App() {
                             </span>
                           </div>
                           <p className="text-zinc-400">{rf.description}</p>
+                          <span className="text-[10px] text-zinc-500 font-mono block">Источник: {rf.source}</span>
                         </div>
                       ))}
                     </div>

@@ -1,6 +1,16 @@
 export type TargetType = 'phone' | 'email' | 'username' | 'image' | 'listing_url';
 export type RiskSeverity = 'low' | 'medium' | 'high' | 'critical';
 
+export interface InvestigationStep {
+  id: string;
+  target: string;
+  platform: string;
+  status: 'running' | 'found' | 'not_found' | 'error';
+  message: string;
+  progress_percent: number;
+  url?: string;
+}
+
 export interface RedFlag {
   id: string;
   source: string;
@@ -13,19 +23,19 @@ export interface SocialProfile {
   platform: string;
   url: string;
   exists: boolean;
-  rawDetails?: Record<string, unknown>;
+  raw_details?: Record<string, unknown>;
 }
 
 export interface InvestigationDossier {
   id: string;
   target: string;
-  targetType: TargetType;
-  trustScore: number; // 0 - 100
-  createdAt: string;
+  target_type: TargetType;
+  trust_score: number; // 0 - 100
+  created_at: string;
   summary: string;
-  redFlags: RedFlag[];
+  red_flags: RedFlag[];
   profiles: SocialProfile[];
-  rawFindings: Record<string, unknown>;
+  raw_findings: Record<string, unknown>;
 }
 
 export interface ImageComparisonResult {

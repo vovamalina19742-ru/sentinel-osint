@@ -3,6 +3,7 @@ pub mod plugins;
 
 use error::{AppError, Result};
 use plugins::phash::{compare_images_bytes, compute_phash_from_bytes, ImageComparisonResult};
+use plugins::sidecar::{run_investigation, InvestigationDossier};
 
 #[tauri::command]
 fn check_target(target: String) -> Result<String> {
@@ -13,10 +14,17 @@ fn check_target(target: String) -> Result<String> {
 }
 
 #[tauri::command]
+async fn start_investigation(
+    app: tauri::AppHandle,
+    target: String,
+    target_type: String,
+) -> Result<InvestigationDossier> {
+    run_investigation(app, target, target_type).await
+}
+
+#[tauri::command]
 fn compute_phash(image_base64: String) -> Result<String> {
     let clean_b64 = image_base64.split(',').last().unwrap_or(&image_base64);
-    
-    // Decode base64
     let bytes = match base64_decode(clean_b64) {
         Ok(b) => b,
         Err(e) => return Err(AppError::ValidationError(format!("Invalid base64 payload: {}", e))),
@@ -44,7 +52,6 @@ fn compare_images(image1_base64: String, image2_base64: String) -> Result<ImageC
 }
 
 fn base64_decode(input: &str) -> std::result::Result<Vec<u8>, String> {
-    // Simple custom standard base64 decoder to avoid unnecessary external crate
     let filtered: String = input.chars().filter(|c| !c.is_whitespace()).collect();
     let mut out = Vec::with_capacity(filtered.len() * 3 / 4);
     let mut buf = 0u32;
@@ -80,6 +87,7 @@ pub fn run() {
         .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![
             check_target,
+            start_investigation,
             compute_phash,
             compare_images
         ])
