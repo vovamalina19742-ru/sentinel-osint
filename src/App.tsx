@@ -90,17 +90,62 @@ export default function App() {
   };
 
   const loadSamplePreset = () => {
-    const makeSvgBase64 = (color: string, label: string) => {
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
-        <rect width="100%" height="100%" fill="${color}"/>
-        <circle cx="150" cy="150" r="80" fill="#ffffff" opacity="0.8"/>
-        <text x="150" y="160" font-size="22" font-family="sans-serif" text-anchor="middle" fill="#18181b">${label}</text>
-      </svg>`;
-      return `data:image/svg+xml;base64,${btoa(svg)}`;
-    };
+    try {
+      const createSamplePng = (bgColor: string, text: string): string => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 300;
+        canvas.height = 300;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return '';
 
-    setImg1(makeSvgBase64('#2563eb', 'iPhone 15 Pro (Лот A)'));
-    setImg2(makeSvgBase64('#1d4ed8', 'iPhone 15 Pro (Лот B)'));
+        // Background
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, 300, 300);
+
+        // Phone body
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        if (ctx.roundRect) {
+          ctx.roundRect(60, 30, 180, 240, 24);
+        } else {
+          ctx.rect(60, 30, 180, 240);
+        }
+        ctx.fill();
+
+        // Phone screen
+        ctx.fillStyle = '#18181b';
+        ctx.beginPath();
+        if (ctx.roundRect) {
+          ctx.roundRect(70, 42, 160, 216, 16);
+        } else {
+          ctx.rect(70, 42, 160, 216);
+        }
+        ctx.fill();
+
+        // Dynamic Island / Camera
+        ctx.fillStyle = '#000000';
+        ctx.beginPath();
+        ctx.arc(150, 58, 7, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Text label
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 14px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(text, 150, 155);
+
+        return canvas.toDataURL('image/png');
+      };
+
+      const p1 = createSamplePng('#1e293b', 'Lot #1 (Original)');
+      const p2 = createSamplePng('#0f172a', 'Lot #2 (Re-uploaded)');
+      setImg1(p1);
+      setImg2(p2);
+      setComparisonResult(null);
+    } catch (err) {
+      console.error('Error generating sample:', err);
+    }
+
     setComparisonResult(null);
   };
 
