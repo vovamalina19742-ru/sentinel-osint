@@ -21,7 +21,7 @@
 | The Enterprise Trap (Maltego, Palantir) | The Open-Source Zoo (350+ GitHub Scripts) | **The Sentinel-OSINT Solution** |
 | :--- | :--- | :--- |
 | Costs **$2,000 to $50,000 / year** per analyst. | Free, but heavily fragmented and unmaintained. | **100% Free & Open-Source (MIT).** |
-| Closed source, heavy corporate lock-in. | Requires manual terminal commands and dependency hell. | **One-Input GUI:** Enter target $	o$ AI runs the pipeline. |
+| Closed source, heavy corporate lock-in. | Requires manual terminal commands and dependency hell. | **One-Input GUI:** Enter target → AI runs the pipeline. |
 | Cloud-dependent: your investigation targets leak. | Raw outputs full of noise and false positives (35% error rate). | **AI De-noising & Trust Scoring (0–100%).** |
 | Rigid, monolithic data models. | No interoperability between tools. | **Model Context Protocol (MCP):** plug-and-play 300+ tools. |
 
@@ -80,21 +80,34 @@
 
 ## 📦 Quick Start
 
-### Prerequisites
-- Node.js 20+ & pnpm (or npm)
-- Rust toolchain (`rustup`)
-- Python 3.10+ (for Python-based MCP sidecars)
-
+### 1. Desktop Application
 ```bash
-# 1. Clone the repository
+# Clone & install dependencies
 git clone https://github.com/vovamalina19742-ru/sentinel-osint.git
 cd sentinel-osint
+npm install
 
-# 2. Install dependencies
-pnpm install
+# Run web / desktop development
+npm run dev
+npm run tauri dev
 
-# 3. Run in development mode
-pnpm tauri dev
+# Build standalone release binaries (.deb / .AppImage / .msi / .exe)
+npm run tauri build
+```
+
+### 2. Model Context Protocol (MCP) Server for LLM Assistants
+Connect Sentinel-OSINT directly to **Claude Desktop**, **Cursor**, or any local LLM agent:
+
+```json
+// Add to claude_desktop_config.json or .cursor/mcp.json:
+{
+  "mcpServers": {
+    "sentinel-osint": {
+      "command": "python",
+      "args": ["<path-to-sentinel-osint>/mcp-hub/server.py"]
+    }
+  }
+}
 ```
 
 ---
@@ -104,7 +117,7 @@ pnpm tauri dev
 **Sentinel-OSINT** — это открытый десктопный ИИ-комбайн для OSINT-разведки, проверки контрагентов и защиты от мошенников.
 
 * **Проблема:** Существующие инструменты либо стоят баснословных денег ($2 000–$50 000 в год), либо представляют собой зоопарк из 350+ разрозненных скриптов, в которых тонут 99% пользователей.
-* **Решение:** Пользователь вводит одну зацепку (номер телефона, логин, email или фото) $	o$ автономный ИИ-агент сам опрашивает нужные утилиты по открытому протоколу **MCP**, отсеивает шум и выдает **готовое структурированное досье с рейтингом благонадежности (Trust Score)** за 30 секунд.
+* **Решение:** Пользователь вводит одну зацепку (номер телефона, логин, email или фото) → автономный ИИ-агент сам опрашивает нужные утилиты по открытому протоколу **MCP**, отсеивает шум и выдает **готовое структурированное досье с рейтингом благонадежности (Trust Score)** за 30 секунд.
 * **Приватность:** 100% локальная работа на вашем компьютере. Никакие данные расследований не передаются третьим лицам.
 
 ---

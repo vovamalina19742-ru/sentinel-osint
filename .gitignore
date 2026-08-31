@@ -13,13 +13,16 @@ src-tauri/target/
 *.dylib
 *.pdb
 
-# Local databases & Investigation caches (CRITICAL FOR PRIVACY)
 *.db
 *.sqlite
 *.sqlite3
 data/
 logs/
 dossiers/
+*.log
+vite.log
+error.log
+serve_app.py
 
 # Secrets & environment
 .env
