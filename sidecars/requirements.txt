@@ -1,0 +1,3 @@
+# Sentinel-OSINT Native Sidecars Dependencies
+maigret==0.4.4
+holehe==2.0.2
