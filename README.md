@@ -164,6 +164,30 @@ Connect Sentinel-OSINT directly to **Claude Desktop**, **Cursor**, or any local 
 
 ---
 
+## 🗺️ Product Roadmap: From MVP (v1.0) to Pro Intelligence Platform (v2.0+)
+
+| Capability | Shipped in v1.0 (Open-Source MVP) | Planned for v2.0+ (Pro Ecosystem) |
+| :--- | :--- | :--- |
+| **Visual Interface** | Fast desktop dashboard, live stream radar, Markdown/PDF export. | **Interactive Relationship Graph:** Dynamic visual nodes connecting entities, handles, phones, and websites (Maltego-style). |
+| **Visual Anti-Scam** | Local instant pHash DCT-II perceptual match against scam archives. | **Reverse Image Pivoting:** Automated source lookup via Yandex / Google Lens APIs. |
+| **Data Sources** | Core Sidecars (Maigret for usernames, Holehe for emails). | **Direct Marketplace Modules:** Crawlers for regional classifieds (999.md, Avito, OLX) with historical price change alerts. |
+| **Storage & Security** | Local zero-knowledge SQLite with WAL durability. | **Cross-Device Sync:** End-to-End (E2E) encrypted peer-to-peer sync between desktop and mobile. |
+| **AI & Connectivity** | Standard Model Context Protocol (MCP) server for any LLM. | **Telegram Bot Companion:** Forward phone numbers or photos directly from mobile for instant analysis. |
+
+---
+
+## 🇷🇺 Дорожная карта: От MVP v1.0 к коммерческой экосистеме v2.0+
+
+| Направление | Что уже есть в v1.0 (MVP) | Что запланировано в v2.0+ |
+| :--- | :--- | :--- |
+| **Интерфейс** | Быстрый десктопный UI, радар поиска, экспорт в PDF/Markdown. | **Интерактивный граф связей:** Визуальные ноды и линии между людьми, номерами и сайтами (как в Maltego). |
+| **Анализ фото** | Локальный мгновенный pHash DCT-II против дубликатов скамов. | **Реверс-поиск:** Автоматический поиск первоисточника фото через Yandex / Google Lens API. |
+| **Источники данных** | Базовые Sidecars (Maigret по никам, Holehe по email). | **Прямые модули маркетплейсов:** Парсинг досок объявлений (999.md, Avito) и мониторинг истории цен. |
+| **Хранение** | Автономная шифрованная SQLite с WAL-режимом. | **Синхронизация:** Облачная/P2P E2E-синхронизация между ноутбуком и телефоном. |
+| **Интеграция** | Стандартный MCP-сервер для вызова из любого ИИ. | **Telegram-бот:** Мгновенная проверка номера или фото прямо со смартфона на ходу. |
+
+---
+
 ## 🤝 Contributing
 
 We welcome contributions from the global intelligence, ethical hacking, and developer communities!
