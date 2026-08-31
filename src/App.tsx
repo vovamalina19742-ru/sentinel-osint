@@ -9,6 +9,9 @@ import {
   UploadCloud,
   FileSearch,
   RefreshCw,
+  Download,
+  Printer,
+  FileText,
   Sparkles,
   Zap,
 } from 'lucide-react';
@@ -27,12 +30,75 @@ export default function App() {
   const [steps, setSteps] = useState<InvestigationStep[]>([]);
   const [progressPercent, setProgressPercent] = useState(0);
   const [currentMessage, setCurrentMessage] = useState('');
+  const [currentService, setCurrentService] = useState('');
 
   // pHash Image Scanner State
   const [img1, setImg1] = useState<string | null>(null);
   const [img2, setImg2] = useState<string | null>(null);
   const [comparing, setComparing] = useState(false);
   const [comparisonResult, setComparisonResult] = useState<ImageComparisonResult | null>(null);
+
+
+  // Dynamic Trust Score calculation
+  const calculateDynamicScore = (d: InvestigationDossier): number => {
+    const verifiedCount = d.profiles.filter((p) => p.exists).length;
+    let score = 50 + verifiedCount * 9;
+
+    for (const rf of d.red_flags) {
+      if (rf.severity === 'critical') score -= 35;
+      else if (rf.severity === 'high') score -= 20;
+      else if (rf.severity === 'medium') score -= 10;
+    }
+
+    return Math.max(5, Math.min(98, score));
+  };
+
+  // Export report to clean Markdown
+  const exportMarkdownReport = () => {
+    if (!dossier) return;
+    const dateStr = new Date(dossier.created_at).toLocaleString('ru-RU');
+    const score = calculateDynamicScore(dossier);
+
+    const mdContent = `# 🛡️ Досье расследования: ${dossier.target}
+**Платформа:** Sentinel-OSINT v0.2 Core
+**Дата формирования:** ${dateStr}
+**Тип цели:** \`${dossier.target_type}\`
+**Итоговый рейтинг доверия (Trust Score):** **${score}%** ${score >= 80 ? '🟢 (Высокий)' : score >= 50 ? '🟡 (Средний)' : '🔴 (Критический риск)'}
+
+---
+
+## 📋 Сводка аналитического отчёта
+${dossier.summary}
+
+---
+
+## 🌐 Обнаруженные профили и цифровой след
+| Платформа | Статус | Ссылка на профиль |
+| :--- | :---: | :--- |
+${dossier.profiles.map(p => `| **${p.platform}** | ${p.exists ? '✅ Найден' : '❌ Не найден'} | ${p.exists ? `[${p.url}](${p.url})` : '—'} |`).join('\n')}
+
+---
+
+## ⚠️ Факторы риска и верификация
+${dossier.red_flags.length === 0 ? '_Критических факторов риска не обнаружено._' : dossier.red_flags.map(rf => `### [${rf.severity.toUpperCase()}] ${rf.title}\n- **Источник:** ${rf.source}\n- **Описание:** ${rf.description}`).join('\n\n')}
+
+---
+*Сформировано автоматически Sentinel-OSINT Core Engine.*
+`;
+
+    const blob = new Blob([mdContent], { type: 'text/markdown;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `Sentinel_Dossier_${dossier.target}_${Date.now()}.md`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // Export / Print PDF
+  const exportPdfReport = () => {
+    window.print();
+  };
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,6 +119,7 @@ export default function App() {
         });
         setProgressPercent(step.progress_percent);
         setCurrentMessage(step.message);
+        setCurrentService(step.platform);
       });
       setDossier(result);
     } catch (err) {
@@ -260,17 +327,48 @@ export default function App() {
                 steps={steps}
                 progressPercent={progressPercent}
                 currentMessage={currentMessage}
+                currentService={currentService}
               />
             )}
 
             {/* Dossier Results */}
             {dossier && !loading && (
-              <section className="space-y-6 animate-in fade-in duration-300">
+              <section className="space-y-6 animate-in fade-in duration-300 print:m-0 print:p-0">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-zinc-900/60 border border-border p-4 rounded-xl print:hidden">
+                  <div className="flex items-center gap-2">
+                    <FileText className="w-4 h-4 text-primary" />
+                    <span className="text-xs font-medium text-zinc-200">
+                      Досье на цель: <strong className="text-primary font-mono">{dossier.target}</strong>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={exportMarkdownReport}
+                      className="px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                    >
+                      <Download className="w-3.5 h-3.5 text-emerald-400" />
+                      Экспорт в Markdown
+                    </button>
+                    <button
+                      type="button"
+                      onClick={exportPdfReport}
+                      className="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary/90 text-white text-xs font-medium flex items-center gap-1.5 transition-colors shadow-sm"
+                    >
+                      <Printer className="w-3.5 h-3.5" />
+                      Печать / PDF
+                    </button>
+                  </div>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-card border border-border rounded-xl p-5 flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-zinc-400">Рейтинг доверия (Trust Score)</p>
-                      <p className="text-3xl font-bold text-emerald-400 mt-1">{dossier.trust_score}%</p>
+                      <p className="text-xs text-zinc-400">Динамический Trust Score</p>
+                      <p className={`text-3xl font-bold mt-1 ${
+                        calculateDynamicScore(dossier) >= 80 ? 'text-emerald-400' : calculateDynamicScore(dossier) >= 50 ? 'text-amber-400' : 'text-rose-400'
+                      }`}>
+                        {calculateDynamicScore(dossier)}%
+                      </p>
                     </div>
                     <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                       <CheckCircle2 className="w-6 h-6" />

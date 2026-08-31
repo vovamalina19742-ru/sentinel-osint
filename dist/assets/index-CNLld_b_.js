@@ -7145,7 +7145,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$d = [
+const __iconNode$h = [
   [
     "path",
     {
@@ -7155,7 +7155,54 @@ const __iconNode$d = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("Camera", __iconNode$d);
+const Camera = createLucideIcon("Camera", __iconNode$h);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$g = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("CircleCheck", __iconNode$g);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
+  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+];
+const CircleX = createLucideIcon("CircleX", __iconNode$f);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$e = [
+  ["path", { d: "M12 13v8", key: "1l5pq0" }],
+  ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
+  ["path", { d: "m8 17 4-4 4 4", key: "1quai1" }]
+];
+const CloudUpload = createLucideIcon("CloudUpload", __iconNode$e);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
+  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
+];
+const Download = createLucideIcon("Download", __iconNode$d);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7163,41 +7210,6 @@ const Camera = createLucideIcon("Camera", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-];
-const CircleCheck = createLucideIcon("CircleCheck", __iconNode$c);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$b = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
-  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
-];
-const CircleX = createLucideIcon("CircleX", __iconNode$b);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [
-  ["path", { d: "M12 13v8", key: "1l5pq0" }],
-  ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
-  ["path", { d: "m8 17 4-4 4 4", key: "1quai1" }]
-];
-const CloudUpload = createLucideIcon("CloudUpload", __iconNode$a);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$9 = [
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   [
     "path",
@@ -7206,7 +7218,41 @@ const __iconNode$9 = [
   ["path", { d: "m9 18-1.5-1.5", key: "1j6qii" }],
   ["circle", { cx: "5", cy: "14", r: "3", key: "ufru5t" }]
 ];
-const FileSearch = createLucideIcon("FileSearch", __iconNode$9);
+const FileSearch = createLucideIcon("FileSearch", __iconNode$c);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$b = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+];
+const FileText = createLucideIcon("FileText", __iconNode$b);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$a = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("Globe", __iconNode$a);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$9);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7214,19 +7260,31 @@ const FileSearch = createLucideIcon("FileSearch", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+  [
+    "path",
+    {
+      d: "M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2",
+      key: "143wyd"
+    }
+  ],
+  ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }],
+  ["rect", { x: "6", y: "14", width: "12", height: "8", rx: "1", key: "1ue0tg" }]
 ];
-const Globe = createLucideIcon("Globe", __iconNode$8);
+const Printer = createLucideIcon("Printer", __iconNode$8);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$7 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$7);
+const __iconNode$7 = [
+  ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
+  ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5", key: "1j5fej" }],
+  ["path", { d: "M19.1 4.9C23 8.8 23 15.1 19.1 19", key: "10b0cb" }]
+];
+const Radio = createLucideIcon("Radio", __iconNode$7);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7538,35 +7596,60 @@ async function startInvestigationIPC(target, targetType, onStep) {
     }
   };
 }
-const InvestigationProgress = ({ steps, progressPercent, currentMessage }) => {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-lg animate-in fade-in duration-200", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between text-xs", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-semibold text-zinc-300 flex items-center gap-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-3.5 h-3.5 text-primary animate-spin" }),
-          "Агентная разведка в реальном времени..."
+const InvestigationProgress = ({
+  steps,
+  progressPercent,
+  currentMessage,
+  currentService
+}) => {
+  var _a;
+  const foundCount = steps.filter((s) => s.status === "found").length;
+  const activeService = currentService || ((_a = steps[steps.length - 1]) == null ? void 0 : _a.platform) || "Оркестратор";
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-xl animate-in fade-in duration-200", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs border-b border-border/70 pb-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "relative flex h-3 w-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "relative inline-flex rounded-full h-3 w-3 bg-primary" })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-mono font-bold text-primary", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-semibold text-zinc-200 flex items-center gap-1.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { className: "w-3.5 h-3.5 text-primary animate-pulse" }),
+          "Опрос сервиса:",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/30 font-mono", children: activeService })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 text-[11px]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-zinc-400", children: [
+          "Обнаружено совпадений:",
+          " ",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-emerald-400 font-mono text-xs", children: foundCount })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20", children: [
           progressPercent,
           "%"
         ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-2 rounded-full bg-zinc-800 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-2.5 rounded-full bg-zinc-800/80 overflow-hidden p-0.5 border border-zinc-700/50", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         "div",
         {
-          className: "h-full bg-gradient-to-r from-primary via-emerald-500 to-primary rounded-full transition-all duration-300 ease-out",
+          className: "h-full bg-gradient-to-r from-primary via-emerald-400 to-cyan-400 rounded-full transition-all duration-300 ease-out shadow-[0_0_12px_rgba(59,130,246,0.5)]",
           style: { width: `${progressPercent}%` }
         }
       ) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-400 font-mono truncate", children: currentMessage })
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-[11px] text-zinc-400 font-mono truncate flex items-center gap-1.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-3 h-3 text-primary animate-spin shrink-0" }),
+        currentMessage || "Сканирование внешних источников..."
+      ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2 max-h-56 overflow-y-auto pr-1", children: steps.map((step) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2 max-h-60 overflow-y-auto pr-1", children: steps.map((step) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
-        className: "flex items-center justify-between p-2.5 rounded-lg bg-zinc-900/70 border border-border/80 text-xs",
+        className: "flex items-center justify-between p-2.5 rounded-xl bg-zinc-900/60 hover:bg-zinc-900/90 border border-border/70 text-xs transition-colors",
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2.5 truncate", children: [
-            step.status === "found" ? /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-4 h-4 text-emerald-400 shrink-0" }) : step.status === "not_found" ? /* @__PURE__ */ jsxRuntimeExports.jsx(CircleX, { className: "w-4 h-4 text-zinc-500 shrink-0" }) : step.status === "error" ? /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-4 h-4 text-rose-400 shrink-0" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-4 h-4 text-primary animate-spin shrink-0" }),
+            step.status === "found" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-5 h-5 rounded-md bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5 text-emerald-400" }) }) : step.status === "not_found" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-5 h-5 rounded-md bg-zinc-800 flex items-center justify-center shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CircleX, { className: "w-3.5 h-3.5 text-zinc-500" }) }) : step.status === "error" ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-5 h-5 rounded-md bg-rose-500/10 border border-rose-500/20 flex items-center justify-center shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-3.5 h-3.5 text-rose-400" }) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-5 h-5 rounded-md bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LoaderCircle, { className: "w-3.5 h-3.5 text-primary animate-spin" }) }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-medium text-zinc-200", children: step.platform }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-500 text-[11px] truncate", children: step.message })
           ] }),
@@ -7576,10 +7659,10 @@ const InvestigationProgress = ({ steps, progressPercent, currentMessage }) => {
               href: step.url,
               target: "_blank",
               rel: "noreferrer",
-              className: "text-primary hover:underline text-[11px] flex items-center gap-1 shrink-0 ml-2",
+              className: "text-primary hover:underline text-[11px] flex items-center gap-1 shrink-0 ml-2 bg-primary/10 px-2 py-0.5 rounded border border-primary/20",
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(Globe, { className: "w-3 h-3" }),
-                "Ссылка"
+                "Профиль"
               ]
             }
           )
@@ -7598,10 +7681,64 @@ function App() {
   const [steps, setSteps] = reactExports.useState([]);
   const [progressPercent, setProgressPercent] = reactExports.useState(0);
   const [currentMessage, setCurrentMessage] = reactExports.useState("");
+  const [currentService, setCurrentService] = reactExports.useState("");
   const [img1, setImg1] = reactExports.useState(null);
   const [img2, setImg2] = reactExports.useState(null);
   const [comparing, setComparing] = reactExports.useState(false);
   const [comparisonResult, setComparisonResult] = reactExports.useState(null);
+  const calculateDynamicScore = (d) => {
+    const verifiedCount = d.profiles.filter((p) => p.exists).length;
+    let score = 50 + verifiedCount * 9;
+    for (const rf of d.red_flags) {
+      if (rf.severity === "critical") score -= 35;
+      else if (rf.severity === "high") score -= 20;
+      else if (rf.severity === "medium") score -= 10;
+    }
+    return Math.max(5, Math.min(98, score));
+  };
+  const exportMarkdownReport = () => {
+    if (!dossier) return;
+    const dateStr = new Date(dossier.created_at).toLocaleString("ru-RU");
+    const score = calculateDynamicScore(dossier);
+    const mdContent = `# 🛡️ Досье расследования: ${dossier.target}
+**Платформа:** Sentinel-OSINT v0.2 Core
+**Дата формирования:** ${dateStr}
+**Тип цели:** \`${dossier.target_type}\`
+**Итоговый рейтинг доверия (Trust Score):** **${score}%** ${score >= 80 ? "🟢 (Высокий)" : score >= 50 ? "🟡 (Средний)" : "🔴 (Критический риск)"}
+
+---
+
+## 📋 Сводка аналитического отчёта
+${dossier.summary}
+
+---
+
+## 🌐 Обнаруженные профили и цифровой след
+| Платформа | Статус | Ссылка на профиль |
+| :--- | :---: | :--- |
+${dossier.profiles.map((p) => `| **${p.platform}** | ${p.exists ? "✅ Найден" : "❌ Не найден"} | ${p.exists ? `[${p.url}](${p.url})` : "—"} |`).join("\n")}
+
+---
+
+## ⚠️ Факторы риска и верификация
+${dossier.red_flags.length === 0 ? "_Критических факторов риска не обнаружено._" : dossier.red_flags.map((rf) => `### [${rf.severity.toUpperCase()}] ${rf.title}
+- **Источник:** ${rf.source}
+- **Описание:** ${rf.description}`).join("\n\n")}
+
+---
+*Сформировано автоматически Sentinel-OSINT Core Engine.*
+`;
+    const blob = new Blob([mdContent], { type: "text/markdown;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `Sentinel_Dossier_${dossier.target}_${Date.now()}.md`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+  const exportPdfReport = () => {
+    window.print();
+  };
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!target.trim() || loading) return;
@@ -7618,6 +7755,7 @@ function App() {
         });
         setProgressPercent(step.progress_percent);
         setCurrentMessage(step.message);
+        setCurrentService(step.platform);
       });
       setDossier(result);
     } catch (err) {
@@ -7787,16 +7925,52 @@ function App() {
           {
             steps,
             progressPercent,
-            currentMessage
+            currentMessage,
+            currentService
           }
         ),
-        dossier && !loading && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "space-y-6 animate-in fade-in duration-300", children: [
+        dossier && !loading && /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "space-y-6 animate-in fade-in duration-300 print:m-0 print:p-0", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-zinc-900/60 border border-border p-4 rounded-xl print:hidden", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-4 h-4 text-primary" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-medium text-zinc-200", children: [
+                "Досье на цель: ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-primary font-mono", children: dossier.target })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  onClick: exportMarkdownReport,
+                  className: "px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-medium flex items-center gap-1.5 transition-colors",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Download, { className: "w-3.5 h-3.5 text-emerald-400" }),
+                    "Экспорт в Markdown"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  onClick: exportPdfReport,
+                  className: "px-3 py-1.5 rounded-lg bg-primary hover:bg-primary/90 text-white text-xs font-medium flex items-center gap-1.5 transition-colors shadow-sm",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Printer, { className: "w-3.5 h-3.5" }),
+                    "Печать / PDF"
+                  ]
+                }
+              )
+            ] })
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-card border border-border rounded-xl p-5 flex items-center justify-between", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400", children: "Рейтинг доверия (Trust Score)" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-3xl font-bold text-emerald-400 mt-1", children: [
-                  dossier.trust_score,
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400", children: "Динамический Trust Score" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: `text-3xl font-bold mt-1 ${calculateDynamicScore(dossier) >= 80 ? "text-emerald-400" : calculateDynamicScore(dossier) >= 50 ? "text-amber-400" : "text-rose-400"}`, children: [
+                  calculateDynamicScore(dossier),
                   "%"
                 ] })
               ] }),
@@ -7979,4 +8153,4 @@ function App() {
 ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-CVEy5aN-.js.map
+//# sourceMappingURL=index-CNLld_b_.js.map
