@@ -8,7 +8,7 @@ import {
   Camera,
   UploadCloud,
   FileSearch,
-  ArrowRightLeft,
+  RefreshCw,
   Sparkles,
   Zap,
 } from 'lucide-react';
@@ -438,8 +438,8 @@ export default function App() {
                     </>
                   ) : (
                     <>
-                      <ArrowRightLeft className="w-4 h-4" />
-                      Сверить перцептивные хэши (IPC $	o$ Rust)
+                      <RefreshCw className="w-4 h-4" />
+                      Сверить перцептивные хэши (IPC / Rust)
                     </>
                   )}
                 </button>
