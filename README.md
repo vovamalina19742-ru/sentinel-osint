@@ -47,6 +47,19 @@
 
 ---
 
+### 🧠 The Paradigm Shift: Why Raw LLMs Fail & Why Sentinel-OSINT Is Their "Hands & Eyes"
+
+Everyone has access to AI today (ChatGPT, Claude, Gemini), but a raw language model is physically incapable of performing ground-truth OSINT on its own:
+
+| Capability | Raw Cloud LLMs (ChatGPT, Gemini) | **Sentinel-OSINT (+ MCP)** |
+| :--- | :--- | :--- |
+| **Real-World Network Access** | ❌ **"Trapped in a sandbox":** Cannot open raw sockets, bypass Cloudflare/WAFs, or query 120+ live services simultaneously. | ✅ **Async Rust/Tokio Engine:** Dispatches parallel stealth HTTP requests, executes sidecars, and gathers live artifacts. |
+| **Pixel-Exact Image Matching** | ❌ **Vision Hallucinations:** Vision models guess similarity "by eye" and frequently invent false matches. | ✅ **Mathematical Certainty (DCT-II):** Computes 64-bit perceptual hashes in Rust at the CPU level: exact Hamming distance, 0 hallucinations. |
+| **Cloud Policy Censorship** | ❌ **Blocked by Safety Guardrails:** Cloud APIs reject queries with *"I cannot search for personal data"*. | ✅ **100% Sovereign & Local-First:** Runs locally on your device with Zero-Knowledge encryption and no corporate censorship. |
+| **Role in AI Ecosystem** | 💬 **A theorist:** Knows OSINT theory, but cannot interact with live network protocols. | 🦾 **The "Hands & Eyes":** Plugged via MCP into Claude Desktop or Cursor, it gives the LLM direct physical tools to investigate and verify facts. |
+
+---
+
 ## ⚡ Key Features
 
 1. **🎯 One-Input Autonomous Pipeline:**
@@ -143,8 +156,11 @@ Connect Sentinel-OSINT directly to **Claude Desktop**, **Cursor**, or any local 
    Вместо облачных сервисов за \$1 000–\$10 000/год, которые видят все ваши поисковые запросы — 100% локальная работа (Zero-Knowledge) с зашифрованной базой SQLite на вашем собственном диске.
 3. **Эпидемия скама и кражи фото *(Боль реселлеров, покупателей и бизнеса)*:**  
    Быстрая «красная кнопка» анти-скама: закинули фото товара → нативный алгоритм pHash DCT-II за 2 секунды определяет: *«100% совпадение с архивным скамом, фото украдено»*.
-4. **Стандарт MCP (Model Context Protocol) *(Тренд 2026 года для разработчиков ИИ)*:**  
-   Встроенный сервер `mcp-hub/` позволяет в одну строчку подключить аналитическое ядро к Claude Desktop, Cursor или любому локальному ИИ-агенту.
+### 🧠 Почему обычный ИИ бессилен и почему Sentinel-OSINT — это его «руки и глаза»:
+* **ИИ «заперт в камере»:** У ChatGPT или Gemini нет прямого сетевого доступа: они не могут сами открыть сокет, обойти защиту Cloudflare или параллельно опросить 120 сайтов.
+* **ИИ гадает «на глаз»:** При сравнении фото нейросети часто галлюцинируют. Ядро на Rust вычисляет точное перцептивное хеширование **pHash DCT-II** на уровне регистров CPU (64 из 64 бит = 100% клон).
+* **Облачная цензура:** Коммерческие ИИ блокируют поиск людей (*«Я не могу искать персональные данные»*). Sentinel-OSINT работает автономно и без цензуры на машине пользователя.
+* **Итог:** Sentinel-OSINT не конкурирует с ИИ, а даёт ему физический инструмент. Подключив его по MCP, пользователь получает ассистента, который умеет автономно добывать проверяемые факты из реального мира.
 
 ---
 
