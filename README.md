@@ -27,6 +27,26 @@
 
 ---
 
+### 🎯 The 4 Critical Pains Sentinel-OSINT Solves
+
+1. **The Hell of 300+ CLI Scripts *(Pain of Security Engineers & OSINT Analysts)*:**
+   * **The Reality:** The world has amazing tools (Sherlock, Maigret, Holehe, SpiderFoot), but each demands its own runtime (Python 3.8/3.11, Go), conflicting libraries, terminal-only execution, and raw text dumps. Analysts waste 15 minutes just juggling multiple command windows.
+   * **The Sentinel Fix:** One clean desktop window with a single input. An async Rust core orchestrates tools in the background and consolidates all findings into a structured dossier.
+
+2. **The "Corporate Trap" & Target Leakage *(Pain of Journalists, Lawyers & Private Investigators)*:**
+   * **The Reality:** Enterprise suites (Maltego, Palantir, Social Links) cost $1,000–$10,000/year and route every query to corporate cloud servers. If an investigative reporter or investigator probes a sensitive entity, the service logs who is being searched.
+   * **The Sentinel Fix:** 100% Free & Open-Source (MIT), operating strictly local-first. Zero cloud telemetry. All findings remain securely inside an offline encrypted SQLite database on your own machine.
+
+3. **Epidemic of Fake Listings & Resale Scams *(Pain of Resellers, Buyers & Small Businesses)*:**
+   * **The Reality:** Everyday buyers, equipment resellers, and hiring managers lose money daily to prepayment scams with stolen photos. They don't have the time to manually reverse-search images across multiple engines.
+   * **The Sentinel Fix:** Instant "Red Button" pHash DCT-II visual perception: drop a photo and in 2 seconds get an alert: *"Critical: 100% duplicate of archived scam listing, photo is stolen"*.
+
+4. **Native Model Context Protocol (MCP) *(The 2026 AI Agent Revolution)*:**
+   * **The Reality:** Anthropic's MCP has become the global standard for connecting tools to LLMs. AI agent developers need turnkey modules so their bots can verify identities and evaluate trust scores autonomously.
+   * **The Sentinel Fix:** A standard MCP Server (`mcp-hub/`). Equip Claude Desktop, Cursor, or any local agent with investigative superpower via a single line in `claude_desktop_config.json`.
+
+---
+
 ## ⚡ Key Features
 
 1. **🎯 One-Input Autonomous Pipeline:**
@@ -116,9 +136,15 @@ Connect Sentinel-OSINT directly to **Claude Desktop**, **Cursor**, or any local 
 
 **Sentinel-OSINT** — это открытый десктопный ИИ-комбайн для OSINT-разведки, проверки контрагентов и защиты от мошенников.
 
-* **Проблема:** Существующие инструменты либо стоят баснословных денег ($2 000–$50 000 в год), либо представляют собой зоопарк из 350+ разрозненных скриптов, в которых тонут 99% пользователей.
-* **Решение:** Пользователь вводит одну зацепку (номер телефона, логин, email или фото) → автономный ИИ-агент сам опрашивает нужные утилиты по открытому протоколу **MCP**, отсеивает шум и выдает **готовое структурированное досье с рейтингом благонадежности (Trust Score)** за 30 секунд.
-* **Приватность:** 100% локальная работа на вашем компьютере. Никакие данные расследований не передаются третьим лицам.
+### 4 ключевые боли, которые решает Sentinel-OSINT:
+1. **Ад из 300+ консольных скриптов *(Боль безопасников и OSINT-аналитиков)*:**  
+   Вместо десятков терминалов с разными версиями Python и сырым выводом — единое окно с одной строкой поиска. Ядро на Rust (Tauri v2) само опрашивает нужные утилиты и собирает данные в чистое досье.
+2. **«Корпоративный капкан» и утечка расследований *(Боль журналистов, юристов и детективных агентств)*:**  
+   Вместо облачных сервисов за \$1 000–\$10 000/год, которые видят все ваши поисковые запросы — 100% локальная работа (Zero-Knowledge) с зашифрованной базой SQLite на вашем собственном диске.
+3. **Эпидемия скама и кражи фото *(Боль реселлеров, покупателей и бизнеса)*:**  
+   Быстрая «красная кнопка» анти-скама: закинули фото товара → нативный алгоритм pHash DCT-II за 2 секунды определяет: *«100% совпадение с архивным скамом, фото украдено»*.
+4. **Стандарт MCP (Model Context Protocol) *(Тренд 2026 года для разработчиков ИИ)*:**  
+   Встроенный сервер `mcp-hub/` позволяет в одну строчку подключить аналитическое ядро к Claude Desktop, Cursor или любому локальному ИИ-агенту.
 
 ---
 
