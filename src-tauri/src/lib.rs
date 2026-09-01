@@ -5,6 +5,7 @@ use error::{AppError, Result};
 use plugins::db::{delete_dossier, get_history, save_dossier, DbState, InvestigationHistoryItem};
 use plugins::phash::{compare_images_bytes, compute_phash_from_bytes, ImageComparisonResult};
 use plugins::sidecar::{execute_maigret, run_investigation, InvestigationDossier, ProfileFinding};
+use plugins::radar::{self, SnifferState};
 use tauri::State;
 
 #[tauri::command]
@@ -126,6 +127,7 @@ pub fn run() {
 
     tauri::Builder::default()
         .manage(db)
+        .manage(SnifferState::default())
         .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![
             check_target,
@@ -135,7 +137,10 @@ pub fn run() {
             compare_images,
             save_investigation_dossier,
             get_investigation_history,
-            delete_investigation_dossier
+            delete_investigation_dossier,
+            radar::check_admin_privileges,
+            radar::start_radio_sniffer,
+            radar::stop_radio_sniffer
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

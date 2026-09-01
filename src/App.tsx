@@ -21,9 +21,10 @@ import {
 import { TargetType, InvestigationDossier, ImageComparisonResult, InvestigationStep } from './types/dossier';
 import { compareImagesIPC, startInvestigationIPC, isTauriEnvironment, saveDossierIPC, getHistoryIPC, deleteDossierIPC, InvestigationHistoryItem } from './services/tauriBridge';
 import { InvestigationProgress } from './components/InvestigationProgress';
+import { RadarTab } from './components/RadarTab';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'osint' | 'phash' | 'history'>('osint');
+  const [activeTab, setActiveTab] = useState<'osint' | 'phash' | 'history' | 'radar'>('osint');
   const [historyItems, setHistoryItems] = useState<InvestigationHistoryItem[]>([]);
   const [loadingHistory, setLoadingHistory] = useState(false);
 
@@ -294,6 +295,15 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
           >
             <Database className="w-3.5 h-3.5" />
             История (SQLite)
+          </button>
+          <button
+            onClick={() => setActiveTab('radar')}
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
+              activeTab === 'radar' ? 'bg-cyan-600 text-white shadow-lg shadow-cyan-950/40' : 'text-zinc-400 hover:text-zinc-200'
+            }`}
+          >
+            <span>📡</span>
+            Радиоразведка
           </button>
         </div>
 
@@ -712,6 +722,8 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
               )}
             </section>
           </div>
+        ) : activeTab === 'radar' ? (
+          <RadarTab />
         ) : null}
       </main>
     </div>
