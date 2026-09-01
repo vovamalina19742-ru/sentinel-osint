@@ -17799,7 +17799,7 @@ function App() {
     const dateStr = new Date(dossier.created_at).toLocaleString("ru-RU");
     const score = calculateDynamicScore(dossier);
     const mdContent = `# 🛡️ Досье расследования: ${dossier.target}
-**Платформа:** Sentinel-OSINT v0.2 Core
+**Платформа:** Sentinel-OSINT v2.0 Radar
 **Дата формирования:** ${dateStr}
 **Тип цели:** \`${dossier.target_type}\`
 **Итоговый рейтинг доверия (Trust Score):** **${score}%** ${score >= 80 ? "🟢 (Высокий)" : score >= 50 ? "🟡 (Средний)" : "🔴 (Критический риск)"}
@@ -17942,7 +17942,7 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-bold text-lg leading-none tracking-tight flex items-center gap-2", children: [
             "Sentinel-OSINT",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700", children: "v0.2 Core" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700", children: "v2.0 Radar" })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-1", children: "Unified AI-Native Intelligence & Anti-Scam Platform" })
         ] })
@@ -18335,4 +18335,4 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
 ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-A6jpVlT0.js.map
+//# sourceMappingURL=index-BXc6ncs0.js.map

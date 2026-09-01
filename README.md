@@ -4,6 +4,7 @@
 
 > **Stop wrestling with 350+ fragmented scripts.** One unified AI-driven desktop hub that turns any lead (phone, username, email, photo) into an actionable, verified intelligence dossier in under 30 seconds.
 
+[![Release: v2.0.0](https://img.shields.io/badge/Release-v2.0.0_(Radar)-cyan.svg?style=flat-square)](https://github.com/vovamalina19742-ru/sentinel-osint/releases/tag/v2.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Tauri v2](https://img.shields.io/badge/Tauri-v2_(Rust)-orange.svg?style=flat-square)](https://v2.tauri.app)
 [![Protocol: MCP](https://img.shields.io/badge/Protocol-MCP_(Model_Context_Protocol)-purple.svg?style=flat-square)](https://modelcontextprotocol.io)
@@ -41,7 +42,11 @@
    * **The Reality:** Everyday buyers, equipment resellers, and hiring managers lose money daily to prepayment scams with stolen photos. They don't have the time to manually reverse-search images across multiple engines.
    * **The Sentinel Fix:** Instant "Red Button" pHash DCT-II visual perception: drop a photo and in 2 seconds get an alert: *"Critical: 100% duplicate of archived scam listing, photo is stolen"*.
 
-4. **Native Model Context Protocol (MCP) *(The 2026 AI Agent Revolution)*:**
+4. **🛰️ Wireless OSINT & SIGINT Radar *(NEW in v2.0)*:**
+   * **Mode A (Passive BSSID Geo):** Enter any AP MAC address (`C4:AD:...`) to geolocate physical routers via Wigle v2 API on an interactive dark Leaflet map (0 API keys required).
+   * **Mode B (Live Radio Sniffer):** On-demand Tokio stream sidecar with Windows UAC / Linux root safety guards, live beacon capture, and real-time map plotting.
+
+5. **Native Model Context Protocol (MCP) *(The 2026 AI Agent Revolution)*:**
    * **The Reality:** Anthropic's MCP has become the global standard for connecting tools to LLMs. AI agent developers need turnkey modules so their bots can verify identities and evaluate trust scores autonomously.
    * **The Sentinel Fix:** A standard MCP Server (`mcp-hub/`). Equip Claude Desktop, Cursor, or any local agent with investigative superpower via a single line in `claude_desktop_config.json`.
 
