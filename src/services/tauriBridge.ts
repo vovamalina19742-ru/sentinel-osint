@@ -269,4 +269,89 @@ export async function deleteDossierIPC(id: string): Promise<boolean> {
   }
 }
 
+export interface SnifferBeaconPayload {
+  bssid: string;
+  ssid: string;
+  rssi: number;
+  channel: number;
+  encryption: string;
+}
 
+export type SnifferEvent =
+  | { type: 'BeaconDetected'; payload: SnifferBeaconPayload }
+  | { type: 'Error'; payload: { message: string } }
+  | { type: 'Stopped' };
+
+export async function checkAdminPrivilegesIPC(): Promise<boolean> {
+  if (isTauriEnvironment()) {
+    try {
+      const { invoke } = await import('@tauri-apps/api/core');
+      return await invoke<boolean>('check_admin_privileges');
+    } catch (err) {
+      console.error('Error checking admin privileges:', err);
+      return false;
+    }
+  }
+  return true; // Web Sandbox Mock
+}
+
+export async function startRadioSnifferIPC(
+  onEvent: (event: SnifferEvent) => void
+): Promise<() => void> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    const { listen } = await import('@tauri-apps/api/event');
+
+    const unlisten = await listen<SnifferEvent>('sniffer-event', (e) => {
+      onEvent(e.payload);
+    });
+
+    await invoke<string>('start_radio_sniffer');
+
+    return () => {
+      unlisten();
+      invoke('stop_radio_sniffer').catch(console.error);
+    };
+  }
+
+  // Web Sandbox Mode (Эмуляция потока реальных маяков)
+  let running = true;
+  const mockAps = [
+    { ssid: 'Target_AP_Secure', bssid: 'C4:AD:34:D1:F2:A0', channel: 1, encryption: 'WPA3', rssi: -48, lat: 47.0120, lng: 28.8650 },
+    { ssid: 'Staff_Net_5G', bssid: '70:85:C2:5D:89:12', channel: 36, encryption: 'WPA2-Enterprise', rssi: -62, lat: 47.0090, lng: 28.8610 },
+    { ssid: 'Guest_Free_WiFi', bssid: '00:1A:2B:3C:4D:5E', channel: 6, encryption: 'Open', rssi: -75, lat: 47.0135, lng: 28.8675 },
+    { ssid: 'CCTV_Camera_Outdoor', bssid: 'B8:27:EB:AA:BB:CC', channel: 11, encryption: 'WPA2-PSK', rssi: -55, lat: 47.0080, lng: 28.8660 },
+  ];
+
+  const timer = setInterval(() => {
+    if (!running) return;
+    const ap = mockAps[Math.floor(Math.random() * mockAps.length)];
+    onEvent({
+      type: 'BeaconDetected',
+      payload: {
+        ssid: ap.ssid,
+        bssid: ap.bssid,
+        channel: ap.channel,
+        encryption: ap.encryption,
+        rssi: ap.rssi + Math.floor(Math.random() * 10 - 5),
+      },
+    });
+  }, 1600);
+
+  return () => {
+    running = false;
+    clearInterval(timer);
+    onEvent({ type: 'Stopped' });
+  };
+}
+
+export async function stopRadioSnifferIPC(): Promise<void> {
+  if (isTauriEnvironment()) {
+    try {
+      const { invoke } = await import('@tauri-apps/api/core');
+      await invoke<string>('stop_radio_sniffer');
+    } catch (err) {
+      console.error('Error stopping radio sniffer:', err);
+    }
+  }
+}

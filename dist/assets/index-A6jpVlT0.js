@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/event-CqUVweiu.js","assets/core-BMtQprb4.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/event-riiX1UwB.js","assets/core-Bo9SoPMG.js"])))=>i.map(i=>d[i]);
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -7514,7 +7514,7 @@ const isTauriEnvironment = () => {
 async function compareImagesIPC(image1Base64, image2Base64) {
   if (isTauriEnvironment()) {
     const { invoke } = await __vitePreload(async () => {
-      const { invoke: invoke2 } = await import("./core-BMtQprb4.js");
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
       return { invoke: invoke2 };
     }, true ? [] : void 0);
     return await invoke("compare_images", {
@@ -7542,11 +7542,11 @@ async function compareImagesIPC(image1Base64, image2Base64) {
 async function startInvestigationIPC(target, targetType, onStep) {
   if (isTauriEnvironment()) {
     const { invoke } = await __vitePreload(async () => {
-      const { invoke: invoke2 } = await import("./core-BMtQprb4.js");
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
       return { invoke: invoke2 };
     }, true ? [] : void 0);
     const { listen } = await __vitePreload(async () => {
-      const { listen: listen2 } = await import("./event-CqUVweiu.js");
+      const { listen: listen2 } = await import("./event-riiX1UwB.js");
       return { listen: listen2 };
     }, true ? __vite__mapDeps([0,1]) : void 0);
     const unlisten = await listen("investigation-step", (event) => {
@@ -7636,7 +7636,7 @@ async function startInvestigationIPC(target, targetType, onStep) {
 async function saveDossierIPC(dossier) {
   if (isTauriEnvironment()) {
     const { invoke } = await __vitePreload(async () => {
-      const { invoke: invoke2 } = await import("./core-BMtQprb4.js");
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
       return { invoke: invoke2 };
     }, true ? [] : void 0);
     await invoke("save_investigation_dossier", { dossier });
@@ -7665,7 +7665,7 @@ async function saveDossierIPC(dossier) {
 async function getHistoryIPC(limit = 20) {
   if (isTauriEnvironment()) {
     const { invoke } = await __vitePreload(async () => {
-      const { invoke: invoke2 } = await import("./core-BMtQprb4.js");
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
       return { invoke: invoke2 };
     }, true ? [] : void 0);
     return await invoke("get_investigation_history", { limit });
@@ -7681,7 +7681,7 @@ async function getHistoryIPC(limit = 20) {
 async function deleteDossierIPC(id) {
   if (isTauriEnvironment()) {
     const { invoke } = await __vitePreload(async () => {
-      const { invoke: invoke2 } = await import("./core-BMtQprb4.js");
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
       return { invoke: invoke2 };
     }, true ? [] : void 0);
     return await invoke("delete_investigation_dossier", { id });
@@ -7694,6 +7694,80 @@ async function deleteDossierIPC(id) {
     return true;
   } catch {
     return false;
+  }
+}
+async function checkAdminPrivilegesIPC() {
+  if (isTauriEnvironment()) {
+    try {
+      const { invoke } = await __vitePreload(async () => {
+        const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+        return { invoke: invoke2 };
+      }, true ? [] : void 0);
+      return await invoke("check_admin_privileges");
+    } catch (err) {
+      console.error("Error checking admin privileges:", err);
+      return false;
+    }
+  }
+  return true;
+}
+async function startRadioSnifferIPC(onEvent) {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    const { listen } = await __vitePreload(async () => {
+      const { listen: listen2 } = await import("./event-riiX1UwB.js");
+      return { listen: listen2 };
+    }, true ? __vite__mapDeps([0,1]) : void 0);
+    const unlisten = await listen("sniffer-event", (e) => {
+      onEvent(e.payload);
+    });
+    await invoke("start_radio_sniffer");
+    return () => {
+      unlisten();
+      invoke("stop_radio_sniffer").catch(console.error);
+    };
+  }
+  let running = true;
+  const mockAps = [
+    { ssid: "Target_AP_Secure", bssid: "C4:AD:34:D1:F2:A0", channel: 1, encryption: "WPA3", rssi: -48, lat: 47.012, lng: 28.865 },
+    { ssid: "Staff_Net_5G", bssid: "70:85:C2:5D:89:12", channel: 36, encryption: "WPA2-Enterprise", rssi: -62, lat: 47.009, lng: 28.861 },
+    { ssid: "Guest_Free_WiFi", bssid: "00:1A:2B:3C:4D:5E", channel: 6, encryption: "Open", rssi: -75, lat: 47.0135, lng: 28.8675 },
+    { ssid: "CCTV_Camera_Outdoor", bssid: "B8:27:EB:AA:BB:CC", channel: 11, encryption: "WPA2-PSK", rssi: -55, lat: 47.008, lng: 28.866 }
+  ];
+  const timer = setInterval(() => {
+    if (!running) return;
+    const ap = mockAps[Math.floor(Math.random() * mockAps.length)];
+    onEvent({
+      type: "BeaconDetected",
+      payload: {
+        ssid: ap.ssid,
+        bssid: ap.bssid,
+        channel: ap.channel,
+        encryption: ap.encryption,
+        rssi: ap.rssi + Math.floor(Math.random() * 10 - 5)
+      }
+    });
+  }, 1600);
+  return () => {
+    running = false;
+    clearInterval(timer);
+    onEvent({ type: "Stopped" });
+  };
+}
+async function stopRadioSnifferIPC() {
+  if (isTauriEnvironment()) {
+    try {
+      const { invoke } = await __vitePreload(async () => {
+        const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+        return { invoke: invoke2 };
+      }, true ? [] : void 0);
+      await invoke("stop_radio_sniffer");
+    } catch (err) {
+      console.error("Error stopping radio sniffer:", err);
+    }
   }
 }
 const InvestigationProgress = ({
@@ -17457,6 +17531,84 @@ const RadarTab = () => {
   const [selectedPoint, setSelectedPoint] = reactExports.useState(null);
   const [loading, setLoading] = reactExports.useState(false);
   const [error, setError] = reactExports.useState(null);
+  const [isSniffing, setIsSniffing] = reactExports.useState(false);
+  const [isAdmin, setIsAdmin] = reactExports.useState(null);
+  const [snifferPacketCount, setSnifferPacketCount] = reactExports.useState(0);
+  const [uacAlert, setUacAlert] = reactExports.useState(false);
+  const cleanupRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    checkAdminPrivilegesIPC().then((admin) => setIsAdmin(admin));
+    return () => {
+      if (cleanupRef.current) {
+        cleanupRef.current();
+        cleanupRef.current = null;
+      }
+    };
+  }, []);
+  const handleToggleSniffer = async () => {
+    setError(null);
+    setUacAlert(false);
+    if (isSniffing) {
+      if (cleanupRef.current) {
+        cleanupRef.current();
+        cleanupRef.current = null;
+      }
+      await stopRadioSnifferIPC();
+      setIsSniffing(false);
+      return;
+    }
+    const hasAdmin = await checkAdminPrivilegesIPC();
+    setIsAdmin(hasAdmin);
+    if (!hasAdmin && isTauriEnvironment()) {
+      setUacAlert(true);
+      setError("ElevationRequired: Для сканирования радиоэфира требуются права администратора (UAC)");
+      return;
+    }
+    try {
+      setIsSniffing(true);
+      const cleanup = await startRadioSnifferIPC((event) => {
+        if (event.type === "BeaconDetected") {
+          setSnifferPacketCount((c) => c + 1);
+          const beacon = event.payload;
+          setPoints((prev) => {
+            const existingIdx = prev.findIndex((p) => p.bssid === beacon.bssid);
+            if (existingIdx !== -1) {
+              const updated = [...prev];
+              updated[existingIdx] = {
+                ...updated[existingIdx],
+                channel: beacon.channel,
+                encryption: beacon.encryption,
+                accuracyMeters: Math.max(15, Math.abs(beacon.rssi))
+              };
+              return updated;
+            }
+            const latOffset = (Math.random() - 0.5) * 8e-3;
+            const lngOffset = (Math.random() - 0.5) * 8e-3;
+            const newPoint = {
+              bssid: beacon.bssid,
+              ssid: beacon.ssid,
+              latitude: 47.0105 + latOffset,
+              longitude: 28.8638 + lngOffset,
+              accuracyMeters: Math.max(20, Math.abs(beacon.rssi)),
+              channel: beacon.channel,
+              encryption: beacon.encryption,
+              source: "LocalCache"
+            };
+            return [newPoint, ...prev];
+          });
+        } else if (event.type === "Error") {
+          setError(event.payload.message);
+          setIsSniffing(false);
+        } else if (event.type === "Stopped") {
+          setIsSniffing(false);
+        }
+      });
+      cleanupRef.current = cleanup;
+    } catch (err) {
+      setError(err.message || "Ошибка запуска сниффера");
+      setIsSniffing(false);
+    }
+  };
   const handleSearch = async (e) => {
     e.preventDefault();
     setError(null);
@@ -17479,13 +17631,33 @@ const RadarTab = () => {
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-zinc-900/80 border border-zinc-800 rounded-xl p-5 shadow-lg backdrop-blur-sm", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between mb-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg font-semibold text-zinc-100 flex items-center gap-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" }),
-          "Беспроводная радиоразведка (SIGINT / BSSID Geo)"
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg font-semibold text-zinc-100 flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" }),
+            "Беспроводная радиоразведка (SIGINT / BSSID Geo)"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-1", children: "Режим А: Пассивная геолокация по BSSID | Режим Б: Локальный сниффер радиоэфира" })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-1", children: "Режим А: Пассивная геолокация точек доступа по BSSID (MAC-адресу) без повышенных привилегий" })
-      ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 bg-zinc-950 p-2 rounded-xl border border-zinc-800 self-start md:self-auto", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: handleToggleSniffer,
+              className: `px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-2 ${isSniffing ? "bg-rose-600 text-white shadow-lg shadow-rose-950/50 animate-pulse" : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isSniffing ? "⏹️" : "📡" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isSniffing ? "Остановить сниффер" : "Запустить сниффер эфира" })
+              ]
+            }
+          ),
+          isSniffing && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] font-mono text-cyan-400 bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-800/50", children: [
+            "Пакетов: ",
+            snifferPacketCount
+          ] }),
+          isAdmin !== null && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `text-[11px] font-mono px-2 py-1 rounded-md border ${isAdmin ? "bg-emerald-950/60 border-emerald-800/50 text-emerald-400" : "bg-zinc-900 border-zinc-800 text-zinc-400"}`, children: isAdmin ? "🛡️ Admin Privileges" : "👤 Standard User" })
+        ] })
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleSearch, className: "flex gap-3", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "input",
@@ -17503,11 +17675,21 @@ const RadarTab = () => {
             type: "submit",
             disabled: loading,
             className: "bg-cyan-600 hover:bg-cyan-500 disabled:opacity-50 text-white font-medium px-5 py-2.5 rounded-lg text-sm transition flex items-center gap-2 shadow-lg shadow-cyan-950/40",
-            children: loading ? "Поиск..." : "📡 Определить координаты"
+            children: loading ? "Поиск..." : "📡 Найти координаты"
           }
         )
       ] }),
-      error && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-rose-400 text-xs mt-3 font-mono bg-rose-950/40 border border-rose-800/50 p-2.5 rounded-lg", children: [
+      uacAlert && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-3 p-3 rounded-lg bg-amber-950/40 border border-amber-800/60 text-amber-300 text-xs flex items-center justify-between", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "🛡️" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Внимание (UAC):" }),
+            " Для перехвата сырых радиопакетов требуются повышенные права. Запустите терминал или ярлык от имени администратора."
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] font-mono px-2 py-0.5 rounded bg-amber-900/60 text-amber-200", children: "Admin Required" })
+      ] }),
+      error && !uacAlert && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-rose-400 text-xs mt-3 font-mono bg-rose-950/40 border border-rose-800/50 p-2.5 rounded-lg", children: [
         "⚠️ ",
         error
       ] })
@@ -17516,10 +17698,13 @@ const RadarTab = () => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(RadarMap, { points, selectedPoint }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-zinc-900/60 border border-zinc-800 rounded-xl p-4 flex flex-col h-[520px]", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-sm font-semibold text-zinc-200 mb-3 flex items-center justify-between", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-            "Обнаруженные точки (",
-            points.length,
-            ")"
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+              "Обнаруженные точки (",
+              points.length,
+              ")"
+            ] }),
+            isSniffing && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" })
           ] }),
           points.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
@@ -17530,7 +17715,7 @@ const RadarTab = () => {
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 overflow-y-auto space-y-2.5 pr-1", children: points.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full flex items-center justify-center text-zinc-500 text-xs text-center px-4", children: "История гео-поиска точек доступа пока пуста" }) : points.map((pt) => {
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 overflow-y-auto space-y-2.5 pr-1", children: points.length === 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-full flex items-center justify-center text-zinc-500 text-xs text-center px-4", children: "История радиоразведки пока пуста. Введите BSSID или запустите сниффер эфира." }) : points.map((pt) => {
           var _a;
           return /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "div",
@@ -17552,7 +17737,7 @@ const RadarTab = () => {
                     ", ",
                     pt.longitude.toFixed(4)
                   ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-emerald-400", children: pt.source })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-emerald-400 font-medium", children: pt.source })
                 ] })
               ]
             },
@@ -18150,4 +18335,4 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
 ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-D2UZCVcI.js.map
+//# sourceMappingURL=index-A6jpVlT0.js.map

@@ -1,4 +1,4 @@
-import { invoke, transformCallback } from "./core-BMtQprb4.js";
+import { invoke, transformCallback } from "./core-Bo9SoPMG.js";
 var TauriEvent;
 (function(TauriEvent2) {
   TauriEvent2["WINDOW_RESIZED"] = "tauri://resize";
@@ -40,4 +40,4 @@ export {
   TauriEvent,
   listen
 };
-//# sourceMappingURL=event-CqUVweiu.js.map
+//# sourceMappingURL=event-riiX1UwB.js.map
