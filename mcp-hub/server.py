@@ -253,5 +253,14 @@ try:
 except Exception as e:
     print(f"Warning: could not register Quishing/Voice tools in MCP: {e}")
 
+try:
+    from sidecars.cleanpixel_sidecar import clean_image
+    @mcp.tool()
+    def strip_image_metadata(file_path: str, output_path: str = None) -> dict:
+        """Очищает изображение JPEG/PNG от GPS, EXIF, Google XMP GUID без потери качества."""
+        return clean_image(file_path, output_path)
+except Exception as e:
+    print(f"Warning: could not register CleanPixel tool in MCP: {e}")
+
 if __name__ == "__main__":
     main()

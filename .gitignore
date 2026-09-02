@@ -12,6 +12,7 @@ src-tauri/target/
 *.so
 *.dylib
 *.pdb
+sidecars/cleanpixel
 
 *.db
 *.sqlite

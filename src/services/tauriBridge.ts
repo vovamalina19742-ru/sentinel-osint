@@ -421,3 +421,39 @@ export async function analyzeVoiceIPC(audioPath: string, outputPlotPath?: string
     error: null,
   };
 }
+
+export interface CleanPixelReport {
+  file_path: string;
+  format: string;
+  original_size_bytes: number;
+  cleaned_size_bytes: number;
+  saved_bytes: number;
+  saved_percent: number;
+  stripped_items: string[];
+  success: boolean;
+  error?: string | null;
+}
+
+export async function cleanPixelIPC(filePath: string, inPlace: boolean = false): Promise<CleanPixelReport> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<CleanPixelReport>('clean_pixel', { filePath, inPlace });
+  }
+  return {
+    file_path: filePath || 'sample_photo.jpg',
+    format: 'JPEG',
+    original_size_bytes: 3452180,
+    cleaned_size_bytes: 3120440,
+    saved_bytes: 331740,
+    saved_percent: 9.61,
+    stripped_items: [
+      'APP1-Exif (GPS широта 55.7512, долгота 37.6184): 48 220 байт',
+      'APP1-XMP (Google Photos Gaia ID & Adobe GUID): 242 110 байт',
+      'APP13 (Photoshop IRB / IPTC метаданные): 32 410 байт',
+      'COM (Текстовый комментарий устройства): 9 000 байт',
+      'Скрытая EXIF-миниатюра (Thumbnail): удалена',
+    ],
+    success: true,
+    error: null,
+  };
+}

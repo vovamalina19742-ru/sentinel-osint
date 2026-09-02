@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   QrCode,
   Mic,
@@ -14,16 +14,24 @@ import {
   Clock,
   Sparkles,
   Info,
+  Image as ImageIcon,
+  UploadCloud,
+  FileCheck,
+  Trash2,
+  Lock,
+  Flame,
 } from 'lucide-react';
 import {
   analyzeQuishingIPC,
   analyzeVoiceIPC,
+  cleanPixelIPC,
   QuishingReport,
   VoiceAnalysisReport,
+  CleanPixelReport,
 } from '../services/tauriBridge';
 
 export function ForensicsTab() {
-  const [activeSubTab, setActiveSubTab] = useState<'quishing' | 'voice'>('quishing');
+  const [activeSubTab, setActiveSubTab] = useState<'quishing' | 'voice' | 'cleanpixel'>('quishing');
 
   // --- Quishing State ---
   const [qrImagePath, setQrImagePath] = useState('');
@@ -34,6 +42,12 @@ export function ForensicsTab() {
   const [audioPath, setAudioPath] = useState('');
   const [voiceLoading, setVoiceLoading] = useState(false);
   const [voiceResult, setVoiceResult] = useState<VoiceAnalysisReport | null>(null);
+
+  // --- CleanPixel State ---
+  const [cleanPixelLoading, setCleanPixelLoading] = useState(false);
+  const [cleanPixelResult, setCleanPixelResult] = useState<CleanPixelReport | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // --- Handlers ---
   const handleAnalyzeQuishing = async () => {
@@ -62,7 +76,44 @@ export function ForensicsTab() {
     }
   };
 
-  // Demo sample loader
+  const handleProcessCleanPixel = async (filename: string) => {
+    setCleanPixelLoading(true);
+    try {
+      const res = await cleanPixelIPC(filename);
+      setCleanPixelResult(res);
+    } catch (err) {
+      console.error('CleanPixel failed:', err);
+    } finally {
+      setCleanPixelLoading(false);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files?.[0];
+    if (file) {
+      handleProcessCleanPixel(file.name);
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      handleProcessCleanPixel(file.name);
+    }
+  };
+
+  // Demo sample loaders
   const loadDemoQuishing = async () => {
     setQrImagePath('demo_sample_qr.png');
     setQuishingLoading(true);
@@ -89,6 +140,10 @@ export function ForensicsTab() {
     }
   };
 
+  const loadDemoCleanPixel = async () => {
+    handleProcessCleanPixel('IMG_2026_Pixel_with_GPS.jpg');
+  };
+
   return (
     <div className="space-y-6">
       {/* Sub-navigation switcher */}
@@ -99,7 +154,7 @@ export function ForensicsTab() {
             Цифровая форензика и расследование угроз (v2.1)
           </h2>
           <p className="text-xs text-zinc-400 mt-0.5">
-            Анализ скрытого QR-фишинга (Quishing) и акустическое профилирование дипфейков
+            Анализ скрытого QR-фишинга (Quishing), детектор синтеза речи и мгновенная очистка EXIF/GUID
           </p>
         </div>
 
@@ -113,7 +168,7 @@ export function ForensicsTab() {
             }`}
           >
             <QrCode className="w-3.5 h-3.5" />
-            Quishing Guard (QR-фишинг)
+            Quishing Guard
           </button>
           <button
             onClick={() => setActiveSubTab('voice')}
@@ -124,7 +179,18 @@ export function ForensicsTab() {
             }`}
           >
             <Mic className="w-3.5 h-3.5" />
-            Voice Spectrogram (Дипфейки)
+            Voice Spectrogram
+          </button>
+          <button
+            onClick={() => setActiveSubTab('cleanpixel')}
+            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
+              activeSubTab === 'cleanpixel'
+                ? 'bg-primary text-white shadow'
+                : 'text-zinc-400 hover:text-zinc-200'
+            }`}
+          >
+            <ImageIcon className="w-3.5 h-3.5" />
+            CleanPixel (EXIF/GUID)
           </button>
         </div>
       </div>
@@ -163,127 +229,119 @@ export function ForensicsTab() {
               <button
                 onClick={handleAnalyzeQuishing}
                 disabled={quishingLoading || !qrImagePath.trim()}
-                className="w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                className="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md"
               >
                 {quishingLoading ? (
                   <>
                     <RefreshCw className="w-4 h-4 animate-spin" />
-                    Декодирование и трейсинг...
+                    Сканирование и трейсинг...
                   </>
                 ) : (
                   <>
                     <Zap className="w-4 h-4" />
-                    Сканировать QR на угрозы
+                    Распознать QR и оценить риск
                   </>
                 )}
               </button>
+            </div>
 
-              <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-border/70 text-xs text-zinc-400 space-y-1.5 leading-relaxed">
-                <p className="font-semibold text-zinc-300 flex items-center gap-1">
-                  <Info className="w-3.5 h-3.5 text-primary" />
-                  Что проверяет Quishing Guard:
-                </p>
-                <ul className="list-disc pl-4 space-y-0.5 text-zinc-400">
-                  <li>Скрытые редиректы сокращателей (bit.ly, t.co, cfd);</li>
-                  <li>HTML Meta Refresh & JS window.location переходы;</li>
-                  <li>Подозрительные TLD зоны (.top, .xyz, .monster);</li>
-                  <li>Сверка с базой активных угроз <strong>abuse.ch URLhaus</strong>.</li>
-                </ul>
+            <div className="p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2">
+              <div className="flex items-center gap-2 text-zinc-300 font-semibold">
+                <Info className="w-4 h-4 text-primary" />
+                Что проверяет Quishing Guard:
               </div>
+              <ul className="list-disc list-inside space-y-1 text-zinc-400">
+                <li>Декодирование через буфер OpenCV (устойчиво к путям на кириллице);</li>
+                <li>Безопасный трейсинг цепочки редиректов без загрузки вредоносного тела (stream=True);</li>
+                <li>Детекция Meta Refresh и обфусцированных JS-перенаправлений;</li>
+                <li>Сверка домена с чёрными списками abuse.ch URLhaus.</li>
+              </ul>
             </div>
           </div>
 
           {/* Results column */}
           <div className="lg:col-span-7">
             {quishingResult ? (
-              <div className="p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm">
-                {/* Header with Risk Badge */}
+              <div className="p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm">
                 <div className="flex items-center justify-between border-b border-border pb-4">
                   <div>
-                    <h3 className="font-bold text-base text-zinc-100">Результаты анализа QR-угрозы</h3>
-                    <p className="text-xs text-zinc-400 font-mono mt-0.5">Домен: {quishingResult.domain || 'N/A'}</p>
+                    <span className="text-xs text-zinc-400 font-mono">Домен назначения:</span>
+                    <h3 className="text-lg font-bold text-zinc-100 font-mono flex items-center gap-2">
+                      {quishingResult.domain || 'Не определен'}
+                    </h3>
                   </div>
 
-                  <div
-                    className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 text-xs font-bold ${
-                      quishingResult.risk_score >= 60
-                        ? 'bg-rose-500/10 border-rose-500/30 text-rose-400'
-                        : quishingResult.risk_score >= 25
-                        ? 'bg-amber-500/10 border-amber-500/30 text-amber-400'
-                        : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
-                    }`}
-                  >
-                    {quishingResult.risk_score >= 60 ? (
-                      <ShieldAlert className="w-4 h-4" />
-                    ) : quishingResult.risk_score >= 25 ? (
-                      <AlertTriangle className="w-4 h-4" />
-                    ) : (
-                      <ShieldCheck className="w-4 h-4" />
-                    )}
-                    Оценка риска: {quishingResult.risk_score}%
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 ${
+                        quishingResult.risk_score >= 50
+                          ? 'bg-red-500/10 text-red-400 border-red-500/30'
+                          : quishingResult.risk_score >= 20
+                          ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
+                          : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                      }`}
+                    >
+                      {quishingResult.risk_score >= 50 ? (
+                        <ShieldAlert className="w-3.5 h-3.5" />
+                      ) : (
+                        <ShieldCheck className="w-3.5 h-3.5" />
+                      )}
+                      Риск Quishing: {quishingResult.risk_score}%
+                    </span>
                   </div>
                 </div>
 
                 {/* Redirect chain */}
                 <div className="space-y-2">
                   <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
-                    Цепочка маршрутизации (Redirect Chain):
+                    Цепочка перенаправлений (Redirect Chain):
                   </span>
-                  <div className="space-y-1.5">
-                    <div className="p-2.5 rounded-xl bg-zinc-900 border border-border font-mono text-xs text-zinc-300 break-all flex items-center gap-2">
-                      <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-400">QR Payload</span>
-                      {quishingResult.initial_url}
+                  <div className="p-3.5 rounded-xl bg-zinc-900 border border-border space-y-2 text-xs font-mono">
+                    <div className="flex items-center gap-2 text-zinc-300">
+                      <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400">QR Payload</span>
+                      <span className="truncate">{quishingResult.initial_url}</span>
                     </div>
 
-                    {quishingResult.redirect_chain.map((url, idx) => (
-                      <div
-                        key={idx}
-                        className="p-2.5 rounded-xl bg-zinc-900/60 border border-border font-mono text-xs text-zinc-400 break-all flex items-center gap-2 pl-4"
-                      >
-                        <ArrowRight className="w-3.5 h-3.5 text-primary shrink-0" />
-                        <span className="px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-500">Прыжок #{idx + 1}</span>
-                        {url}
+                    {quishingResult.redirect_chain.map((step, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-amber-300 pl-4 border-l border-border/80">
+                        <ArrowRight className="w-3.5 h-3.5 shrink-0 text-zinc-500" />
+                        <span className="truncate">{step}</span>
                       </div>
                     ))}
 
-                    <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/30 font-mono text-xs text-primary font-bold break-all flex items-center gap-2">
-                      <span className="px-1.5 py-0.5 rounded bg-primary/20 text-[10px] text-primary">Итог</span>
-                      {quishingResult.final_url}
+                    <div className="flex items-center gap-2 text-primary font-bold pl-4 border-l border-primary/50">
+                      <ArrowRight className="w-3.5 h-3.5 shrink-0 text-primary" />
+                      <span className="truncate">{quishingResult.final_url}</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Threat Indicators & Flags */}
-                <div className="space-y-2">
-                  <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
-                    Индикаторы компрометации (IoC Flags):
-                  </span>
-                  {quishingResult.flags.length > 0 ? (
-                    <div className="space-y-1.5">
+                {/* Flags and IoC */}
+                {quishingResult.flags && quishingResult.flags.length > 0 && (
+                  <div className="space-y-2">
+                    <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                      Индикаторы компрометации (IoC Flags):
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {quishingResult.flags.map((flag, idx) => (
                         <div
                           key={idx}
-                          className="px-3 py-2 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs flex items-center gap-2 font-medium"
+                          className="p-2.5 rounded-xl bg-amber-500/5 border border-amber-500/20 text-xs text-amber-200 flex items-start gap-2"
                         >
-                          <AlertTriangle className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                          {flag}
+                          <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                          <span>{flag}</span>
                         </div>
                       ))}
                     </div>
-                  ) : (
-                    <div className="px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      Подозрительных маркеров и перенаправлений не обнаружено. Ссылка выглядит чистой.
-                    </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             ) : (
-              <div className="h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-dashed border-border text-center">
-                <QrCode className="w-12 h-12 text-zinc-600 mb-3" />
-                <p className="font-medium text-zinc-400 text-sm">Нет данных для отображения</p>
-                <p className="text-xs text-zinc-500 mt-1 max-w-sm">
-                  Укажите путь к изображению с QR-кодом или нажмите «Тестовый сэмпл» для демонстрации полного анализа
+              <div className="h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500">
+                <QrCode className="w-12 h-12 mb-3 opacity-20 text-primary" />
+                <p className="text-sm font-medium text-zinc-400">Нет данных для отображения</p>
+                <p className="text-xs text-zinc-600 mt-1 max-w-sm">
+                  Укажите путь к изображению с QR-кодом или запустите тестовый сэмпл для визуализации маршрута редиректа.
                 </p>
               </div>
             )}
@@ -300,7 +358,7 @@ export function ForensicsTab() {
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
                   <Mic className="w-4 h-4 text-primary" />
-                  Акустический сэмпл
+                  Аудио-файл голосовой записи
                 </span>
                 <button
                   onClick={loadDemoVoice}
@@ -315,7 +373,7 @@ export function ForensicsTab() {
                 <label className="text-xs text-zinc-300 font-medium">Путь к аудиофайлу (WAV, MP3, OGG):</label>
                 <input
                   type="text"
-                  placeholder="D:\\Recordings\\telegram_voice_msg.wav"
+                  placeholder="D:\\Recordings\\incoming_call.wav"
                   value={audioPath}
                   onChange={(e) => setAudioPath(e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
@@ -325,160 +383,304 @@ export function ForensicsTab() {
               <button
                 onClick={handleAnalyzeVoice}
                 disabled={voiceLoading || !audioPath.trim()}
-                className="w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+                className="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md"
               >
                 {voiceLoading ? (
                   <>
                     <RefreshCw className="w-4 h-4 animate-spin" />
-                    Расчет спектрограммы и MFCC...
+                    Вычисление спектра и MFCC...
                   </>
                 ) : (
                   <>
                     <Activity className="w-4 h-4" />
-                    Запустить частотную форензику
+                    Построить спектрограмму и оценить синтез
                   </>
                 )}
               </button>
+            </div>
 
-              <div className="p-3.5 rounded-xl bg-zinc-900/60 border border-border/70 text-xs text-zinc-400 space-y-1.5 leading-relaxed">
-                <p className="font-semibold text-zinc-300 flex items-center gap-1">
-                  <Info className="w-3.5 h-3.5 text-primary" />
-                  Метрики детекции дипфейков:
-                </p>
-                <ul className="list-disc pl-4 space-y-0.5 text-zinc-400">
-                  <li><strong>Spectral Rolloff (95%):</strong> поиск искусственного среза вокодеров (&lt; 7.5 кГц);</li>
-                  <li><strong>MFCC Variance:</strong> неестественная плавность артикуляции;</li>
-                  <li><strong>Digital Silence (RMS):</strong> выявление отсутствия дыхания и склейки фраз;</li>
-                  <li><strong>Кэширование SHA-256:</strong> повторное открытие досье за 0.7 мс.</li>
-                </ul>
+            <div className="p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2">
+              <div className="flex items-center gap-2 text-zinc-300 font-semibold">
+                <Info className="w-4 h-4 text-primary" />
+                Физика детекции аудио-дипфейков:
               </div>
+              <ul className="list-disc list-inside space-y-1 text-zinc-400">
+                <li><strong>Частотный срез (Rolloff):</strong> нейросетевые вокодеры (HiFi-GAN) резко обрезают спектр выше 7.5–8 кГц;</li>
+                <li><strong>Вариативность MFCC:</strong> монотонность синтеза выдаёт неестественно гладкую артикуляцию;</li>
+                <li><strong>Цифровая тишина (RMS):</strong> отсутствие микропауз дыхания и фонового шума помещения между словами;</li>
+                <li><strong>Кэш SHA-256:</strong> мгновенный повторный вывод (0.7 мс).</li>
+              </ul>
             </div>
           </div>
 
           {/* Results column */}
           <div className="lg:col-span-7">
             {voiceResult ? (
-              <div className="p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm">
-                {/* Header with Synthetic Threat Badge */}
+              <div className="p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm">
                 <div className="flex items-center justify-between border-b border-border pb-4">
                   <div>
-                    <h3 className="font-bold text-base text-zinc-100">Акустический спектральный отчёт</h3>
-                    <p className="text-xs text-zinc-400 font-mono mt-0.5">
-                      Длительность: {voiceResult.duration_sec} сек | Дискретизация: {voiceResult.sample_rate} Гц
-                    </p>
+                    <span className="text-xs text-zinc-400 font-mono">Акустический отпечаток:</span>
+                    <h3 className="text-base font-bold text-zinc-100 flex items-center gap-2">
+                      <FileAudio className="w-4 h-4 text-primary" />
+                      Запись {voiceResult.duration_sec} сек • {voiceResult.sample_rate} Гц
+                    </h3>
                   </div>
 
-                  <div
-                    className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 text-xs font-bold ${
-                      voiceResult.synthetic_threat_score >= 60
-                        ? 'bg-rose-500/10 border-rose-500/30 text-rose-400'
-                        : voiceResult.synthetic_threat_score >= 30
-                        ? 'bg-amber-500/10 border-amber-500/30 text-amber-400'
-                        : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400'
-                    }`}
-                  >
-                    <Activity className="w-4 h-4" />
-                    Риск синтеза: {voiceResult.synthetic_threat_score}%
+                  <div className="flex items-center gap-2">
+                    {voiceResult.cached && (
+                      <span className="px-2 py-0.5 rounded-full text-[10px] bg-primary/10 text-primary border border-primary/20 flex items-center gap-1 font-mono">
+                        <Clock className="w-3 h-3" /> кэш SHA-256
+                      </span>
+                    )}
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 ${
+                        voiceResult.synthetic_threat_score >= 60
+                          ? 'bg-red-500/10 text-red-400 border-red-500/30'
+                          : voiceResult.synthetic_threat_score >= 30
+                          ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
+                          : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+                      }`}
+                    >
+                      <Activity className="w-3.5 h-3.5" />
+                      Риск синтеза: {voiceResult.synthetic_threat_score}%
+                    </span>
                   </div>
                 </div>
 
-                {/* Key Frequency Metrics Grid */}
-                <div className="grid grid-cols-3 gap-3">
-                  <div className="p-3 rounded-xl bg-zinc-900 border border-border">
-                    <span className="text-[10px] text-zinc-500 uppercase font-mono block">Срез частот (Rolloff)</span>
-                    <span className="text-sm font-bold text-zinc-100 mt-1 block">
-                      {voiceResult.avg_rolloff_hz.toFixed(1)} Гц
+                {/* Core acoustic metrics */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="p-3.5 rounded-xl bg-zinc-900 border border-border">
+                    <span className="text-[11px] text-zinc-400 block mb-1">Срез частот (Rolloff)</span>
+                    <span className="text-base font-bold text-zinc-100 font-mono">
+                      {voiceResult.avg_rolloff_hz} Гц
                     </span>
-                    <span className="text-[10px] text-zinc-400">
-                      {voiceResult.avg_rolloff_hz < 7500 ? '⚠️ Срез вокодера' : '🟢 Естественный'}
+                    <span className="text-[10px] text-amber-400 block mt-0.5">
+                      {voiceResult.avg_rolloff_hz < 7500 ? '⚠️ Срез вокодера' : '🟢 Естественный диапазон'}
                     </span>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-zinc-900 border border-border">
-                    <span className="text-[10px] text-zinc-500 uppercase font-mono block">Вариативность MFCC</span>
-                    <span className="text-sm font-bold text-zinc-100 mt-1 block">
-                      {voiceResult.mfcc_variance.toFixed(2)}
+                  <div className="p-3.5 rounded-xl bg-zinc-900 border border-border">
+                    <span className="text-[11px] text-zinc-400 block mb-1">Вариативность MFCC</span>
+                    <span className="text-base font-bold text-zinc-100 font-mono">
+                      {voiceResult.mfcc_variance}
                     </span>
-                    <span className="text-[10px] text-zinc-400">
+                    <span className="text-[10px] text-zinc-400 block mt-0.5">
                       {voiceResult.mfcc_variance < 1.2 ? '⚠️ Монотонность' : '🟢 Живая речь'}
                     </span>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-zinc-900 border border-border">
-                    <span className="text-[10px] text-zinc-500 uppercase font-mono block">Цифровая тишина (RMS)</span>
-                    <span className="text-sm font-bold text-zinc-100 mt-1 block">
-                      {((voiceResult.digital_silence_ratio || 0) * 100).toFixed(1)}%
+                  <div className="p-3.5 rounded-xl bg-zinc-900 border border-border">
+                    <span className="text-[11px] text-zinc-400 block mb-1">Цифровая тишина (RMS)</span>
+                    <span className="text-base font-bold text-zinc-100 font-mono">
+                      {voiceResult.digital_silence_ratio !== undefined ? `${voiceResult.digital_silence_ratio}%` : '0.0%'}
                     </span>
-                    <span className="text-[10px] text-zinc-400">
-                      {(voiceResult.digital_silence_ratio || 0) > 0.25 ? '⚠️ Нет дыхания' : '🟢 Фоновый шум'}
+                    <span className="text-[10px] text-zinc-400 block mt-0.5">
+                      {(voiceResult.digital_silence_ratio || 0) > 30 ? '⚠️ Нет дыхания' : '🟢 Фоновый шум'}
                     </span>
                   </div>
                 </div>
 
-                {/* Spectrogram visualizer if available */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
-                      Мел-Спектрограмма частотного отпечатка:
-                    </span>
-                    {voiceResult.cached && (
-                      <span className="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-mono flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        Кэш SHA-256 (0.7 мс)
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="p-2 rounded-xl bg-black border border-border overflow-hidden flex items-center justify-center">
-                    {voiceResult.spectrogram_path ? (
-                      <img
-                        src={`https://asset.localhost/${voiceResult.spectrogram_path}`}
-                        alt="Spectrogram"
-                        className="w-full h-auto rounded-lg max-h-[220px] object-contain"
-                        onError={(e) => {
-                          (e.target as HTMLElement).style.display = 'none';
-                        }}
-                      />
-                    ) : (
-                      <div className="py-8 text-center text-xs text-zinc-500 flex items-center gap-2">
-                        <FileAudio className="w-4 h-4 text-zinc-400" />
-                        Графический профиль частот успешно сформирован
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* Anomalies list */}
+                {/* Spectral Anomaly list */}
                 <div className="space-y-2">
                   <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
-                    Выявленные аномалии синтеза:
+                    Обнаруженные спектральные аномалии:
                   </span>
-                  {voiceResult.anomalies.length > 0 ? (
-                    <div className="space-y-1.5">
-                      {voiceResult.anomalies.map((anom, idx) => (
-                        <div
-                          key={idx}
-                          className="px-3 py-2 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs flex items-center gap-2 font-medium"
-                        >
-                          <AlertTriangle className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                          {anom}
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      Аномалий вокодеров не выявлено. Акустический профиль соответствует естественной человеческой речи.
-                    </div>
-                  )}
+                  <div className="space-y-1.5">
+                    {voiceResult.anomalies.map((anom, idx) => (
+                      <div
+                        key={idx}
+                        className="p-2.5 rounded-xl bg-zinc-900 border border-border text-xs text-zinc-300 flex items-center gap-2"
+                      >
+                        <AlertTriangle className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                        <span>{anom}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ) : (
-              <div className="h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-dashed border-border text-center">
-                <Mic className="w-12 h-12 text-zinc-600 mb-3" />
-                <p className="font-medium text-zinc-400 text-sm">Нет данных спектрального анализа</p>
-                <p className="text-xs text-zinc-500 mt-1 max-w-sm">
-                  Укажите путь к аудиозаписи или нажмите «Тестовый сэмпл» для генерации спектрограммы и проверки детекции вокодеров
+              <div className="h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500">
+                <Activity className="w-12 h-12 mb-3 opacity-20 text-primary" />
+                <p className="text-sm font-medium text-zinc-400">Нет данных для отображения</p>
+                <p className="text-xs text-zinc-600 mt-1 max-w-sm">
+                  Укажите путь к аудиозаписи или нажмите «Тестовый сэмпл» для расчёта акустических признаков нейросетевого голоса.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* --- 3. CLEANPIXEL STUDIO TAB (DRAG & DROP) --- */}
+      {activeSubTab === 'cleanpixel' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Dropzone & Control column */}
+          <div className="lg:col-span-6 space-y-4">
+            <div className="p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <ImageIcon className="w-4 h-4 text-primary" />
+                  Lossless Metadata Stripper (Rust)
+                </span>
+                <button
+                  onClick={loadDemoCleanPixel}
+                  className="text-xs text-primary hover:underline flex items-center gap-1 font-medium"
+                >
+                  <Sparkles className="w-3 h-3" />
+                  Тестовый образец с GPS
+                </button>
+              </div>
+
+              {/* Drag-and-Drop Area */}
+              <div
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}
+                onClick={() => fileInputRef.current?.click()}
+                className={`relative border-2 border-dashed rounded-2xl p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all ${
+                  isDragging
+                    ? 'border-primary bg-primary/10 scale-[1.01]'
+                    : 'border-border/80 hover:border-primary/50 bg-zinc-900/40 hover:bg-zinc-900/80'
+                }`}
+              >
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleFileChange}
+                  accept=".jpg,.jpeg,.png"
+                  className="hidden"
+                />
+
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 shadow-inner">
+                  {cleanPixelLoading ? (
+                    <RefreshCw className="w-7 h-7 text-primary animate-spin" />
+                  ) : (
+                    <UploadCloud className="w-7 h-7 text-primary" />
+                  )}
+                </div>
+
+                <h4 className="text-sm font-bold text-zinc-100 mb-1">
+                  {cleanPixelLoading
+                    ? 'Очистка байтового контейнера...'
+                    : 'Перетащите сюда фото (JPEG / PNG)'}
+                </h4>
+                <p className="text-xs text-zinc-400 max-w-xs mb-3">
+                  или нажмите для выбора файла на диске. 0% потери качества, пиксели не пережимаются.
+                </p>
+
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono bg-zinc-800 text-zinc-300 border border-border">
+                  <Flame className="w-3 h-3 text-amber-400" />
+                  1000+ фото/сек • CleanPixel Rust Core
+                </span>
+              </div>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2">
+              <div className="flex items-center gap-2 text-zinc-300 font-semibold">
+                <Info className="w-4 h-4 text-primary" />
+                Что удаляет CleanPixel:
+              </div>
+              <ul className="list-disc list-inside space-y-1 text-zinc-400">
+                <li><strong>GPS координаты:</strong> точная геолокация съёмки (широта, долгота, высота);</li>
+                <li><strong>Google & Adobe GUID:</strong> скрытые теги XMP/Gaia ID, привязывающие фото к аккаунту;</li>
+                <li><strong>Скрытая EXIF-миниатюра:</strong> оригинальное превью, остающееся даже после замазывания;</li>
+                <li><strong>100% сохранение качества:</strong> таблицы квантования и энтропийные пиксели остаются нетронутыми.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* CleanPixel Result column */}
+          <div className="lg:col-span-6">
+            {cleanPixelResult ? (
+              <div className="p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm">
+                <div className="flex items-center justify-between border-b border-border pb-4">
+                  <div>
+                    <span className="text-xs text-zinc-400 font-mono">Обработанный файл:</span>
+                    <h3 className="text-base font-bold text-zinc-100 flex items-center gap-2 truncate max-w-[280px]">
+                      <FileCheck className="w-4 h-4 text-emerald-400" />
+                      {cleanPixelResult.file_path}
+                    </h3>
+                  </div>
+
+                  <span className="px-3 py-1 rounded-full text-xs font-bold border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    Метаданные очищены
+                  </span>
+                </div>
+
+                {/* Size comparison metrics */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="p-3.5 rounded-xl bg-zinc-900 border border-border">
+                    <span className="text-[11px] text-zinc-400 block mb-1">Исходный размер</span>
+                    <span className="text-base font-bold text-zinc-100 font-mono">
+                      {(cleanPixelResult.original_size_bytes / 1024).toFixed(1)} КБ
+                    </span>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-zinc-900 border border-border">
+                    <span className="text-[11px] text-zinc-400 block mb-1">Очищенный размер</span>
+                    <span className="text-base font-bold text-emerald-400 font-mono">
+                      {(cleanPixelResult.cleaned_size_bytes / 1024).toFixed(1)} КБ
+                    </span>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-zinc-900 border border-border">
+                    <span className="text-[11px] text-zinc-400 block mb-1">Сэкономлено</span>
+                    <span className="text-base font-bold text-primary font-mono">
+                      -{(cleanPixelResult.saved_bytes / 1024).toFixed(1)} КБ
+                    </span>
+                    <span className="text-[10px] text-emerald-400 block mt-0.5">
+                      (-{cleanPixelResult.saved_percent}%)
+                    </span>
+                  </div>
+                </div>
+
+                {/* Privacy guarantees */}
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                    Гарантии приватности и целостности:
+                  </span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                    <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>GPS-координаты дома удалены</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2">
+                      <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Google & Adobe GUID стёрты</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2">
+                      <Trash2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Скрытая EXIF-миниатюра вырезана</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-primary/5 border border-primary/20 text-primary flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-primary shrink-0" />
+                      <span>0% потери качества (Lossless)</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stripped items details */}
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                    Удалённые бинарные блоки:
+                  </span>
+                  <div className="p-3 rounded-xl bg-zinc-900 border border-border space-y-1.5 text-xs font-mono">
+                    {cleanPixelResult.stripped_items.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-zinc-300">
+                        <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500">
+                <ImageIcon className="w-12 h-12 mb-3 opacity-20 text-primary" />
+                <p className="text-sm font-medium text-zinc-400">Ожидание фото для очистки</p>
+                <p className="text-xs text-zinc-600 mt-1 max-w-sm">
+                  Перетащите изображение в область слева или нажмите «Тестовый образец с GPS», чтобы проверить моментальную очистку метаданных.
                 </p>
               </div>
             )}

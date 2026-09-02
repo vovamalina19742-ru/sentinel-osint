@@ -7145,7 +7145,7 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$r = [
+const __iconNode$v = [
   [
     "path",
     {
@@ -7154,25 +7154,25 @@ const __iconNode$r = [
     }
   ]
 ];
-const Activity = createLucideIcon("Activity", __iconNode$r);
+const Activity = createLucideIcon("Activity", __iconNode$v);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$q = [
+const __iconNode$u = [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
 ];
-const ArrowRight = createLucideIcon("ArrowRight", __iconNode$q);
+const ArrowRight = createLucideIcon("ArrowRight", __iconNode$u);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$p = [
+const __iconNode$t = [
   [
     "path",
     {
@@ -7182,7 +7182,53 @@ const __iconNode$p = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("Camera", __iconNode$p);
+const Camera = createLucideIcon("Camera", __iconNode$t);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$s = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("CircleCheck", __iconNode$s);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$r = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
+  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+];
+const CircleX = createLucideIcon("CircleX", __iconNode$r);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$q = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
+];
+const Clock = createLucideIcon("Clock", __iconNode$q);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$p = [
+  ["path", { d: "M12 13v8", key: "1l5pq0" }],
+  ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
+  ["path", { d: "m8 17 4-4 4 4", key: "1quai1" }]
+];
+const CloudUpload = createLucideIcon("CloudUpload", __iconNode$p);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7190,10 +7236,11 @@ const Camera = createLucideIcon("Camera", __iconNode$p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$o = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
+  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
+  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
 ];
-const CircleCheck = createLucideIcon("CircleCheck", __iconNode$o);
+const Database = createLucideIcon("Database", __iconNode$o);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7201,11 +7248,11 @@ const CircleCheck = createLucideIcon("CircleCheck", __iconNode$o);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$n = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
-  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
+  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
 ];
-const CircleX = createLucideIcon("CircleX", __iconNode$n);
+const Download = createLucideIcon("Download", __iconNode$n);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7213,53 +7260,6 @@ const CircleX = createLucideIcon("CircleX", __iconNode$n);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$m = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
-];
-const Clock = createLucideIcon("Clock", __iconNode$m);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$l = [
-  ["path", { d: "M12 13v8", key: "1l5pq0" }],
-  ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
-  ["path", { d: "m8 17 4-4 4 4", key: "1quai1" }]
-];
-const CloudUpload = createLucideIcon("CloudUpload", __iconNode$l);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$k = [
-  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
-  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
-  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
-];
-const Database = createLucideIcon("Database", __iconNode$k);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$j = [
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
-  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
-];
-const Download = createLucideIcon("Download", __iconNode$j);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$i = [
   ["path", { d: "M17.5 22h.5a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3", key: "rslqgf" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   [
@@ -7270,14 +7270,26 @@ const __iconNode$i = [
     }
   ]
 ];
-const FileAudio = createLucideIcon("FileAudio", __iconNode$i);
+const FileAudio = createLucideIcon("FileAudio", __iconNode$m);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$h = [
+const __iconNode$l = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "m9 15 2 2 4-4", key: "1grp1n" }]
+];
+const FileCheck = createLucideIcon("FileCheck", __iconNode$l);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$k = [
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   [
     "path",
@@ -7286,7 +7298,49 @@ const __iconNode$h = [
   ["path", { d: "m9 18-1.5-1.5", key: "1j6qii" }],
   ["circle", { cx: "5", cy: "14", r: "3", key: "ufru5t" }]
 ];
-const FileSearch = createLucideIcon("FileSearch", __iconNode$h);
+const FileSearch = createLucideIcon("FileSearch", __iconNode$k);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$j = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+];
+const FileText = createLucideIcon("FileText", __iconNode$j);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$i = [
+  [
+    "path",
+    {
+      d: "M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z",
+      key: "96xj49"
+    }
+  ]
+];
+const Flame = createLucideIcon("Flame", __iconNode$i);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$h = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("Globe", __iconNode$h);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7294,13 +7348,11 @@ const FileSearch = createLucideIcon("FileSearch", __iconNode$h);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$g = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M10 9H8", key: "b1mrlr" }],
-  ["path", { d: "M16 13H8", key: "t4e002" }],
-  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
 ];
-const FileText = createLucideIcon("FileText", __iconNode$g);
+const Image = createLucideIcon("Image", __iconNode$g);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7309,30 +7361,29 @@ const FileText = createLucideIcon("FileText", __iconNode$g);
  */
 const __iconNode$f = [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
-];
-const Globe = createLucideIcon("Globe", __iconNode$f);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$e = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 16v-4", key: "1dtifu" }],
   ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ];
-const Info = createLucideIcon("Info", __iconNode$e);
+const Info = createLucideIcon("Info", __iconNode$f);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$d = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$d);
+const __iconNode$e = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$e);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+];
+const Lock = createLucideIcon("Lock", __iconNode$d);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7918,6 +7969,32 @@ async function analyzeVoiceIPC(audioPath, outputPlotPath) {
       "Высокий уровень спектральной равномерности (фоновый шум диффузии)"
     ],
     spectrogram_path: outputPlotPath || null,
+    error: null
+  };
+}
+async function cleanPixelIPC(filePath, inPlace = false) {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    return await invoke("clean_pixel", { filePath, inPlace });
+  }
+  return {
+    file_path: filePath || "sample_photo.jpg",
+    format: "JPEG",
+    original_size_bytes: 3452180,
+    cleaned_size_bytes: 3120440,
+    saved_bytes: 331740,
+    saved_percent: 9.61,
+    stripped_items: [
+      "APP1-Exif (GPS широта 55.7512, долгота 37.6184): 48 220 байт",
+      "APP1-XMP (Google Photos Gaia ID & Adobe GUID): 242 110 байт",
+      "APP13 (Photoshop IRB / IPTC метаданные): 32 410 байт",
+      "COM (Текстовый комментарий устройства): 9 000 байт",
+      "Скрытая EXIF-миниатюра (Thumbnail): удалена"
+    ],
+    success: true,
     error: null
   };
 }
@@ -17907,6 +17984,10 @@ function ForensicsTab() {
   const [audioPath, setAudioPath] = reactExports.useState("");
   const [voiceLoading, setVoiceLoading] = reactExports.useState(false);
   const [voiceResult, setVoiceResult] = reactExports.useState(null);
+  const [cleanPixelLoading, setCleanPixelLoading] = reactExports.useState(false);
+  const [cleanPixelResult, setCleanPixelResult] = reactExports.useState(null);
+  const [isDragging, setIsDragging] = reactExports.useState(false);
+  const fileInputRef = reactExports.useRef(null);
   const handleAnalyzeQuishing = async () => {
     if (!qrImagePath.trim()) return;
     setQuishingLoading(true);
@@ -17929,6 +18010,40 @@ function ForensicsTab() {
       console.error("Voice analysis failed:", err);
     } finally {
       setVoiceLoading(false);
+    }
+  };
+  const handleProcessCleanPixel = async (filename) => {
+    setCleanPixelLoading(true);
+    try {
+      const res = await cleanPixelIPC(filename);
+      setCleanPixelResult(res);
+    } catch (err) {
+      console.error("CleanPixel failed:", err);
+    } finally {
+      setCleanPixelLoading(false);
+    }
+  };
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+  const handleDrop = (e) => {
+    var _a;
+    e.preventDefault();
+    setIsDragging(false);
+    const file = (_a = e.dataTransfer.files) == null ? void 0 : _a[0];
+    if (file) {
+      handleProcessCleanPixel(file.name);
+    }
+  };
+  const handleFileChange = (e) => {
+    var _a;
+    const file = (_a = e.target.files) == null ? void 0 : _a[0];
+    if (file) {
+      handleProcessCleanPixel(file.name);
     }
   };
   const loadDemoQuishing = async () => {
@@ -17955,6 +18070,9 @@ function ForensicsTab() {
       setVoiceLoading(false);
     }
   };
+  const loadDemoCleanPixel = async () => {
+    handleProcessCleanPixel("IMG_2026_Pixel_with_GPS.jpg");
+  };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
@@ -17962,7 +18080,7 @@ function ForensicsTab() {
           /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-5 h-5 text-primary" }),
           "Цифровая форензика и расследование угроз (v2.1)"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: "Анализ скрытого QR-фишинга (Quishing) и акустическое профилирование дипфейков" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: "Анализ скрытого QR-фишинга (Quishing), детектор синтеза речи и мгновенная очистка EXIF/GUID" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 bg-zinc-900 border border-border p-1 rounded-xl", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -17972,7 +18090,7 @@ function ForensicsTab() {
             className: `px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeSubTab === "quishing" ? "bg-primary text-white shadow" : "text-zinc-400 hover:text-zinc-200"}`,
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-3.5 h-3.5" }),
-              "Quishing Guard (QR-фишинг)"
+              "Quishing Guard"
             ]
           }
         ),
@@ -17983,313 +18101,440 @@ function ForensicsTab() {
             className: `px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeSubTab === "voice" ? "bg-primary text-white shadow" : "text-zinc-400 hover:text-zinc-200"}`,
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-3.5 h-3.5" }),
-              "Voice Spectrogram (Дипфейки)"
+              "Voice Spectrogram"
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            onClick: () => setActiveSubTab("cleanpixel"),
+            className: `px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeSubTab === "cleanpixel" ? "bg-primary text-white shadow" : "text-zinc-400 hover:text-zinc-200"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-3.5 h-3.5" }),
+              "CleanPixel (EXIF/GUID)"
             ]
           }
         )
       ] })
     ] }),
     activeSubTab === "quishing" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-4 h-4 text-primary" }),
-            "Анализ QR-изображения"
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-5 space-y-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-4 h-4 text-primary" }),
+              "Анализ QR-изображения"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                onClick: loadDemoQuishing,
+                className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                  "Тестовый сэмпл"
+                ]
+              }
+            )
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Путь к файлу изображения (PNG, JPG, PDF):" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "input",
+              {
+                type: "text",
+                placeholder: "D:\\\\Downloads\\\\suspicious_bill_qr.png",
+                value: qrImagePath,
+                onChange: (e) => setQrImagePath(e.target.value),
+                className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
             {
-              onClick: loadDemoQuishing,
-              className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
-                "Тестовый сэмпл"
-              ]
+              onClick: handleAnalyzeQuishing,
+              disabled: quishingLoading || !qrImagePath.trim(),
+              className: "w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md",
+              children: quishingLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
+                "Сканирование и трейсинг..."
+              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4" }),
+                "Распознать QR и оценить риск"
+              ] })
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Путь к файлу изображения (PNG, JPG, PDF):" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "input",
-            {
-              type: "text",
-              placeholder: "D:\\\\Downloads\\\\suspicious_bill_qr.png",
-              value: qrImagePath,
-              onChange: (e) => setQrImagePath(e.target.value),
-              className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "button",
-          {
-            onClick: handleAnalyzeQuishing,
-            disabled: quishingLoading || !qrImagePath.trim(),
-            className: "w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20",
-            children: quishingLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
-              "Декодирование и трейсинг..."
-            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4" }),
-              "Сканировать QR на угрозы"
-            ] })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900/60 border border-border/70 text-xs text-zinc-400 space-y-1.5 leading-relaxed", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-semibold text-zinc-300 flex items-center gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-3.5 h-3.5 text-primary" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300 font-semibold", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-4 h-4 text-primary" }),
             "Что проверяет Quishing Guard:"
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc pl-4 space-y-0.5 text-zinc-400", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Скрытые редиректы сокращателей (bit.ly, t.co, cfd);" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "HTML Meta Refresh & JS window.location переходы;" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Подозрительные TLD зоны (.top, .xyz, .monster);" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              "Сверка с базой активных угроз ",
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "abuse.ch URLhaus" }),
-              "."
-            ] })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc list-inside space-y-1 text-zinc-400", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Декодирование через буфер OpenCV (устойчиво к путям на кириллице);" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Безопасный трейсинг цепочки редиректов без загрузки вредоносного тела (stream=True);" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Детекция Meta Refresh и обфусцированных JS-перенаправлений;" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Сверка домена с чёрными списками abuse.ch URLhaus." })
           ] })
         ] })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: quishingResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: quishingResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-base text-zinc-100", children: "Результаты анализа QR-угрозы" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-zinc-400 font-mono mt-0.5", children: [
-              "Домен: ",
-              quishingResult.domain || "N/A"
-            ] })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 font-mono", children: "Домен назначения:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-zinc-100 font-mono flex items-center gap-2", children: quishingResult.domain || "Не определен" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "div",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "span",
             {
-              className: `px-3 py-1.5 rounded-xl border flex items-center gap-1.5 text-xs font-bold ${quishingResult.risk_score >= 60 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : quishingResult.risk_score >= 25 ? "bg-amber-500/10 border-amber-500/30 text-amber-400" : "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"}`,
+              className: `px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 ${quishingResult.risk_score >= 50 ? "bg-red-500/10 text-red-400 border-red-500/30" : quishingResult.risk_score >= 20 ? "bg-amber-500/10 text-amber-400 border-amber-500/30" : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"}`,
               children: [
-                quishingResult.risk_score >= 60 ? /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-4 h-4" }) : quishingResult.risk_score >= 25 ? /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-4 h-4" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-4 h-4" }),
-                "Оценка риска: ",
+                quishingResult.risk_score >= 50 ? /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-3.5 h-3.5" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-3.5 h-3.5" }),
+                "Риск Quishing: ",
                 quishingResult.risk_score,
                 "%"
               ]
             }
-          )
+          ) })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Цепочка маршрутизации (Redirect Chain):" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-zinc-900 border border-border font-mono text-xs text-zinc-300 break-all flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-400", children: "QR Payload" }),
-              quishingResult.initial_url
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Цепочка перенаправлений (Redirect Chain):" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border space-y-2 text-xs font-mono", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400", children: "QR Payload" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: quishingResult.initial_url })
             ] }),
-            quishingResult.redirect_chain.map((url, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "div",
-              {
-                className: "p-2.5 rounded-xl bg-zinc-900/60 border border-border font-mono text-xs text-zinc-400 break-all flex items-center gap-2 pl-4",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 text-primary shrink-0" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-500", children: [
-                    "Прыжок #",
-                    idx + 1
-                  ] }),
-                  url
-                ]
-              },
-              idx
-            )),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-primary/10 border border-primary/30 font-mono text-xs text-primary font-bold break-all flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded bg-primary/20 text-[10px] text-primary", children: "Итог" }),
-              quishingResult.final_url
+            quishingResult.redirect_chain.map((step, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-amber-300 pl-4 border-l border-border/80", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 shrink-0 text-zinc-500" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: step })
+            ] }, idx)),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-primary font-bold pl-4 border-l border-primary/50", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 shrink-0 text-primary" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: quishingResult.final_url })
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+        quishingResult.flags && quishingResult.flags.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Индикаторы компрометации (IoC Flags):" }),
-          quishingResult.flags.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: quishingResult.flags.map((flag, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-2", children: quishingResult.flags.map((flag, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "div",
             {
-              className: "px-3 py-2 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs flex items-center gap-2 font-medium",
+              className: "p-2.5 rounded-xl bg-amber-500/5 border border-amber-500/20 text-xs text-amber-200 flex items-start gap-2",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-3.5 h-3.5 text-rose-400 shrink-0" }),
-                flag
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-4 h-4 text-amber-400 shrink-0 mt-0.5" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: flag })
               ]
             },
             idx
-          )) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs flex items-center gap-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5 text-emerald-400 shrink-0" }),
-            "Подозрительных маркеров и перенаправлений не обнаружено. Ссылка выглядит чистой."
-          ] })
+          )) })
         ] })
-      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-dashed border-border text-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-12 h-12 text-zinc-600 mb-3" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium text-zinc-400 text-sm", children: "Нет данных для отображения" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-500 mt-1 max-w-sm", children: "Укажите путь к изображению с QR-кодом или нажмите «Тестовый сэмпл» для демонстрации полного анализа" })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-12 h-12 mb-3 opacity-20 text-primary" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Нет данных для отображения" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-600 mt-1 max-w-sm", children: "Укажите путь к изображению с QR-кодом или запустите тестовый сэмпл для визуализации маршрута редиректа." })
       ] }) })
     ] }),
     activeSubTab === "voice" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-4 h-4 text-primary" }),
-            "Акустический сэмпл"
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-5 space-y-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-4 h-4 text-primary" }),
+              "Аудио-файл голосовой записи"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                onClick: loadDemoVoice,
+                className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                  "Тестовый сэмпл"
+                ]
+              }
+            )
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Путь к аудиофайлу (WAV, MP3, OGG):" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "input",
+              {
+                type: "text",
+                placeholder: "D:\\\\Recordings\\\\incoming_call.wav",
+                value: audioPath,
+                onChange: (e) => setAudioPath(e.target.value),
+                className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
             "button",
             {
-              onClick: loadDemoVoice,
-              className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
-                "Тестовый сэмпл"
-              ]
+              onClick: handleAnalyzeVoice,
+              disabled: voiceLoading || !audioPath.trim(),
+              className: "w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md",
+              children: voiceLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
+                "Вычисление спектра и MFCC..."
+              ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4" }),
+                "Построить спектрограмму и оценить синтез"
+              ] })
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Путь к аудиофайлу (WAV, MP3, OGG):" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "input",
-            {
-              type: "text",
-              placeholder: "D:\\\\Recordings\\\\telegram_voice_msg.wav",
-              value: audioPath,
-              onChange: (e) => setAudioPath(e.target.value),
-              className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
-            }
-          )
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "button",
-          {
-            onClick: handleAnalyzeVoice,
-            disabled: voiceLoading || !audioPath.trim(),
-            className: "w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20",
-            children: voiceLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
-              "Расчет спектрограммы и MFCC..."
-            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4" }),
-              "Запустить частотную форензику"
-            ] })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900/60 border border-border/70 text-xs text-zinc-400 space-y-1.5 leading-relaxed", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-semibold text-zinc-300 flex items-center gap-1", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-3.5 h-3.5 text-primary" }),
-            "Метрики детекции дипфейков:"
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300 font-semibold", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-4 h-4 text-primary" }),
+            "Физика детекции аудио-дипфейков:"
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc pl-4 space-y-0.5 text-zinc-400", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc list-inside space-y-1 text-zinc-400", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Spectral Rolloff (95%):" }),
-              " поиск искусственного среза вокодеров (< 7.5 кГц);"
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Частотный срез (Rolloff):" }),
+              " нейросетевые вокодеры (HiFi-GAN) резко обрезают спектр выше 7.5–8 кГц;"
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "MFCC Variance:" }),
-              " неестественная плавность артикуляции;"
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Вариативность MFCC:" }),
+              " монотонность синтеза выдаёт неестественно гладкую артикуляцию;"
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Digital Silence (RMS):" }),
-              " выявление отсутствия дыхания и склейки фраз;"
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Цифровая тишина (RMS):" }),
+              " отсутствие микропауз дыхания и фонового шума помещения между словами;"
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Кэширование SHA-256:" }),
-              " повторное открытие досье за 0.7 мс."
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Кэш SHA-256:" }),
+              " мгновенный повторный вывод (0.7 мс)."
             ] })
           ] })
         ] })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: voiceResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: voiceResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-base text-zinc-100", children: "Акустический спектральный отчёт" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-zinc-400 font-mono mt-0.5", children: [
-              "Длительность: ",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 font-mono", children: "Акустический отпечаток:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-base font-bold text-zinc-100 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FileAudio, { className: "w-4 h-4 text-primary" }),
+              "Запись ",
               voiceResult.duration_sec,
-              " сек | Дискретизация: ",
+              " сек • ",
               voiceResult.sample_rate,
               " Гц"
             ] })
           ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+            voiceResult.cached && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-full text-[10px] bg-primary/10 text-primary border border-primary/20 flex items-center gap-1 font-mono", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3" }),
+              " кэш SHA-256"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "span",
+              {
+                className: `px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 ${voiceResult.synthetic_threat_score >= 60 ? "bg-red-500/10 text-red-400 border-red-500/30" : voiceResult.synthetic_threat_score >= 30 ? "bg-amber-500/10 text-amber-400 border-amber-500/30" : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"}`,
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-3.5 h-3.5" }),
+                  "Риск синтеза: ",
+                  voiceResult.synthetic_threat_score,
+                  "%"
+                ]
+              }
+            )
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Срез частот (Rolloff)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-zinc-100 font-mono", children: [
+              voiceResult.avg_rolloff_hz,
+              " Гц"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-amber-400 block mt-0.5", children: voiceResult.avg_rolloff_hz < 7500 ? "⚠️ Срез вокодера" : "🟢 Естественный диапазон" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Вариативность MFCC" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base font-bold text-zinc-100 font-mono", children: voiceResult.mfcc_variance }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400 block mt-0.5", children: voiceResult.mfcc_variance < 1.2 ? "⚠️ Монотонность" : "🟢 Живая речь" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Цифровая тишина (RMS)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base font-bold text-zinc-100 font-mono", children: voiceResult.digital_silence_ratio !== void 0 ? `${voiceResult.digital_silence_ratio}%` : "0.0%" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400 block mt-0.5", children: (voiceResult.digital_silence_ratio || 0) > 30 ? "⚠️ Нет дыхания" : "🟢 Фоновый шум" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Обнаруженные спектральные аномалии:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: voiceResult.anomalies.map((anom, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "p-2.5 rounded-xl bg-zinc-900 border border-border text-xs text-zinc-300 flex items-center gap-2",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-3.5 h-3.5 text-amber-400 shrink-0" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: anom })
+              ]
+            },
+            idx
+          )) })
+        ] })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-12 h-12 mb-3 opacity-20 text-primary" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Нет данных для отображения" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-600 mt-1 max-w-sm", children: "Укажите путь к аудиозаписи или нажмите «Тестовый сэмпл» для расчёта акустических признаков нейросетевого голоса." })
+      ] }) })
+    ] }),
+    activeSubTab === "cleanpixel" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-6 space-y-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-4 h-4 text-primary" }),
+              "Lossless Metadata Stripper (Rust)"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                onClick: loadDemoCleanPixel,
+                className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                  "Тестовый образец с GPS"
+                ]
+              }
+            )
+          ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "div",
             {
-              className: `px-3 py-1.5 rounded-xl border flex items-center gap-1.5 text-xs font-bold ${voiceResult.synthetic_threat_score >= 60 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : voiceResult.synthetic_threat_score >= 30 ? "bg-amber-500/10 border-amber-500/30 text-amber-400" : "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"}`,
+              onDragOver: handleDragOver,
+              onDragLeave: handleDragLeave,
+              onDrop: handleDrop,
+              onClick: () => {
+                var _a;
+                return (_a = fileInputRef.current) == null ? void 0 : _a.click();
+              },
+              className: `relative border-2 border-dashed rounded-2xl p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all ${isDragging ? "border-primary bg-primary/10 scale-[1.01]" : "border-border/80 hover:border-primary/50 bg-zinc-900/40 hover:bg-zinc-900/80"}`,
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4" }),
-                "Риск синтеза: ",
-                voiceResult.synthetic_threat_score,
-                "%"
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "input",
+                  {
+                    type: "file",
+                    ref: fileInputRef,
+                    onChange: handleFileChange,
+                    accept: ".jpg,.jpeg,.png",
+                    className: "hidden"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 shadow-inner", children: cleanPixelLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-7 h-7 text-primary animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(CloudUpload, { className: "w-7 h-7 text-primary" }) }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-sm font-bold text-zinc-100 mb-1", children: cleanPixelLoading ? "Очистка байтового контейнера..." : "Перетащите сюда фото (JPEG / PNG)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 max-w-xs mb-3", children: "или нажмите для выбора файла на диске. 0% потери качества, пиксели не пережимаются." }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono bg-zinc-800 text-zinc-300 border border-border", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Flame, { className: "w-3 h-3 text-amber-400" }),
+                  "1000+ фото/сек • CleanPixel Rust Core"
+                ] })
               ]
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-500 uppercase font-mono block", children: "Срез частот (Rolloff)" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-zinc-100 mt-1 block", children: [
-              voiceResult.avg_rolloff_hz.toFixed(1),
-              " Гц"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400", children: voiceResult.avg_rolloff_hz < 7500 ? "⚠️ Срез вокодера" : "🟢 Естественный" })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300 font-semibold", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-4 h-4 text-primary" }),
+            "Что удаляет CleanPixel:"
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-500 uppercase font-mono block", children: "Вариативность MFCC" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-zinc-100 mt-1 block", children: voiceResult.mfcc_variance.toFixed(2) }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400", children: voiceResult.mfcc_variance < 1.2 ? "⚠️ Монотонность" : "🟢 Живая речь" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-500 uppercase font-mono block", children: "Цифровая тишина (RMS)" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-zinc-100 mt-1 block", children: [
-              ((voiceResult.digital_silence_ratio || 0) * 100).toFixed(1),
-              "%"
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc list-inside space-y-1 text-zinc-400", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "GPS координаты:" }),
+              " точная геолокация съёмки (широта, долгота, высота);"
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400", children: (voiceResult.digital_silence_ratio || 0) > 0.25 ? "⚠️ Нет дыхания" : "🟢 Фоновый шум" })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Мел-Спектрограмма частотного отпечатка:" }),
-            voiceResult.cached && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-mono flex items-center gap-1", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3" }),
-              "Кэш SHA-256 (0.7 мс)"
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Google & Adobe GUID:" }),
+              " скрытые теги XMP/Gaia ID, привязывающие фото к аккаунту;"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Скрытая EXIF-миниатюра:" }),
+              " оригинальное превью, остающееся даже после замазывания;"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "100% сохранение качества:" }),
+              " таблицы квантования и энтропийные пиксели остаются нетронутыми."
             ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-xl bg-black border border-border overflow-hidden flex items-center justify-center", children: voiceResult.spectrogram_path ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "img",
-            {
-              src: `https://asset.localhost/${voiceResult.spectrogram_path}`,
-              alt: "Spectrogram",
-              className: "w-full h-auto rounded-lg max-h-[220px] object-contain",
-              onError: (e) => {
-                e.target.style.display = "none";
-              }
-            }
-          ) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "py-8 text-center text-xs text-zinc-500 flex items-center gap-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(FileAudio, { className: "w-4 h-4 text-zinc-400" }),
-            "Графический профиль частот успешно сформирован"
-          ] }) })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Выявленные аномалии синтеза:" }),
-          voiceResult.anomalies.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: voiceResult.anomalies.map((anom, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "div",
-            {
-              className: "px-3 py-2 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs flex items-center gap-2 font-medium",
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-3.5 h-3.5 text-rose-400 shrink-0" }),
-                anom
-              ]
-            },
-            idx
-          )) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs flex items-center gap-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5 text-emerald-400 shrink-0" }),
-            "Аномалий вокодеров не выявлено. Акустический профиль соответствует естественной человеческой речи."
           ] })
         ] })
-      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-dashed border-border text-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-12 h-12 text-zinc-600 mb-3" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium text-zinc-400 text-sm", children: "Нет данных спектрального анализа" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-500 mt-1 max-w-sm", children: "Укажите путь к аудиозаписи или нажмите «Тестовый сэмпл» для генерации спектрограммы и проверки детекции вокодеров" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-6", children: cleanPixelResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 font-mono", children: "Обработанный файл:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-base font-bold text-zinc-100 flex items-center gap-2 truncate max-w-[280px]", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(FileCheck, { className: "w-4 h-4 text-emerald-400" }),
+              cleanPixelResult.file_path
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-3 py-1 rounded-full text-xs font-bold border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 flex items-center gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5" }),
+            "Метаданные очищены"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Исходный размер" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-zinc-100 font-mono", children: [
+              (cleanPixelResult.original_size_bytes / 1024).toFixed(1),
+              " КБ"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Очищенный размер" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-emerald-400 font-mono", children: [
+              (cleanPixelResult.cleaned_size_bytes / 1024).toFixed(1),
+              " КБ"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Сэкономлено" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-primary font-mono", children: [
+              "-",
+              (cleanPixelResult.saved_bytes / 1024).toFixed(1),
+              " КБ"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-emerald-400 block mt-0.5", children: [
+              "(-",
+              cleanPixelResult.saved_percent,
+              "%)"
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Гарантии приватности и целостности:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-4 h-4 text-emerald-400 shrink-0" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GPS-координаты дома удалены" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { className: "w-4 h-4 text-emerald-400 shrink-0" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Google & Adobe GUID стёрты" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { className: "w-4 h-4 text-emerald-400 shrink-0" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Скрытая EXIF-миниатюра вырезана" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-primary/5 border border-primary/20 text-primary flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 text-primary shrink-0" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "0% потери качества (Lossless)" })
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Удалённые бинарные блоки:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border space-y-1.5 text-xs font-mono", children: cleanPixelResult.stripped_items.map((item, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-red-400 shrink-0" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: item })
+          ] }, idx)) })
+        ] })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-12 h-12 mb-3 opacity-20 text-primary" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Ожидание фото для очистки" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-600 mt-1 max-w-sm", children: "Перетащите изображение в область слева или нажмите «Тестовый образец с GPS», чтобы проверить моментальную очистку метаданных." })
       ] }) })
     ] })
   ] });
@@ -18892,4 +19137,4 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
 ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-CVDhqSNR.js.map
+//# sourceMappingURL=index-CbdfV6O9.js.map
