@@ -232,5 +232,26 @@ def main():
             sys.stdout.write(json.dumps(res) + "\n")
             sys.stdout.flush()
 
+
+# --- Quishing & Voice Spectrum Analyzers ---
+try:
+    from sidecars.analyzers.quishing_guard import QuishingAnalyzer
+    from sidecars.analyzers.voice_spectrogram import VoiceSpectrumAnalyzer
+    quishing_worker = QuishingAnalyzer()
+    voice_worker = VoiceSpectrumAnalyzer()
+
+    @mcp.tool()
+    def scan_qr_phishing(image_path: str) -> dict:
+        """Анализирует QR-коды на изображении, раскрывает редиректы и рассчитывает риск Quishing."""
+        return quishing_worker.analyze_file(image_path)
+
+    @mcp.tool()
+    def analyze_voice_deepfake(audio_path: str, save_plot: bool = True) -> dict:
+        """Проводит акустический анализ аудио на спектральные признаки синтеза и deepfake-TTS."""
+        plot_target = f"{audio_path}_spec.png" if save_plot else None
+        return voice_worker.analyze(audio_path, output_plot_path=plot_target)
+except Exception as e:
+    print(f"Warning: could not register Quishing/Voice tools in MCP: {e}")
+
 if __name__ == "__main__":
     main()

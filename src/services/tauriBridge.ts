@@ -355,3 +355,67 @@ export async function stopRadioSnifferIPC(): Promise<void> {
     }
   }
 }
+
+export interface QuishingReport {
+  found: boolean;
+  payload_type: string;
+  initial_url: string;
+  final_url: string;
+  domain: string;
+  redirect_chain: string[];
+  risk_score: number;
+  flags: string[];
+  error?: string | null;
+}
+
+export interface VoiceAnalysisReport {
+  sample_rate: number;
+  duration_sec: number;
+  avg_rolloff_hz: number;
+  mfcc_variance: number;
+  spectral_flatness: number;
+  synthetic_threat_score: number;
+  anomalies: string[];
+  spectrogram_path?: string | null;
+  error?: string | null;
+}
+
+export async function analyzeQuishingIPC(imagePath: string): Promise<QuishingReport> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<QuishingReport>('analyze_quishing', { imagePath });
+  }
+  return {
+    found: true,
+    payload_type: 'url',
+    initial_url: 'https://bit.ly/secure-auth-check',
+    final_url: 'https://login-portal.top/auth',
+    domain: 'login-portal.top',
+    redirect_chain: ['https://bit.ly/secure-auth-check', 'https://gateway.cfd/forward'],
+    risk_score: 60,
+    flags: ['Подозрительный TLD: .top', 'Длинная цепочка редиректов (2 перехода)'],
+    error: null,
+  };
+}
+
+export async function analyzeVoiceIPC(audioPath: string, outputPlotPath?: string): Promise<VoiceAnalysisReport> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<VoiceAnalysisReport>('analyze_voice', { audioPath, outputPlotPath });
+  }
+  return {
+    sample_rate: 22050,
+    duration_sec: 4.2,
+    avg_rolloff_hz: 6840.5,
+    mfcc_variance: 0.84,
+    spectral_flatness: 0.061,
+    synthetic_threat_score: 90,
+    anomalies: [
+      'Аномальный срез ВЧ: 6840.5 Гц (паттерн легковесного вокодера)',
+      'Неестественно заниженная дисперсия формант (монотонность синтеза)',
+      'Высокий уровень спектральной равномерности (фоновый шум диффузии)',
+    ],
+    spectrogram_path: outputPlotPath || null,
+    error: null,
+  };
+}
