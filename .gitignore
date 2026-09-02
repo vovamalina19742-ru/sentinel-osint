@@ -35,3 +35,4 @@ credentials.json
 .vscode/
 .idea/
 *.swp
+.spec_cache/

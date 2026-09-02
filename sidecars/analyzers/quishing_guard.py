@@ -1,10 +1,11 @@
-import numpy as np
 import os
+import re
 import cv2
+import numpy as np
 import requests
 import tldextract
 from typing import TypedDict, List, Optional
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 
 class QuishingReport(TypedDict):
     found: bool
@@ -26,22 +27,68 @@ class QuishingAnalyzer:
     def decode_qr(self, image_path: str) -> List[str]:
         if not os.path.exists(image_path):
             raise FileNotFoundError(f"Файл не найден: {image_path}")
+        
+        # Безопасное чтение через буфер памяти (поддержка кириллицы/Unicode в Windows)
         try:
             with open(image_path, "rb") as f:
                 bytes_data = np.frombuffer(f.read(), dtype=np.uint8)
             img = cv2.imdecode(bytes_data, cv2.IMREAD_COLOR)
         except Exception:
             img = cv2.imread(image_path)
+            
         if img is None:
             raise ValueError(f"Ошибка декодирования растра: {image_path}")
         
-        # Попытка множественного обнаружения, fallback на одиночное
         success, decoded_info, _, _ = self.detector.detectAndDecodeMulti(img)
         if success and any(decoded_info):
             return [data for data in decoded_info if data]
         
         data, _, _ = self.detector.detectAndDecode(img)
         return [data] if data else []
+
+    def _check_meta_or_js_redirect(self, session: requests.Session, url: str) -> Optional[str]:
+        """Анализ первых килобайт HTML на наличие скрытых <meta refresh> или window.location."""
+        try:
+            resp = session.get(url, timeout=self.timeout, stream=True)
+            chunk = resp.raw.read(4096).decode('utf-8', errors='ignore')
+            resp.close()
+
+            # 1. Поиск <meta http-equiv="refresh" content="...; url=...">
+            lower_chunk = chunk.lower()
+            if "http-equiv" in lower_chunk and "refresh" in lower_chunk and "url=" in lower_chunk:
+                idx = lower_chunk.find("url=")
+                chars_to_strip = '\"\'<>'
+                sub = chunk[idx + 4:].strip().strip(chars_to_strip)
+                candidate = sub.split()[0].split('"')[0].split("'")[0].split(">")[0]
+                if candidate:
+                    return urljoin(url, candidate)
+
+            # 2. Поиск JS редиректов window.location / location.replace / location.href
+            for kw in ["location.href", "location.replace", "window.location"]:
+                if kw in chunk:
+                    m = re.search(re.escape(kw) + r"""\s*\(?\s*['"]([^'"]+)['"]""", chunk)
+                    if m:
+                        return urljoin(url, m.group(1).strip())
+        except Exception:
+            pass
+        return None
+
+    def _check_urlhaus_threat(self, domain: str) -> bool:
+        """Бесплатная проверка домена в базе активных угроз abuse.ch URLhaus."""
+        if not domain:
+            return False
+        try:
+            resp = requests.post(
+                "https://urlhaus-api.abuse.ch/v1/host/",
+                data={"host": domain},
+                timeout=2.5
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                return data.get("query_status") == "ok"
+        except Exception:
+            pass
+        return False
 
     def trace_and_inspect(self, raw_payload: str) -> QuishingReport:
         if not raw_payload:
@@ -65,13 +112,11 @@ class QuishingAnalyzer:
         final_url = raw_payload
 
         try:
-            # HEAD-запросы с ограничением времени
             resp = session.head(raw_payload, allow_redirects=True, timeout=self.timeout)
             if resp.history:
                 redirect_chain = [r.url for r in resp.history]
             final_url = resp.url
         except requests.RequestException:
-            # Fallback на GET со stream, если сервер блокирует HEAD
             try:
                 resp = session.get(raw_payload, allow_redirects=True, timeout=self.timeout, stream=True)
                 if resp.history:
@@ -81,10 +126,15 @@ class QuishingAnalyzer:
             except requests.RequestException:
                 pass
 
+        # Проверка скрытого Meta/JS редиректа на конечной странице
+        hidden_dest = self._check_meta_or_js_redirect(session, final_url)
+        if hidden_dest and hidden_dest != final_url:
+            redirect_chain.append(final_url)
+            final_url = hidden_dest
+
         parsed_final = tldextract.extract(final_url)
         root_domain = f"{parsed_final.domain}.{parsed_final.suffix}".strip(".")
         
-        # Эвристика компрометации
         score = 0
         flags = []
         if parsed_final.suffix.lower() in self.suspicious_tlds:
@@ -93,12 +143,21 @@ class QuishingAnalyzer:
         if len(redirect_chain) >= 2:
             score += 25
             flags.append(f"Длинная цепочка редиректов ({len(redirect_chain)} перехода)")
+        if hidden_dest:
+            score += 30
+            flags.append("Обнаружен скрытый HTML Meta/JavaScript редирект")
         if not parsed_final.suffix and any(char.isdigit() for char in parsed_final.domain):
             score += 40
             flags.append("Прямой IP-адрес хоста вместо доменного имени")
         if "@" in parsed_final.subdomain:
             score += 30
             flags.append("Использование userinfo credentials в URL (@)")
+
+        # Проверка репутации в URLhaus
+        if root_domain and score >= 25:
+            if self._check_urlhaus_threat(root_domain):
+                score += 50
+                flags.append("⛔ Зафиксирован в базе угроз abuse.ch URLhaus (Active Malware/Phishing)")
 
         return {
             "found": True,
