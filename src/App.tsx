@@ -259,7 +259,7 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
             <h1 className="font-bold text-lg leading-none tracking-tight flex items-center gap-2">
               Sentinel-OSINT
               <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700">
-                v2.1 Forensics
+                v2.2 DFIR & Threat Intel
               </span>
             </h1>
             <p className="text-xs text-zinc-400 mt-1">Unified AI-Native Intelligence & Anti-Scam Platform</p>
@@ -314,7 +314,7 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
             }`}
           >
             <ShieldAlert className="w-3.5 h-3.5" />
-            Форензика (v2.1)
+            Форензика & Досье (v2.2)
           </button>
         </div>
 

@@ -20,6 +20,7 @@ import {
   Trash2,
   Lock,
   Flame,
+  FileText as FileTextIcon,
 } from 'lucide-react';
 import {
   analyzeQuishingIPC,
@@ -29,6 +30,8 @@ import {
   VoiceAnalysisReport,
   CleanPixelReport,
 } from '../services/tauriBridge';
+import { buildIncidentDossier } from '../services/dossierEngine';
+import { DossierModal } from './DossierModal';
 
 export function ForensicsTab() {
   const [activeSubTab, setActiveSubTab] = useState<'quishing' | 'voice' | 'cleanpixel'>('quishing');
@@ -47,6 +50,7 @@ export function ForensicsTab() {
   const [cleanPixelLoading, setCleanPixelLoading] = useState(false);
   const [cleanPixelResult, setCleanPixelResult] = useState<CleanPixelReport | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const [isDossierOpen, setIsDossierOpen] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // --- Handlers ---
@@ -158,7 +162,16 @@ export function ForensicsTab() {
           </p>
         </div>
 
-        <div className="flex items-center gap-1 bg-zinc-900 border border-border p-1 rounded-xl">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setIsDossierOpen(true)}
+            className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-primary to-indigo-600 hover:opacity-90 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md"
+          >
+            <FileTextIcon className="w-3.5 h-3.5" />
+            Сформировать Досье (v2.2)
+          </button>
+
+          <div className="flex items-center gap-1 bg-zinc-900 border border-border p-1 rounded-xl">
           <button
             onClick={() => setActiveSubTab('quishing')}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
@@ -194,6 +207,7 @@ export function ForensicsTab() {
           </button>
         </div>
       </div>
+    </div>
 
       {/* --- 1. QUISHING GUARD TAB --- */}
       {activeSubTab === 'quishing' && (
@@ -687,6 +701,13 @@ export function ForensicsTab() {
           </div>
         </div>
       )}
+
+      {/* Dossier Modal */}
+      <DossierModal
+        isOpen={isDossierOpen}
+        onClose={() => setIsDossierOpen(false)}
+        dossier={buildIncidentDossier(quishingResult, voiceResult, cleanPixelResult)}
+      />
     </div>
   );
 }
