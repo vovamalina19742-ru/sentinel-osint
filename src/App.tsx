@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {
   Shield,
+  ShieldAlert,
   Search,
   AlertTriangle,
   CheckCircle2,
@@ -22,9 +23,10 @@ import { TargetType, InvestigationDossier, ImageComparisonResult, InvestigationS
 import { compareImagesIPC, startInvestigationIPC, isTauriEnvironment, saveDossierIPC, getHistoryIPC, deleteDossierIPC, InvestigationHistoryItem } from './services/tauriBridge';
 import { InvestigationProgress } from './components/InvestigationProgress';
 import { RadarTab } from './components/RadarTab';
+import { ForensicsTab } from './components/ForensicsTab';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'osint' | 'phash' | 'history' | 'radar'>('osint');
+  const [activeTab, setActiveTab] = useState<'osint' | 'phash' | 'history' | 'radar' | 'forensics'>('osint');
   const [historyItems, setHistoryItems] = useState<InvestigationHistoryItem[]>([]);
   const [loadingHistory, setLoadingHistory] = useState(false);
 
@@ -88,7 +90,7 @@ export default function App() {
     const score = calculateDynamicScore(dossier);
 
     const mdContent = `# 🛡️ Досье расследования: ${dossier.target}
-**Платформа:** Sentinel-OSINT v2.0 Radar
+**Платформа:** Sentinel-OSINT v2.1 Forensics
 **Дата формирования:** ${dateStr}
 **Тип цели:** \`${dossier.target_type}\`
 **Итоговый рейтинг доверия (Trust Score):** **${score}%** ${score >= 80 ? '🟢 (Высокий)' : score >= 50 ? '🟡 (Средний)' : '🔴 (Критический риск)'}
@@ -257,7 +259,7 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
             <h1 className="font-bold text-lg leading-none tracking-tight flex items-center gap-2">
               Sentinel-OSINT
               <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700">
-                v2.0 Radar
+                v2.1 Forensics
               </span>
             </h1>
             <p className="text-xs text-zinc-400 mt-1">Unified AI-Native Intelligence & Anti-Scam Platform</p>
@@ -304,6 +306,15 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
           >
             <span>📡</span>
             Радиоразведка
+          </button>
+          <button
+            onClick={() => setActiveTab('forensics')}
+            className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
+              activeTab === 'forensics' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-950/40' : 'text-zinc-400 hover:text-zinc-200'
+            }`}
+          >
+            <ShieldAlert className="w-3.5 h-3.5" />
+            Форензика (v2.1)
           </button>
         </div>
 
@@ -724,6 +735,8 @@ ${dossier.red_flags.length === 0 ? '_Критических факторов р�
           </div>
         ) : activeTab === 'radar' ? (
           <RadarTab />
+        ) : activeTab === 'forensics' ? (
+          <ForensicsTab />
         ) : null}
       </main>
     </div>

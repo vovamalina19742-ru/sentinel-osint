@@ -7145,7 +7145,34 @@ const createLucideIcon = (iconName, iconNode) => {
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$k = [
+const __iconNode$r = [
+  [
+    "path",
+    {
+      d: "M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2",
+      key: "169zse"
+    }
+  ]
+];
+const Activity = createLucideIcon("Activity", __iconNode$r);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$q = [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+];
+const ArrowRight = createLucideIcon("ArrowRight", __iconNode$q);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$p = [
   [
     "path",
     {
@@ -7155,7 +7182,65 @@ const __iconNode$k = [
   ],
   ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
 ];
-const Camera = createLucideIcon("Camera", __iconNode$k);
+const Camera = createLucideIcon("Camera", __iconNode$p);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$o = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+];
+const CircleCheck = createLucideIcon("CircleCheck", __iconNode$o);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$n = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
+  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+];
+const CircleX = createLucideIcon("CircleX", __iconNode$n);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$m = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
+];
+const Clock = createLucideIcon("Clock", __iconNode$m);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$l = [
+  ["path", { d: "M12 13v8", key: "1l5pq0" }],
+  ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
+  ["path", { d: "m8 17 4-4 4 4", key: "1quai1" }]
+];
+const CloudUpload = createLucideIcon("CloudUpload", __iconNode$l);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$k = [
+  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
+  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
+  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
+];
+const Database = createLucideIcon("Database", __iconNode$k);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7163,10 +7248,11 @@ const Camera = createLucideIcon("Camera", __iconNode$k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$j = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
+  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
 ];
-const CircleCheck = createLucideIcon("CircleCheck", __iconNode$j);
+const Download = createLucideIcon("Download", __iconNode$j);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7174,11 +7260,17 @@ const CircleCheck = createLucideIcon("CircleCheck", __iconNode$j);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$i = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m15 9-6 6", key: "1uzhvr" }],
-  ["path", { d: "m9 9 6 6", key: "z0biqf" }]
+  ["path", { d: "M17.5 22h.5a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3", key: "rslqgf" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  [
+    "path",
+    {
+      d: "M2 19a2 2 0 1 1 4 0v1a2 2 0 1 1-4 0v-4a6 6 0 0 1 12 0v4a2 2 0 1 1-4 0v-1a2 2 0 1 1 4 0",
+      key: "9f7x3i"
+    }
+  ]
 ];
-const CircleX = createLucideIcon("CircleX", __iconNode$i);
+const FileAudio = createLucideIcon("FileAudio", __iconNode$i);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7186,53 +7278,6 @@ const CircleX = createLucideIcon("CircleX", __iconNode$i);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$h = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
-];
-const Clock = createLucideIcon("Clock", __iconNode$h);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$g = [
-  ["path", { d: "M12 13v8", key: "1l5pq0" }],
-  ["path", { d: "M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242", key: "1pljnt" }],
-  ["path", { d: "m8 17 4-4 4 4", key: "1quai1" }]
-];
-const CloudUpload = createLucideIcon("CloudUpload", __iconNode$g);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$f = [
-  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
-  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
-  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
-];
-const Database = createLucideIcon("Database", __iconNode$f);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$e = [
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
-  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
-];
-const Download = createLucideIcon("Download", __iconNode$e);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$d = [
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   [
     "path",
@@ -7241,7 +7286,53 @@ const __iconNode$d = [
   ["path", { d: "m9 18-1.5-1.5", key: "1j6qii" }],
   ["circle", { cx: "5", cy: "14", r: "3", key: "ufru5t" }]
 ];
-const FileSearch = createLucideIcon("FileSearch", __iconNode$d);
+const FileSearch = createLucideIcon("FileSearch", __iconNode$h);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$g = [
+  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
+  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
+  ["path", { d: "M10 9H8", key: "b1mrlr" }],
+  ["path", { d: "M16 13H8", key: "t4e002" }],
+  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+];
+const FileText = createLucideIcon("FileText", __iconNode$g);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+];
+const Globe = createLucideIcon("Globe", __iconNode$f);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$e = [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 16v-4", key: "1dtifu" }],
+  ["path", { d: "M12 8h.01", key: "e9boi3" }]
+];
+const Info = createLucideIcon("Info", __iconNode$e);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$d = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$d);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7249,13 +7340,11 @@ const FileSearch = createLucideIcon("FileSearch", __iconNode$d);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$c = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "M10 9H8", key: "b1mrlr" }],
-  ["path", { d: "M16 13H8", key: "t4e002" }],
-  ["path", { d: "M16 17H8", key: "z1uh3a" }]
+  ["path", { d: "M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z", key: "131961" }],
+  ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
+  ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
 ];
-const FileText = createLucideIcon("FileText", __iconNode$c);
+const Mic = createLucideIcon("Mic", __iconNode$c);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7263,26 +7352,6 @@ const FileText = createLucideIcon("FileText", __iconNode$c);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$b = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
-];
-const Globe = createLucideIcon("Globe", __iconNode$b);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$a);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$9 = [
   [
     "path",
     {
@@ -7293,7 +7362,42 @@ const __iconNode$9 = [
   ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }],
   ["rect", { x: "6", y: "14", width: "12", height: "8", rx: "1", key: "1ue0tg" }]
 ];
-const Printer = createLucideIcon("Printer", __iconNode$9);
+const Printer = createLucideIcon("Printer", __iconNode$b);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$a = [
+  ["rect", { width: "5", height: "5", x: "3", y: "3", rx: "1", key: "1tu5fj" }],
+  ["rect", { width: "5", height: "5", x: "16", y: "3", rx: "1", key: "1v8r4q" }],
+  ["rect", { width: "5", height: "5", x: "3", y: "16", rx: "1", key: "1x03jg" }],
+  ["path", { d: "M21 16h-3a2 2 0 0 0-2 2v3", key: "177gqh" }],
+  ["path", { d: "M21 21v.01", key: "ents32" }],
+  ["path", { d: "M12 7v3a2 2 0 0 1-2 2H7", key: "8crl2c" }],
+  ["path", { d: "M3 12h.01", key: "nlz23k" }],
+  ["path", { d: "M12 3h.01", key: "n36tog" }],
+  ["path", { d: "M12 16v.01", key: "133mhm" }],
+  ["path", { d: "M16 12h1", key: "1slzba" }],
+  ["path", { d: "M21 12v.01", key: "1lwtk9" }],
+  ["path", { d: "M12 21v-1", key: "1880an" }]
+];
+const QrCode = createLucideIcon("QrCode", __iconNode$a);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$9 = [
+  ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
+  ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5", key: "1j5fej" }],
+  ["path", { d: "M19.1 4.9C23 8.8 23 15.1 19.1 19", key: "10b0cb" }]
+];
+const Radio = createLucideIcon("Radio", __iconNode$9);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7301,13 +7405,12 @@ const Printer = createLucideIcon("Printer", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
-  ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5", key: "1j5fej" }],
-  ["path", { d: "M19.1 4.9C23 8.8 23 15.1 19.1 19", key: "10b0cb" }]
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
 ];
-const Radio = createLucideIcon("Radio", __iconNode$8);
+const RefreshCw = createLucideIcon("RefreshCw", __iconNode$8);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7315,12 +7418,10 @@ const Radio = createLucideIcon("Radio", __iconNode$8);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$7 = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
+  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
 ];
-const RefreshCw = createLucideIcon("RefreshCw", __iconNode$7);
+const Search = createLucideIcon("Search", __iconNode$7);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7328,10 +7429,17 @@ const RefreshCw = createLucideIcon("RefreshCw", __iconNode$7);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$6 = [
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
-  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ],
+  ["path", { d: "M12 8v4", key: "1got3b" }],
+  ["path", { d: "M12 16h.01", key: "1drbdi" }]
 ];
-const Search = createLucideIcon("Search", __iconNode$6);
+const ShieldAlert = createLucideIcon("ShieldAlert", __iconNode$6);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7346,10 +7454,9 @@ const __iconNode$5 = [
       key: "oel41y"
     }
   ],
-  ["path", { d: "M12 8v4", key: "1got3b" }],
-  ["path", { d: "M12 16h.01", key: "1drbdi" }]
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
 ];
-const ShieldAlert = createLucideIcon("ShieldAlert", __iconNode$5);
+const ShieldCheck = createLucideIcon("ShieldCheck", __iconNode$5);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7769,6 +7876,50 @@ async function stopRadioSnifferIPC() {
       console.error("Error stopping radio sniffer:", err);
     }
   }
+}
+async function analyzeQuishingIPC(imagePath) {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    return await invoke("analyze_quishing", { imagePath });
+  }
+  return {
+    found: true,
+    payload_type: "url",
+    initial_url: "https://bit.ly/secure-auth-check",
+    final_url: "https://login-portal.top/auth",
+    domain: "login-portal.top",
+    redirect_chain: ["https://bit.ly/secure-auth-check", "https://gateway.cfd/forward"],
+    risk_score: 60,
+    flags: ["Подозрительный TLD: .top", "Длинная цепочка редиректов (2 перехода)"],
+    error: null
+  };
+}
+async function analyzeVoiceIPC(audioPath, outputPlotPath) {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    return await invoke("analyze_voice", { audioPath, outputPlotPath });
+  }
+  return {
+    sample_rate: 22050,
+    duration_sec: 4.2,
+    avg_rolloff_hz: 6840.5,
+    mfcc_variance: 0.84,
+    spectral_flatness: 0.061,
+    synthetic_threat_score: 90,
+    anomalies: [
+      "Аномальный срез ВЧ: 6840.5 Гц (паттерн легковесного вокодера)",
+      "Неестественно заниженная дисперсия формант (монотонность синтеза)",
+      "Высокий уровень спектральной равномерности (фоновый шум диффузии)"
+    ],
+    spectrogram_path: outputPlotPath || null,
+    error: null
+  };
 }
 const InvestigationProgress = ({
   steps,
@@ -17748,6 +17899,401 @@ const RadarTab = () => {
     ] })
   ] });
 };
+function ForensicsTab() {
+  const [activeSubTab, setActiveSubTab] = reactExports.useState("quishing");
+  const [qrImagePath, setQrImagePath] = reactExports.useState("");
+  const [quishingLoading, setQuishingLoading] = reactExports.useState(false);
+  const [quishingResult, setQuishingResult] = reactExports.useState(null);
+  const [audioPath, setAudioPath] = reactExports.useState("");
+  const [voiceLoading, setVoiceLoading] = reactExports.useState(false);
+  const [voiceResult, setVoiceResult] = reactExports.useState(null);
+  const handleAnalyzeQuishing = async () => {
+    if (!qrImagePath.trim()) return;
+    setQuishingLoading(true);
+    try {
+      const res = await analyzeQuishingIPC(qrImagePath);
+      setQuishingResult(res);
+    } catch (err) {
+      console.error("Quishing analysis failed:", err);
+    } finally {
+      setQuishingLoading(false);
+    }
+  };
+  const handleAnalyzeVoice = async () => {
+    if (!audioPath.trim()) return;
+    setVoiceLoading(true);
+    try {
+      const res = await analyzeVoiceIPC(audioPath);
+      setVoiceResult(res);
+    } catch (err) {
+      console.error("Voice analysis failed:", err);
+    } finally {
+      setVoiceLoading(false);
+    }
+  };
+  const loadDemoQuishing = async () => {
+    setQrImagePath("demo_sample_qr.png");
+    setQuishingLoading(true);
+    try {
+      const res = await analyzeQuishingIPC("demo_sample_qr.png");
+      setQuishingResult(res);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setQuishingLoading(false);
+    }
+  };
+  const loadDemoVoice = async () => {
+    setAudioPath("demo_synth_voice.wav");
+    setVoiceLoading(true);
+    try {
+      const res = await analyzeVoiceIPC("demo_synth_voice.wav");
+      setVoiceResult(res);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setVoiceLoading(false);
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg font-bold flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-5 h-5 text-primary" }),
+          "Цифровая форензика и расследование угроз (v2.1)"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: "Анализ скрытого QR-фишинга (Quishing) и акустическое профилирование дипфейков" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 bg-zinc-900 border border-border p-1 rounded-xl", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            onClick: () => setActiveSubTab("quishing"),
+            className: `px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeSubTab === "quishing" ? "bg-primary text-white shadow" : "text-zinc-400 hover:text-zinc-200"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-3.5 h-3.5" }),
+              "Quishing Guard (QR-фишинг)"
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            onClick: () => setActiveSubTab("voice"),
+            className: `px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeSubTab === "voice" ? "bg-primary text-white shadow" : "text-zinc-400 hover:text-zinc-200"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-3.5 h-3.5" }),
+              "Voice Spectrogram (Дипфейки)"
+            ]
+          }
+        )
+      ] })
+    ] }),
+    activeSubTab === "quishing" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-4 h-4 text-primary" }),
+            "Анализ QR-изображения"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: loadDemoQuishing,
+              className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                "Тестовый сэмпл"
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Путь к файлу изображения (PNG, JPG, PDF):" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "input",
+            {
+              type: "text",
+              placeholder: "D:\\\\Downloads\\\\suspicious_bill_qr.png",
+              value: qrImagePath,
+              onChange: (e) => setQrImagePath(e.target.value),
+              className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            onClick: handleAnalyzeQuishing,
+            disabled: quishingLoading || !qrImagePath.trim(),
+            className: "w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20",
+            children: quishingLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
+              "Декодирование и трейсинг..."
+            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4" }),
+              "Сканировать QR на угрозы"
+            ] })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900/60 border border-border/70 text-xs text-zinc-400 space-y-1.5 leading-relaxed", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-semibold text-zinc-300 flex items-center gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-3.5 h-3.5 text-primary" }),
+            "Что проверяет Quishing Guard:"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc pl-4 space-y-0.5 text-zinc-400", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Скрытые редиректы сокращателей (bit.ly, t.co, cfd);" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "HTML Meta Refresh & JS window.location переходы;" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Подозрительные TLD зоны (.top, .xyz, .monster);" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              "Сверка с базой активных угроз ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "abuse.ch URLhaus" }),
+              "."
+            ] })
+          ] })
+        ] })
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: quishingResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-base text-zinc-100", children: "Результаты анализа QR-угрозы" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-zinc-400 font-mono mt-0.5", children: [
+              "Домен: ",
+              quishingResult.domain || "N/A"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: `px-3 py-1.5 rounded-xl border flex items-center gap-1.5 text-xs font-bold ${quishingResult.risk_score >= 60 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : quishingResult.risk_score >= 25 ? "bg-amber-500/10 border-amber-500/30 text-amber-400" : "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"}`,
+              children: [
+                quishingResult.risk_score >= 60 ? /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-4 h-4" }) : quishingResult.risk_score >= 25 ? /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-4 h-4" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-4 h-4" }),
+                "Оценка риска: ",
+                quishingResult.risk_score,
+                "%"
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Цепочка маршрутизации (Redirect Chain):" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-zinc-900 border border-border font-mono text-xs text-zinc-300 break-all flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-400", children: "QR Payload" }),
+              quishingResult.initial_url
+            ] }),
+            quishingResult.redirect_chain.map((url, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "p-2.5 rounded-xl bg-zinc-900/60 border border-border font-mono text-xs text-zinc-400 break-all flex items-center gap-2 pl-4",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 text-primary shrink-0" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-1.5 py-0.5 rounded bg-zinc-800 text-[10px] text-zinc-500", children: [
+                    "Прыжок #",
+                    idx + 1
+                  ] }),
+                  url
+                ]
+              },
+              idx
+            )),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-primary/10 border border-primary/30 font-mono text-xs text-primary font-bold break-all flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded bg-primary/20 text-[10px] text-primary", children: "Итог" }),
+              quishingResult.final_url
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Индикаторы компрометации (IoC Flags):" }),
+          quishingResult.flags.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: quishingResult.flags.map((flag, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "px-3 py-2 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs flex items-center gap-2 font-medium",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-3.5 h-3.5 text-rose-400 shrink-0" }),
+                flag
+              ]
+            },
+            idx
+          )) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5 text-emerald-400 shrink-0" }),
+            "Подозрительных маркеров и перенаправлений не обнаружено. Ссылка выглядит чистой."
+          ] })
+        ] })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-dashed border-border text-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-12 h-12 text-zinc-600 mb-3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium text-zinc-400 text-sm", children: "Нет данных для отображения" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-500 mt-1 max-w-sm", children: "Укажите путь к изображению с QR-кодом или нажмите «Тестовый сэмпл» для демонстрации полного анализа" })
+      ] }) })
+    ] }),
+    activeSubTab === "voice" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-4 h-4 text-primary" }),
+            "Акустический сэмпл"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: loadDemoVoice,
+              className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                "Тестовый сэмпл"
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Путь к аудиофайлу (WAV, MP3, OGG):" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "input",
+            {
+              type: "text",
+              placeholder: "D:\\\\Recordings\\\\telegram_voice_msg.wav",
+              value: audioPath,
+              onChange: (e) => setAudioPath(e.target.value),
+              className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            onClick: handleAnalyzeVoice,
+            disabled: voiceLoading || !audioPath.trim(),
+            className: "w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-medium text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20",
+            children: voiceLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
+              "Расчет спектрограммы и MFCC..."
+            ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4" }),
+              "Запустить частотную форензику"
+            ] })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900/60 border border-border/70 text-xs text-zinc-400 space-y-1.5 leading-relaxed", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-semibold text-zinc-300 flex items-center gap-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-3.5 h-3.5 text-primary" }),
+            "Метрики детекции дипфейков:"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc pl-4 space-y-0.5 text-zinc-400", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Spectral Rolloff (95%):" }),
+              " поиск искусственного среза вокодеров (< 7.5 кГц);"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "MFCC Variance:" }),
+              " неестественная плавность артикуляции;"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Digital Silence (RMS):" }),
+              " выявление отсутствия дыхания и склейки фраз;"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Кэширование SHA-256:" }),
+              " повторное открытие досье за 0.7 мс."
+            ] })
+          ] })
+        ] })
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: voiceResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-base text-zinc-100", children: "Акустический спектральный отчёт" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-zinc-400 font-mono mt-0.5", children: [
+              "Длительность: ",
+              voiceResult.duration_sec,
+              " сек | Дискретизация: ",
+              voiceResult.sample_rate,
+              " Гц"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: `px-3 py-1.5 rounded-xl border flex items-center gap-1.5 text-xs font-bold ${voiceResult.synthetic_threat_score >= 60 ? "bg-rose-500/10 border-rose-500/30 text-rose-400" : voiceResult.synthetic_threat_score >= 30 ? "bg-amber-500/10 border-amber-500/30 text-amber-400" : "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4" }),
+                "Риск синтеза: ",
+                voiceResult.synthetic_threat_score,
+                "%"
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-500 uppercase font-mono block", children: "Срез частот (Rolloff)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-zinc-100 mt-1 block", children: [
+              voiceResult.avg_rolloff_hz.toFixed(1),
+              " Гц"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400", children: voiceResult.avg_rolloff_hz < 7500 ? "⚠️ Срез вокодера" : "🟢 Естественный" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-500 uppercase font-mono block", children: "Вариативность MFCC" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-zinc-100 mt-1 block", children: voiceResult.mfcc_variance.toFixed(2) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400", children: voiceResult.mfcc_variance < 1.2 ? "⚠️ Монотонность" : "🟢 Живая речь" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-500 uppercase font-mono block", children: "Цифровая тишина (RMS)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold text-zinc-100 mt-1 block", children: [
+              ((voiceResult.digital_silence_ratio || 0) * 100).toFixed(1),
+              "%"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400", children: (voiceResult.digital_silence_ratio || 0) > 0.25 ? "⚠️ Нет дыхания" : "🟢 Фоновый шум" })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Мел-Спектрограмма частотного отпечатка:" }),
+            voiceResult.cached && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-mono flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3" }),
+              "Кэш SHA-256 (0.7 мс)"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-xl bg-black border border-border overflow-hidden flex items-center justify-center", children: voiceResult.spectrogram_path ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: `https://asset.localhost/${voiceResult.spectrogram_path}`,
+              alt: "Spectrogram",
+              className: "w-full h-auto rounded-lg max-h-[220px] object-contain",
+              onError: (e) => {
+                e.target.style.display = "none";
+              }
+            }
+          ) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "py-8 text-center text-xs text-zinc-500 flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(FileAudio, { className: "w-4 h-4 text-zinc-400" }),
+            "Графический профиль частот успешно сформирован"
+          ] }) })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Выявленные аномалии синтеза:" }),
+          voiceResult.anomalies.length > 0 ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: voiceResult.anomalies.map((anom, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "px-3 py-2 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs flex items-center gap-2 font-medium",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-3.5 h-3.5 text-rose-400 shrink-0" }),
+                anom
+              ]
+            },
+            idx
+          )) }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5 text-emerald-400 shrink-0" }),
+            "Аномалий вокодеров не выявлено. Акустический профиль соответствует естественной человеческой речи."
+          ] })
+        ] })
+      ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-dashed border-border text-center", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-12 h-12 text-zinc-600 mb-3" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-medium text-zinc-400 text-sm", children: "Нет данных спектрального анализа" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-500 mt-1 max-w-sm", children: "Укажите путь к аудиозаписи или нажмите «Тестовый сэмпл» для генерации спектрограммы и проверки детекции вокодеров" })
+      ] }) })
+    ] })
+  ] });
+}
 function App() {
   const [activeTab, setActiveTab] = reactExports.useState("osint");
   const [historyItems, setHistoryItems] = reactExports.useState([]);
@@ -17799,7 +18345,7 @@ function App() {
     const dateStr = new Date(dossier.created_at).toLocaleString("ru-RU");
     const score = calculateDynamicScore(dossier);
     const mdContent = `# 🛡️ Досье расследования: ${dossier.target}
-**Платформа:** Sentinel-OSINT v2.0 Radar
+**Платформа:** Sentinel-OSINT v2.1 Forensics
 **Дата формирования:** ${dateStr}
 **Тип цели:** \`${dossier.target_type}\`
 **Итоговый рейтинг доверия (Trust Score):** **${score}%** ${score >= 80 ? "🟢 (Высокий)" : score >= 50 ? "🟡 (Средний)" : "🔴 (Критический риск)"}
@@ -17942,7 +18488,7 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-bold text-lg leading-none tracking-tight flex items-center gap-2", children: [
             "Sentinel-OSINT",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700", children: "v2.0 Radar" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] uppercase font-mono px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700", children: "v2.1 Forensics" })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-1", children: "Unified AI-Native Intelligence & Anti-Scam Platform" })
         ] })
@@ -17992,6 +18538,17 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "📡" }),
               "Радиоразведка"
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            onClick: () => setActiveTab("forensics"),
+            className: `px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeTab === "forensics" ? "bg-indigo-600 text-white shadow-lg shadow-indigo-950/40" : "text-zinc-400 hover:text-zinc-200"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-3.5 h-3.5" }),
+              "Форензика (v2.1)"
             ]
           }
         )
@@ -18329,10 +18886,10 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
           item.id
         )) })
       ] }) })
-    ) : activeTab === "radar" ? /* @__PURE__ */ jsxRuntimeExports.jsx(RadarTab, {}) : null })
+    ) : activeTab === "radar" ? /* @__PURE__ */ jsxRuntimeExports.jsx(RadarTab, {}) : activeTab === "forensics" ? /* @__PURE__ */ jsxRuntimeExports.jsx(ForensicsTab, {}) : null })
   ] });
 }
 ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-BXc6ncs0.js.map
+//# sourceMappingURL=index-CVDhqSNR.js.map

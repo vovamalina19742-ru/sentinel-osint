@@ -374,9 +374,11 @@ export interface VoiceAnalysisReport {
   avg_rolloff_hz: number;
   mfcc_variance: number;
   spectral_flatness: number;
+  digital_silence_ratio?: number;
   synthetic_threat_score: number;
   anomalies: string[];
   spectrogram_path?: string | null;
+  cached?: boolean;
   error?: string | null;
 }
 
