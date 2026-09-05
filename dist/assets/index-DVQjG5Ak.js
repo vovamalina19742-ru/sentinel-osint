@@ -7267,11 +7267,13 @@ const Copy = createLucideIcon("Copy", __iconNode$s);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$r = [
-  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
-  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
-  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["line", { x1: "22", x2: "18", y1: "12", y2: "12", key: "l9bcsi" }],
+  ["line", { x1: "6", x2: "2", y1: "12", y2: "12", key: "13hhkx" }],
+  ["line", { x1: "12", x2: "12", y1: "6", y2: "2", key: "10w3f3" }],
+  ["line", { x1: "12", x2: "12", y1: "22", y2: "18", key: "15g9kq" }]
 ];
-const Database = createLucideIcon("Database", __iconNode$r);
+const Crosshair = createLucideIcon("Crosshair", __iconNode$r);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7279,11 +7281,11 @@ const Database = createLucideIcon("Database", __iconNode$r);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$q = [
-  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
-  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
+  ["ellipse", { cx: "12", cy: "5", rx: "9", ry: "3", key: "msslwz" }],
+  ["path", { d: "M3 5V19A9 3 0 0 0 21 19V5", key: "1wlel7" }],
+  ["path", { d: "M3 12A9 3 0 0 0 21 12", key: "mv7ke4" }]
 ];
-const Download = createLucideIcon("Download", __iconNode$q);
+const Database = createLucideIcon("Database", __iconNode$q);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7291,11 +7293,11 @@ const Download = createLucideIcon("Download", __iconNode$q);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$p = [
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
-  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
-  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+  ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
+  ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
+  ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
 ];
-const ExternalLink = createLucideIcon("ExternalLink", __iconNode$p);
+const Download = createLucideIcon("Download", __iconNode$p);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7303,6 +7305,18 @@ const ExternalLink = createLucideIcon("ExternalLink", __iconNode$p);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$o = [
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
+  ["path", { d: "M10 14 21 3", key: "gplh6r" }],
+  ["path", { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6", key: "a6xqqp" }]
+];
+const ExternalLink = createLucideIcon("ExternalLink", __iconNode$o);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$n = [
   ["path", { d: "M17.5 22h.5a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3", key: "rslqgf" }],
   ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
   [
@@ -7313,19 +7327,7 @@ const __iconNode$o = [
     }
   ]
 ];
-const FileAudio = createLucideIcon("FileAudio", __iconNode$o);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$n = [
-  ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z", key: "1rqfz7" }],
-  ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-  ["path", { d: "m9 15 2 2 4-4", key: "1grp1n" }]
-];
-const FileCheck = createLucideIcon("FileCheck", __iconNode$n);
+const FileAudio = createLucideIcon("FileAudio", __iconNode$n);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7363,15 +7365,11 @@ const FileText = createLucideIcon("FileText", __iconNode$l);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$k = [
-  [
-    "path",
-    {
-      d: "M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z",
-      key: "96xj49"
-    }
-  ]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
+  ["path", { d: "M2 12h20", key: "9i4pu4" }]
 ];
-const Flame = createLucideIcon("Flame", __iconNode$k);
+const Globe = createLucideIcon("Globe", __iconNode$k);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7379,11 +7377,11 @@ const Flame = createLucideIcon("Flame", __iconNode$k);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$j = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20", key: "13o1zl" }],
-  ["path", { d: "M2 12h20", key: "9i4pu4" }]
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
+  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
+  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
 ];
-const Globe = createLucideIcon("Globe", __iconNode$j);
+const Image = createLucideIcon("Image", __iconNode$j);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7391,11 +7389,11 @@ const Globe = createLucideIcon("Globe", __iconNode$j);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$i = [
-  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", ry: "2", key: "1m3agn" }],
-  ["circle", { cx: "9", cy: "9", r: "2", key: "af1f0g" }],
-  ["path", { d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21", key: "1xmnt7" }]
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 16v-4", key: "1dtifu" }],
+  ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ];
-const Image = createLucideIcon("Image", __iconNode$i);
+const Info = createLucideIcon("Info", __iconNode$i);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7403,18 +7401,6 @@ const Image = createLucideIcon("Image", __iconNode$i);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$h = [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 16v-4", key: "1dtifu" }],
-  ["path", { d: "M12 8h.01", key: "e9boi3" }]
-];
-const Info = createLucideIcon("Info", __iconNode$h);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$g = [
   [
     "path",
     {
@@ -7437,15 +7423,27 @@ const __iconNode$g = [
     }
   ]
 ];
-const Layers = createLucideIcon("Layers", __iconNode$g);
+const Layers = createLucideIcon("Layers", __iconNode$h);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$f = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$f);
+const __iconNode$g = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$g);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$f = [
+  ["path", { d: "M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z", key: "131961" }],
+  ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
+  ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
+];
+const Mic = createLucideIcon("Mic", __iconNode$f);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7453,10 +7451,13 @@ const LoaderCircle = createLucideIcon("LoaderCircle", __iconNode$f);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$e = [
-  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
-  ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
+  ["rect", { x: "16", y: "16", width: "6", height: "6", rx: "1", key: "4q2zg0" }],
+  ["rect", { x: "2", y: "16", width: "6", height: "6", rx: "1", key: "8cvhb9" }],
+  ["rect", { x: "9", y: "2", width: "6", height: "6", rx: "1", key: "1egb70" }],
+  ["path", { d: "M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3", key: "1jsf9p" }],
+  ["path", { d: "M12 12V8", key: "2874zd" }]
 ];
-const Lock = createLucideIcon("Lock", __iconNode$e);
+const Network = createLucideIcon("Network", __iconNode$e);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7464,18 +7465,6 @@ const Lock = createLucideIcon("Lock", __iconNode$e);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$d = [
-  ["path", { d: "M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z", key: "131961" }],
-  ["path", { d: "M19 10v2a7 7 0 0 1-14 0v-2", key: "1vc78b" }],
-  ["line", { x1: "12", x2: "12", y1: "19", y2: "22", key: "x3vr5v" }]
-];
-const Mic = createLucideIcon("Mic", __iconNode$d);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$c = [
   [
     "path",
     {
@@ -7486,14 +7475,14 @@ const __iconNode$c = [
   ["path", { d: "M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6", key: "1itne7" }],
   ["rect", { x: "6", y: "14", width: "12", height: "8", rx: "1", key: "1ue0tg" }]
 ];
-const Printer = createLucideIcon("Printer", __iconNode$c);
+const Printer = createLucideIcon("Printer", __iconNode$d);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
  */
-const __iconNode$b = [
+const __iconNode$c = [
   ["rect", { width: "5", height: "5", x: "3", y: "3", rx: "1", key: "1tu5fj" }],
   ["rect", { width: "5", height: "5", x: "16", y: "3", rx: "1", key: "1v8r4q" }],
   ["rect", { width: "5", height: "5", x: "3", y: "16", rx: "1", key: "1x03jg" }],
@@ -7507,7 +7496,21 @@ const __iconNode$b = [
   ["path", { d: "M21 12v.01", key: "1lwtk9" }],
   ["path", { d: "M12 21v-1", key: "1880an" }]
 ];
-const QrCode = createLucideIcon("QrCode", __iconNode$b);
+const QrCode = createLucideIcon("QrCode", __iconNode$c);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$b = [
+  ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
+  ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
+  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
+  ["path", { d: "M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5", key: "1j5fej" }],
+  ["path", { d: "M19.1 4.9C23 8.8 23 15.1 19.1 19", key: "10b0cb" }]
+];
+const Radio = createLucideIcon("Radio", __iconNode$b);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7515,13 +7518,12 @@ const QrCode = createLucideIcon("QrCode", __iconNode$b);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$a = [
-  ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
-  ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
-  ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }],
-  ["path", { d: "M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5", key: "1j5fej" }],
-  ["path", { d: "M19.1 4.9C23 8.8 23 15.1 19.1 19", key: "10b0cb" }]
+  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
+  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
+  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
+  ["path", { d: "M8 16H3v5", key: "1cv678" }]
 ];
-const Radio = createLucideIcon("Radio", __iconNode$a);
+const RefreshCw = createLucideIcon("RefreshCw", __iconNode$a);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7529,12 +7531,10 @@ const Radio = createLucideIcon("Radio", __iconNode$a);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$9 = [
-  ["path", { d: "M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8", key: "v9h5vc" }],
-  ["path", { d: "M21 3v5h-5", key: "1q7to0" }],
-  ["path", { d: "M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16", key: "3uifl3" }],
-  ["path", { d: "M8 16H3v5", key: "1cv678" }]
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
+  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
 ];
-const RefreshCw = createLucideIcon("RefreshCw", __iconNode$9);
+const Search = createLucideIcon("Search", __iconNode$9);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7542,10 +7542,17 @@ const RefreshCw = createLucideIcon("RefreshCw", __iconNode$9);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$8 = [
-  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
-  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ],
+  ["path", { d: "M12 8v4", key: "1got3b" }],
+  ["path", { d: "M12 16h.01", key: "1drbdi" }]
 ];
-const Search = createLucideIcon("Search", __iconNode$8);
+const ShieldAlert = createLucideIcon("ShieldAlert", __iconNode$8);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7559,11 +7566,9 @@ const __iconNode$7 = [
       d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
       key: "oel41y"
     }
-  ],
-  ["path", { d: "M12 8v4", key: "1got3b" }],
-  ["path", { d: "M12 16h.01", key: "1drbdi" }]
+  ]
 ];
-const ShieldAlert = createLucideIcon("ShieldAlert", __iconNode$7);
+const Shield = createLucideIcon("Shield", __iconNode$7);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7571,16 +7576,17 @@ const ShieldAlert = createLucideIcon("ShieldAlert", __iconNode$7);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$6 = [
-  [
-    "path",
-    {
-      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-      key: "oel41y"
-    }
-  ],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+  ["line", { x1: "4", x2: "4", y1: "21", y2: "14", key: "1p332r" }],
+  ["line", { x1: "4", x2: "4", y1: "10", y2: "3", key: "gb41h5" }],
+  ["line", { x1: "12", x2: "12", y1: "21", y2: "12", key: "hf2csr" }],
+  ["line", { x1: "12", x2: "12", y1: "8", y2: "3", key: "1kfi7u" }],
+  ["line", { x1: "20", x2: "20", y1: "21", y2: "16", key: "1lhrwl" }],
+  ["line", { x1: "20", x2: "20", y1: "12", y2: "3", key: "16vvfq" }],
+  ["line", { x1: "2", x2: "6", y1: "14", y2: "14", key: "1uebub" }],
+  ["line", { x1: "10", x2: "14", y1: "8", y2: "8", key: "1yglbp" }],
+  ["line", { x1: "18", x2: "22", y1: "16", y2: "16", key: "1jxqpz" }]
 ];
-const ShieldCheck = createLucideIcon("ShieldCheck", __iconNode$6);
+const SlidersVertical = createLucideIcon("SlidersVertical", __iconNode$6);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -7588,22 +7594,6 @@ const ShieldCheck = createLucideIcon("ShieldCheck", __iconNode$6);
  * See the LICENSE file in the root directory of this source tree.
  */
 const __iconNode$5 = [
-  [
-    "path",
-    {
-      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
-      key: "oel41y"
-    }
-  ]
-];
-const Shield = createLucideIcon("Shield", __iconNode$5);
-/**
- * @license lucide-react v0.475.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$4 = [
   [
     "path",
     {
@@ -7616,7 +7606,18 @@ const __iconNode$4 = [
   ["path", { d: "M4 17v2", key: "vumght" }],
   ["path", { d: "M5 18H3", key: "zchphs" }]
 ];
-const Sparkles = createLucideIcon("Sparkles", __iconNode$4);
+const Sparkles = createLucideIcon("Sparkles", __iconNode$5);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+const __iconNode$4 = [
+  ["polyline", { points: "4 17 10 11 4 5", key: "akl6gq" }],
+  ["line", { x1: "12", x2: "20", y1: "19", y2: "19", key: "q2wloq" }]
+];
+const Terminal = createLucideIcon("Terminal", __iconNode$4);
 /**
  * @license lucide-react v0.475.0 - ISC
  *
@@ -8080,6 +8081,194 @@ async function cleanPixelIPC(filePath, inPlace = false) {
     ],
     success: true,
     error: null
+  };
+}
+function calculateShannonEntropyClient(str) {
+  if (!str || str.length === 0) return 0;
+  const map = {};
+  for (let i = 0; i < str.length; i++) {
+    const c = str[i];
+    map[c] = (map[c] || 0) + 1;
+  }
+  const len = str.length;
+  let entropy = 0;
+  for (const c in map) {
+    const p = map[c] / len;
+    entropy -= p * Math.log2(p);
+  }
+  return Math.round(entropy * 1e3) / 1e3;
+}
+async function checkDomainDgaIPC(domain) {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    return await invoke("check_domain_dga", { domain });
+  }
+  const clean = domain.trim().toLowerCase().replace(/^https?:\/\//, "").split("/")[0];
+  const parts = clean.split(".");
+  const sld = parts.length >= 2 ? parts[parts.length - 2] : clean;
+  const ent = calculateShannonEntropyClient(sld);
+  const isDga = ent >= 3.85 || sld.length >= 14 && ent >= 3.6;
+  const reasons = [];
+  if (ent >= 3.85) reasons.push(`Высокая энтропия SLD (${ent.toFixed(2)} ≥ 3.85)`);
+  if (sld.length >= 14) reasons.push(`Аномальная длина SLD (${sld.length} символов)`);
+  if (/[0-9]{4,}/.test(sld)) reasons.push("Пакетные числовые последовательности в домене");
+  return {
+    domain: clean,
+    sld,
+    entropy: ent,
+    is_dga_suspected: isDga,
+    confidence_percent: isDga ? Math.min(99, Math.round(ent / 4.5 * 100)) : 10,
+    reasons: reasons.length ? reasons : ["Энтропия и структура домена в пределах нормы"],
+    mitre_technique: "T1568.002 (Dynamic Resolution: Domain Generation Algorithms)"
+  };
+}
+async function checkHttpC2IPC(url, headers, body) {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    return await invoke("check_http_c2", { url, headers, body });
+  }
+  const urlEnt = calculateShannonEntropyClient(url);
+  const isUrlSuspicious = urlEnt >= 4.4;
+  const headersEntropy = [];
+  const reasons = [];
+  if (isUrlSuspicious) {
+    reasons.push(`Энтропия URI (${urlEnt.toFixed(2)}) превышает порог 4.40`);
+  }
+  if (headers) {
+    for (const [k, v] of Object.entries(headers)) {
+      const hEnt = calculateShannonEntropyClient(v);
+      const isSusp = hEnt >= 4.8;
+      headersEntropy.push([k, hEnt, isSusp]);
+      if (isSusp) {
+        reasons.push(`Заголовок «${k}» содержит данные высокой энтропии (${hEnt.toFixed(2)})`);
+      }
+    }
+  }
+  const isC2 = isUrlSuspicious || headersEntropy.some(([, , susp]) => susp);
+  return {
+    url,
+    url_entropy: urlEnt,
+    is_url_suspicious: isUrlSuspicious,
+    headers_entropy: headersEntropy,
+    is_c2_suspected: isC2,
+    reasons: reasons.length ? reasons : ["Признаков маскировки C2 HTTP трафика не выявлено"],
+    mitre_technique: "T1071.001 (Application Layer Protocol: Web Protocols)"
+  };
+}
+async function scanNamedPipesIPC() {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    return await invoke("scan_named_pipes");
+  }
+  return [
+    {
+      pipe_name: "\\\\.\\pipe\\spoolss",
+      severity: "low",
+      is_known_c2: false,
+      is_whitelisted: true,
+      entropy: 2.12,
+      description: "Легитимный системный канал Windows (Print Spooler)",
+      mitre_technique: "T1570 (System Baseline)"
+    },
+    {
+      pipe_name: "\\\\.\\pipe\\samr",
+      severity: "low",
+      is_known_c2: false,
+      is_whitelisted: true,
+      entropy: 2,
+      description: "Легитимный системный канал Windows (Security Account Manager)",
+      mitre_technique: "T1570 (System Baseline)"
+    },
+    {
+      pipe_name: "\\\\.\\pipe\\msagent_84f9",
+      severity: "critical",
+      is_known_c2: true,
+      is_whitelisted: false,
+      entropy: 3.82,
+      description: "⚠️ ОБНАРУЖЕН АКТИВНЫЙ ХАКЕРСКИЙ C2 PIPE: Cobalt Strike Default Pipe Profile",
+      mitre_technique: "T1570 (Lateral Movement: Lateral Tool Transfer)"
+    },
+    {
+      pipe_name: "\\\\.\\pipe\\sliver_session_01",
+      severity: "critical",
+      is_known_c2: true,
+      is_whitelisted: false,
+      entropy: 3.75,
+      description: "⚠️ ОБНАРУЖЕН АКТИВНЫЙ ХАКЕРСКИЙ C2 PIPE: BishopFox Sliver C2 Framework Pipe",
+      mitre_technique: "T1570 (Lateral Movement: Lateral Tool Transfer)"
+    },
+    {
+      pipe_name: "\\\\.\\pipe\\a9f4c2e1b8d3",
+      severity: "high",
+      is_known_c2: false,
+      is_whitelisted: false,
+      entropy: 3.78,
+      description: "Подозрительный канал с псевдослучайным именем (признак C2 Beacon)",
+      mitre_technique: "T1570 (Lateral Movement)"
+    }
+  ];
+}
+async function checkNamedPipeNameIPC(pipeName) {
+  if (isTauriEnvironment()) {
+    const { invoke } = await __vitePreload(async () => {
+      const { invoke: invoke2 } = await import("./core-Bo9SoPMG.js");
+      return { invoke: invoke2 };
+    }, true ? [] : void 0);
+    return await invoke("check_named_pipe_name", { pipeName });
+  }
+  const clean = pipeName.toLowerCase().replace(/^\\\\\\.\\pipe\\/, "").replace(/^\/pipe\//, "");
+  const ent = calculateShannonEntropyClient(clean);
+  const knownC2 = {
+    msagent: "Cobalt Strike Default Pipe",
+    status: "Cobalt Strike Status Channel",
+    postex: "Cobalt Strike Post-Exploitation Pipe",
+    meterpreter: "Metasploit Meterpreter Pipe",
+    sliver: "Sliver C2 Framework Pipe",
+    havoc: "Havoc C2 Demon Pipe"
+  };
+  for (const [k, desc] of Object.entries(knownC2)) {
+    if (clean.includes(k)) {
+      return {
+        pipe_name: pipeName,
+        severity: "critical",
+        is_known_c2: true,
+        is_whitelisted: false,
+        entropy: ent,
+        description: `⚠️ ОБНАРУЖЕН АКТИВНЫЙ ХАКЕРСКИЙ C2 PIPE: ${desc}`,
+        mitre_technique: "T1570 (Lateral Movement: Lateral Tool Transfer)"
+      };
+    }
+  }
+  const whitelist = ["spoolss", "samr", "lsarpc", "netlogon", "wkssvc", "srvsvc", "epmapper"];
+  if (whitelist.includes(clean)) {
+    return {
+      pipe_name: pipeName,
+      severity: "low",
+      is_known_c2: false,
+      is_whitelisted: true,
+      entropy: ent,
+      description: "Легитимный системный канал Windows / ПО",
+      mitre_technique: "T1570 (System Baseline)"
+    };
+  }
+  const isHex = clean.length >= 6 && /^[0-9a-f]+$/i.test(clean);
+  return {
+    pipe_name: pipeName,
+    severity: isHex || ent >= 3.6 ? "high" : "medium",
+    is_known_c2: false,
+    is_whitelisted: false,
+    entropy: ent,
+    description: isHex || ent >= 3.6 ? "Подозрительный канал с псевдослучайным именем (признак C2 Beacon)" : "Нестандартный канал",
+    mitre_technique: "T1570 (Lateral Movement)"
   };
 }
 const InvestigationProgress = ({
@@ -18060,7 +18249,8 @@ const RadarTab = () => {
     ] })
   ] });
 };
-function buildIncidentDossier(quishing, voice, cleanpixel, customTitle) {
+function buildIncidentDossier(quishing, voice, cleanpixel, c2Hunter, customTitle) {
+  var _a;
   const caseId = crypto.randomUUID();
   const caseNumber = `IR-${(/* @__PURE__ */ new Date()).getFullYear()}-${Math.floor(1e3 + Math.random() * 9e3)}`;
   const now = (/* @__PURE__ */ new Date()).toISOString();
@@ -18164,8 +18354,81 @@ function buildIncidentDossier(quishing, voice, cleanpixel, customTitle) {
       }
     }
   }
+  if ((c2Hunter == null ? void 0 : c2Hunter.dga) && c2Hunter.dga.is_dga_suspected) {
+    if (85 > highestScore) highestScore = 85;
+    mitre.push({
+      technique_id: "T1568.002",
+      name: "Dynamic Resolution: Domain Generation Algorithms (DGA)",
+      tactic: "Command and Control",
+      severity: "high",
+      evidence_description: `Обнаружен DGA домен «${c2Hunter.dga.domain}» с аномальной энтропией ${c2Hunter.dga.entropy.toFixed(2)}.`
+    });
+    timeline.push({
+      id: "tl-c2-dga",
+      timestamp: now,
+      phase: "C2 Beacon Detection",
+      source_module: "C2 Hunter",
+      summary: `DNS аудит: домен ${c2Hunter.dga.domain} определен как DGA алгоритм связи с C&C сервером.`,
+      severity: "critical"
+    });
+    iocs.push({
+      type: "domain",
+      value: c2Hunter.dga.domain,
+      description: `DGA домен (энтропия Шеннона: ${c2Hunter.dga.entropy.toFixed(2)})`,
+      threat_level: "Malicious"
+    });
+  }
+  if ((c2Hunter == null ? void 0 : c2Hunter.httpC2) && c2Hunter.httpC2.is_c2_suspected) {
+    if (80 > highestScore) highestScore = 80;
+    mitre.push({
+      technique_id: "T1071.001",
+      name: "Application Layer Protocol: Web Protocols (C2 Channel)",
+      tactic: "Command and Control",
+      severity: "high",
+      evidence_description: `Выявлены высокоэнтропийные HTTP метаданные C2 канала на URI «${c2Hunter.httpC2.url}».`
+    });
+    timeline.push({
+      id: "tl-c2-http",
+      timestamp: now,
+      phase: "Traffic Anomaly Analysis",
+      source_module: "C2 Hunter",
+      summary: `HTTP C2 аудит: зафиксирован обфусцированный сетевой трафик на ${c2Hunter.httpC2.url}`,
+      severity: "warning"
+    });
+    iocs.push({
+      type: "url",
+      value: c2Hunter.httpC2.url,
+      description: `Подозрительный URI C2 маяка (энтропия: ${c2Hunter.httpC2.url_entropy.toFixed(2)})`,
+      threat_level: "Suspicious"
+    });
+  }
+  if ((c2Hunter == null ? void 0 : c2Hunter.namedPipe) && !c2Hunter.namedPipe.is_whitelisted) {
+    const isCritical = c2Hunter.namedPipe.severity === "critical";
+    if (isCritical && 95 > highestScore) highestScore = 95;
+    mitre.push({
+      technique_id: "T1570",
+      name: "Lateral Movement: Lateral Tool Transfer (C2 Named Pipe)",
+      tactic: "Lateral Movement",
+      severity: isCritical ? "critical" : "high",
+      evidence_description: `${c2Hunter.namedPipe.description}: канал ${c2Hunter.namedPipe.pipe_name}`
+    });
+    timeline.push({
+      id: "tl-c2-pipe",
+      timestamp: now,
+      phase: "Host IPC Forensics",
+      source_module: "C2 Hunter",
+      summary: `Аудит Named Pipes: обнаружен ${c2Hunter.namedPipe.pipe_name} (${c2Hunter.namedPipe.description})`,
+      severity: isCritical ? "critical" : "warning"
+    });
+    iocs.push({
+      type: "pipe",
+      value: c2Hunter.namedPipe.pipe_name,
+      description: c2Hunter.namedPipe.description,
+      threat_level: isCritical ? "Malicious" : "Suspicious"
+    });
+  }
   const overallThreatLevel = highestScore >= 70 ? "Critical" : highestScore >= 45 ? "High" : highestScore >= 20 ? "Medium" : "Low";
-  const title = customTitle || ((quishing == null ? void 0 : quishing.domain) ? `Расследование инцидента: фишинговая кампания через домен ${quishing.domain}` : voice ? `Аудит подлинности голосовой записи (Синтез: ${voice.synthetic_threat_score}%)` : `Комплексное криминалистическое досье ${caseNumber}`);
+  const title = customTitle || (((_a = c2Hunter == null ? void 0 : c2Hunter.namedPipe) == null ? void 0 : _a.is_known_c2) ? `Расследование инцидента: обнаружен активный C2 канал ${c2Hunter.namedPipe.pipe_name}` : (quishing == null ? void 0 : quishing.domain) ? `Расследование инцидента: фишинговая кампания через домен ${quishing.domain}` : voice ? `Аудит подлинности голосовой записи (Синтез: ${voice.synthetic_threat_score}%)` : `Комплексное криминалистическое досье ${caseNumber}`);
   return {
     id: caseId,
     case_number: caseNumber,
@@ -18182,7 +18445,10 @@ function buildIncidentDossier(quishing, voice, cleanpixel, customTitle) {
     evidence: {
       quishing: quishing || null,
       voice: voice || null,
-      cleanpixel: cleanpixel || null
+      cleanpixel: cleanpixel || null,
+      dga: (c2Hunter == null ? void 0 : c2Hunter.dga) || null,
+      httpC2: (c2Hunter == null ? void 0 : c2Hunter.httpC2) || null,
+      namedPipe: (c2Hunter == null ? void 0 : c2Hunter.namedPipe) || null
     }
   };
 }
@@ -18767,6 +19033,38 @@ function ForensicsTab() {
   const [isDragging, setIsDragging] = reactExports.useState(false);
   const [isDossierOpen, setIsDossierOpen] = reactExports.useState(false);
   const fileInputRef = reactExports.useRef(null);
+  const [c2SubMode, setC2SubMode] = reactExports.useState("entropy");
+  const [entropyInput, setEntropyInput] = reactExports.useState("W3NhbXBsZV9wYXlsb2FkX3dpdGhfYmFzZTY0X2hpZ2hfZW50cm9weV9zaGVsbGNvZGVd");
+  const [entropyResult, setEntropyResult] = reactExports.useState(null);
+  const [domainInput, setDomainInput] = reactExports.useState("xkz98qwerty12489asdf.biz");
+  const [dgaLoading, setDgaLoading] = reactExports.useState(false);
+  const [dgaResult, setDgaResult] = reactExports.useState(null);
+  const [httpUrlInput, setHttpUrlInput] = reactExports.useState("https://c2-beacon.darknet.top/api/v2/gate?token=9f8a2b1c4e7d0f3a8b2c");
+  const [httpHeadersInput, setHttpHeadersInput] = reactExports.useState("Cookie: session=aW5qZWN0X2xvYWRlcl94ODZfc2hlbGwK\nAuthorization: Bearer 8f3c2a1b9e0d4f5a");
+  const [httpC2Loading, setHttpC2Loading] = reactExports.useState(false);
+  const [httpC2Result, setHttpC2Result] = reactExports.useState(null);
+  const [pipeInput, setPipeInput] = reactExports.useState("\\\\.\\pipe\\msagent_84f9");
+  const [pipesLoading, setPipesLoading] = reactExports.useState(false);
+  const [namedPipesList, setNamedPipesList] = reactExports.useState([]);
+  const [pipeSingleResult, setPipeSingleResult] = reactExports.useState(null);
+  reactExports.useEffect(() => {
+    if (entropyInput) {
+      const ent = calculateShannonEntropyClient(entropyInput);
+      const maxPossible = entropyInput.length > 1 ? Math.min(8, Math.log2(entropyInput.length)) : 0;
+      const ratio = maxPossible > 0 ? ent / maxPossible : 0;
+      const isSusp = ent >= 4;
+      setEntropyResult({
+        input_length: entropyInput.length,
+        entropy: ent,
+        max_possible_entropy: Math.round(maxPossible * 1e3) / 1e3,
+        entropy_ratio: Math.round(ratio * 1e3) / 1e3,
+        is_suspicious: isSusp,
+        assessment: isSusp ? "⚠️ Высокая энтропия: хаотичный псевдослучайный паттерн (C2 Payload / Shellcode / Base64)" : "Нормальная энтропия: естественный текст, стандартный URL или легитимный идентификатор"
+      });
+    } else {
+      setEntropyResult(null);
+    }
+  }, [entropyInput]);
   const handleAnalyzeQuishing = async () => {
     if (!qrImagePath.trim()) return;
     setQuishingLoading(true);
@@ -18800,6 +19098,59 @@ function ForensicsTab() {
       console.error("CleanPixel failed:", err);
     } finally {
       setCleanPixelLoading(false);
+    }
+  };
+  const handleAnalyzeDGA = async () => {
+    if (!domainInput.trim()) return;
+    setDgaLoading(true);
+    try {
+      const res = await checkDomainDgaIPC(domainInput);
+      setDgaResult(res);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setDgaLoading(false);
+    }
+  };
+  const handleAnalyzeHttpC2 = async () => {
+    if (!httpUrlInput.trim()) return;
+    setHttpC2Loading(true);
+    try {
+      const headersMap = {};
+      httpHeadersInput.split("\n").forEach((line) => {
+        const idx = line.indexOf(":");
+        if (idx > -1) {
+          const k = line.substring(0, idx).trim();
+          const v = line.substring(idx + 1).trim();
+          if (k && v) headersMap[k] = v;
+        }
+      });
+      const res = await checkHttpC2IPC(httpUrlInput, headersMap);
+      setHttpC2Result(res);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setHttpC2Loading(false);
+    }
+  };
+  const handleScanNamedPipes = async () => {
+    setPipesLoading(true);
+    try {
+      const res = await scanNamedPipesIPC();
+      setNamedPipesList(res);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setPipesLoading(false);
+    }
+  };
+  const handleCheckSinglePipe = async () => {
+    if (!pipeInput.trim()) return;
+    try {
+      const res = await checkNamedPipeNameIPC(pipeInput);
+      setPipeSingleResult(res);
+    } catch (err) {
+      console.error(err);
     }
   };
   const handleDragOver = (e) => {
@@ -18857,9 +19208,9 @@ function ForensicsTab() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg font-bold flex items-center gap-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-5 h-5 text-primary" }),
-          "Цифровая форензика и расследование угроз (v2.1)"
+          "Цифровая форензика и расследование угроз (v2.3)"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: "Анализ скрытого QR-фишинга (Quishing), детектор синтеза речи и мгновенная очистка EXIF/GUID" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 mt-0.5", children: "DFIR C2 Hunter (энтропия Шеннона, DGA, Named Pipes), Quishing Guard, детектор дипфейков и CleanPixel" })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -18869,11 +19220,22 @@ function ForensicsTab() {
             className: "px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-primary to-indigo-600 hover:opacity-90 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(FileText, { className: "w-3.5 h-3.5" }),
-              "Сформировать Досье (v2.2)"
+              "Сформировать Досье (v2.3)"
             ]
           }
         ),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 bg-zinc-900 border border-border p-1 rounded-xl", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: () => setActiveSubTab("c2hunter"),
+              className: `px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeSubTab === "c2hunter" ? "bg-primary text-white shadow" : "text-zinc-400 hover:text-zinc-200"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-3.5 h-3.5 text-cyan-400" }),
+                "DFIR C2 Hunter"
+              ]
+            }
+          ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "button",
             {
@@ -18903,10 +19265,529 @@ function ForensicsTab() {
               className: `px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${activeSubTab === "cleanpixel" ? "bg-primary text-white shadow" : "text-zinc-400 hover:text-zinc-200"}`,
               children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-3.5 h-3.5" }),
-                "CleanPixel (EXIF/GUID)"
+                "CleanPixel"
               ]
             }
           )
+        ] })
+      ] })
+    ] }),
+    activeSubTab === "c2hunter" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between bg-card/60 p-3 rounded-2xl border border-border", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: () => setC2SubMode("entropy"),
+              className: `px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${c2SubMode === "entropy" ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm" : "text-zinc-400 hover:text-zinc-200"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(SlidersVertical, { className: "w-3.5 h-3.5" }),
+                "1. Энтропия Шеннона H(X)"
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: () => setC2SubMode("dga"),
+              className: `px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${c2SubMode === "dga" ? "bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 shadow-sm" : "text-zinc-400 hover:text-zinc-200"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Crosshair, { className: "w-3.5 h-3.5" }),
+                "2. DGA Domain Hunter"
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: () => setC2SubMode("http_c2"),
+              className: `px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${c2SubMode === "http_c2" ? "bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-sm" : "text-zinc-400 hover:text-zinc-200"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-3.5 h-3.5" }),
+                "3. HTTP C2 Metadata"
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "button",
+            {
+              onClick: () => setC2SubMode("named_pipes"),
+              className: `px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${c2SubMode === "named_pipes" ? "bg-red-500/20 text-red-300 border border-red-500/40 shadow-sm" : "text-zinc-400 hover:text-zinc-200"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-3.5 h-3.5" }),
+                "4. Named Pipes Anomaly"
+              ]
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] font-mono px-2.5 py-1 rounded-lg bg-zinc-900 border border-border text-zinc-400", children: "PT NAD & MITRE ATT&CK Matrix v2.3" }) })
+      ] }),
+      c2SubMode === "entropy" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-6 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(SlidersVertical, { className: "w-4 h-4 text-cyan-400" }),
+              "Интерактивный сканер энтропии Шеннона"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: () => setEntropyInput("Hello World, this is normal human readable text!"),
+                  className: "text-[11px] text-zinc-400 hover:text-cyan-400 transition-colors",
+                  children: "[Обычный текст]"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: () => setEntropyInput("aW5qZWN0X2xvYWRlcl94ODZfc2hlbGxjb2RlXzB4Zjlh"),
+                  className: "text-[11px] text-zinc-400 hover:text-cyan-400 transition-colors",
+                  children: "[Base64 C2]"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: () => setEntropyInput("4f8a1c9e2b7d0f3a5e8c1b4d7f0e3a6c"),
+                  className: "text-[11px] text-zinc-400 hover:text-cyan-400 transition-colors",
+                  children: "[Hex Random]"
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Входная строка / Пейлоад / Токен / URI / Шелл-код:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "textarea",
+              {
+                rows: 4,
+                value: entropyInput,
+                onChange: (e) => setEntropyInput(e.target.value),
+                placeholder: "Вставьте любую строку или токен для мгновенного измерения энтропии...",
+                className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-cyan-400 transition-colors font-mono"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-400 space-y-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 text-zinc-300 font-medium", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-3.5 h-3.5 text-cyan-400" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Формула энтропии Шеннона:" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-cyan-300/90 pl-5", children: "H(X) = - Σ (P(x_i) * log2(P(x_i)))" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-500 pl-5", children: "Измеряет непредсказуемость байт. Человеческий язык: ~2.0–3.2 бит/символ. Base64 / AES / Shellcode: ~4.5–6.0+ бит/символ." })
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-6 space-y-4", children: entropyResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Метрики хаотичности (H-Score)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `px-2.5 py-1 rounded-full text-xs font-bold font-mono border ${entropyResult.is_suspicious ? "bg-red-500/10 text-red-400 border-red-500/30" : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"}`,
+                children: entropyResult.is_suspicious ? "SUSPICIOUS ENTROPY" : "BENIGN / NORMAL"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-zinc-900 border border-border", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Энтропия H(X)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-3xl font-black font-mono text-cyan-400", children: [
+                entropyResult.entropy.toFixed(3),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-500 font-normal ml-1", children: "бит/симв" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-500 mt-1 block", children: "Порог подозрения: ≥ 4.00" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-zinc-900 border border-border", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Коэффициент рандомизации" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-3xl font-black font-mono text-zinc-200", children: [
+                (entropyResult.entropy_ratio * 100).toFixed(1),
+                "%"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[11px] text-zinc-500 mt-1 block", children: [
+                "Длина: ",
+                entropyResult.input_length,
+                " байт"
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between text-xs", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-400", children: "Шкала энтропии:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-mono text-cyan-300", children: [
+                entropyResult.entropy.toFixed(2),
+                " / 8.00 бит"
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-3 w-full bg-zinc-900 rounded-full overflow-hidden p-0.5 border border-zinc-800", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: `h-full rounded-full transition-all duration-300 ${entropyResult.entropy >= 5 ? "bg-gradient-to-r from-amber-500 to-red-500" : entropyResult.entropy >= 4 ? "bg-gradient-to-r from-cyan-500 to-amber-500" : "bg-gradient-to-r from-emerald-500 to-cyan-500"}`,
+                style: { width: `${Math.min(100, entropyResult.entropy / 8 * 100)}%` }
+              }
+            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[10px] text-zinc-500 font-mono px-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "0.0 (Повторы)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "3.2 (Текст)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "4.0 (DGA/URI)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "6.0+ (Шифр/Пейлоад)" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900/90 border border-border space-y-1 text-xs", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold text-zinc-300", children: "Криминалистическое заключение:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-zinc-400 leading-relaxed", children: entropyResult.assessment })
+          ] })
+        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[260px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SlidersVertical, { className: "w-10 h-10 mb-2 opacity-20 text-cyan-400" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Введите данные для расчета энтропии" })
+        ] }) })
+      ] }),
+      c2SubMode === "dga" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Crosshair, { className: "w-4 h-4 text-indigo-400" }),
+              "Анализ DGA Алгоритмов"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: () => setDomainInput("google.com"),
+                  className: "text-[11px] text-zinc-400 hover:text-indigo-400",
+                  children: "[google.com]"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: () => setDomainInput("xkz98qwerty12489asdf.biz"),
+                  className: "text-[11px] text-zinc-400 hover:text-indigo-400",
+                  children: "[DGA Botnet]"
+                }
+              )
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Целевой домен (FQDN или SLD):" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "input",
+              {
+                type: "text",
+                value: domainInput,
+                onChange: (e) => setDomainInput(e.target.value),
+                placeholder: "e.g. 7f8a9e1c2b3d4f5.top",
+                className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 font-mono focus:outline-none focus:border-indigo-400"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              onClick: handleAnalyzeDGA,
+              disabled: dgaLoading || !domainInput.trim(),
+              className: "w-full py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md",
+              children: dgaLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Crosshair, { className: "w-4 h-4" }),
+                "Сканировать на DGA Признаки"
+              ] })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-indigo-950/20 border border-indigo-900/30 text-xs text-indigo-300 space-y-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "font-bold flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-3.5 h-3.5" }),
+              "MITRE ATT&CK T1568.002"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-400", children: "Вредоносное ПО использует алгоритмы псевдослучайной генерации имен (DGA) для обхода блокировок C2 серверов." })
+          ] })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 space-y-4", children: dgaResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider block", children: "Результат классификации домена" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-mono text-zinc-200", children: dgaResult.domain })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `px-3 py-1 rounded-full text-xs font-bold font-mono border ${dgaResult.is_dga_suspected ? "bg-red-500/15 text-red-400 border-red-500/40" : "bg-emerald-500/15 text-emerald-400 border-emerald-500/40"}`,
+                children: dgaResult.is_dga_suspected ? "⚠️ DGA SUSPECTED" : "✅ LEGITIMATE DOMAIN"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "SLD Энтропия" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl font-black font-mono text-indigo-400", children: dgaResult.entropy.toFixed(2) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Уверенность детекта" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-2xl font-black font-mono text-zinc-200", children: [
+                dgaResult.confidence_percent.toFixed(0),
+                "%"
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "SLD Имя" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-mono text-zinc-300 truncate block", children: dgaResult.sld })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Факторы подозрительности:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border space-y-1.5 text-xs font-mono", children: dgaResult.reasons.map((r, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: `w-2 h-2 rounded-full shrink-0 ${dgaResult.is_dga_suspected ? "bg-red-400" : "bg-emerald-400"}`
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: r })
+            ] }, idx)) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-400 flex items-center justify-between", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-indigo-300", children: dgaResult.mitre_technique }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-500", children: "DFIR Standard" })
+          ] })
+        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[260px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Crosshair, { className: "w-10 h-10 mb-2 opacity-20 text-indigo-400" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Нажмите «Сканировать на DGA Признаки»" })
+        ] }) })
+      ] }),
+      c2SubMode === "http_c2" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-4 h-4 text-amber-400" }),
+            "Инспектор HTTP C2 Маяков"
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "HTTP URL / Маршрут C2:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "input",
+              {
+                type: "text",
+                value: httpUrlInput,
+                onChange: (e) => setHttpUrlInput(e.target.value),
+                className: "w-full px-3.5 py-2 rounded-xl bg-zinc-900 border border-border text-xs text-zinc-100 font-mono focus:outline-none focus:border-amber-400"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "HTTP Headers (Cookie, Auth, Custom):" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "textarea",
+              {
+                rows: 3,
+                value: httpHeadersInput,
+                onChange: (e) => setHttpHeadersInput(e.target.value),
+                className: "w-full px-3.5 py-2 rounded-xl bg-zinc-900 border border-border text-xs text-zinc-100 font-mono focus:outline-none focus:border-amber-400"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              onClick: handleAnalyzeHttpC2,
+              disabled: httpC2Loading || !httpUrlInput.trim(),
+              className: "w-full py-2.5 px-4 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-medium text-sm flex items-center justify-center gap-2 transition-all shadow-md",
+              children: httpC2Loading ? /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-4 h-4" }),
+                "Анализировать HTTP C2 Трафик"
+              ] })
+            }
+          )
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 space-y-4", children: httpC2Result ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider block", children: "Вердикт C2 Сетевого Маяка" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-mono text-zinc-300 truncate max-w-sm block", children: httpC2Result.url })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: `px-3 py-1 rounded-full text-xs font-bold font-mono border ${httpC2Result.is_c2_suspected ? "bg-red-500/15 text-red-400 border-red-500/40" : "bg-emerald-500/15 text-emerald-400 border-emerald-500/40"}`,
+                children: httpC2Result.is_c2_suspected ? "⚠️ C2 BEACON SUSPECTED" : "✅ BENIGN TRAFFIC"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Энтропия URI" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl font-black font-mono text-amber-400", children: httpC2Result.url_entropy.toFixed(2) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Подозрительных заголовков" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-2xl font-black font-mono text-zinc-200", children: httpC2Result.headers_entropy.filter(([, , s]) => s).length })
+            ] })
+          ] }),
+          httpC2Result.headers_entropy.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Энтропия заголовков:" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border space-y-2 text-xs font-mono", children: httpC2Result.headers_entropy.map(([k, ent, isSusp], idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between text-zinc-300", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-zinc-400", children: [
+                k,
+                ":"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: isSusp ? "text-red-400 font-bold" : "text-zinc-300", children: [
+                  ent.toFixed(2),
+                  " бит"
+                ] }),
+                isSusp && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded bg-red-500/20 text-red-400 text-[10px]", children: "HIGH ENTROPY" })
+              ] })
+            ] }, idx)) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-400 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-amber-300", children: httpC2Result.mitre_technique }) })
+        ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[260px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Network, { className: "w-10 h-10 mb-2 opacity-20 text-amber-400" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Нажмите «Анализировать HTTP C2 Трафик»" })
+        ] }) })
+      ] }),
+      c2SubMode === "named_pipes" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-4 h-4 text-red-400" }),
+              "Аудит Windows Именованных Каналов"
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("label", { className: "text-xs text-zinc-300 font-medium", children: "Проверить конкретный Named Pipe:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  type: "text",
+                  value: pipeInput,
+                  onChange: (e) => setPipeInput(e.target.value),
+                  placeholder: "\\\\.\\pipe\\msagent_84f9",
+                  className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 font-mono focus:outline-none focus:border-red-400"
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  onClick: handleCheckSinglePipe,
+                  className: "flex-1 py-2.5 px-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-medium text-xs flex items-center justify-center gap-1.5 transition-all",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "w-3.5 h-3.5" }),
+                    "Проверить имя"
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  onClick: handleScanNamedPipes,
+                  disabled: pipesLoading,
+                  className: "flex-1 py-2.5 px-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-medium text-xs flex items-center justify-center gap-1.5 transition-all shadow-md",
+                  children: pipesLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-3.5 h-3.5 animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-3.5 h-3.5" }),
+                    "Сканировать систему"
+                  ] })
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-2 border-t border-border/60", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-500 block mb-2 font-medium", children: "Быстрые пресеты для теста:" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-1.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    onClick: () => {
+                      setPipeInput("\\\\.\\pipe\\msagent_4f8a");
+                      handleCheckSinglePipe();
+                    },
+                    className: "px-2 py-1 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20 text-[11px] font-mono hover:bg-red-500/20 transition-colors",
+                    children: "Cobalt Strike (msagent)"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    onClick: () => {
+                      setPipeInput("\\\\.\\pipe\\sliver_session_9b");
+                      handleCheckSinglePipe();
+                    },
+                    className: "px-2 py-1 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20 text-[11px] font-mono hover:bg-red-500/20 transition-colors",
+                    children: "Sliver C2"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "button",
+                  {
+                    onClick: () => {
+                      setPipeInput("\\\\.\\pipe\\spoolss");
+                      handleCheckSinglePipe();
+                    },
+                    className: "px-2 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] font-mono hover:bg-emerald-500/20 transition-colors",
+                    children: "Windows Print (spoolss)"
+                  }
+                )
+              ] })
+            ] })
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 space-y-4", children: pipeSingleResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Анализ именованного канала" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: `px-3 py-1 rounded-full text-xs font-bold font-mono border ${pipeSingleResult.severity === "critical" ? "bg-red-500/15 text-red-400 border-red-500/40 animate-pulse" : pipeSingleResult.severity === "high" ? "bg-amber-500/15 text-amber-400 border-amber-500/40" : "bg-emerald-500/15 text-emerald-400 border-emerald-500/40"}`,
+                  children: pipeSingleResult.severity.toUpperCase()
+                }
+              )
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border font-mono text-sm text-zinc-200", children: pipeSingleResult.pipe_name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Статус сигнатуры" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-sm font-bold text-zinc-200", children: pipeSingleResult.is_known_c2 ? "🚨 ХАКЕРСКИЙ C2 ФРЕЙМВОРК" : pipeSingleResult.is_whitelisted ? "✅ СИСТЕМНЫЙ БЕЛЫЙ СПИСОК" : "⚠️ НЕИЗВЕСТНЫЙ КАНАЛ" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-zinc-900 border border-border", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Энтропия имени" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-sm font-bold font-mono text-cyan-400", children: [
+                  pipeSingleResult.entropy.toFixed(2),
+                  " бит"
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border text-xs text-zinc-300 leading-relaxed", children: pipeSingleResult.description }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[11px] font-mono text-zinc-500", children: [
+              "MITRE Technique: ",
+              pipeSingleResult.mitre_technique
+            ] })
+          ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[220px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-10 h-10 mb-2 opacity-20 text-red-400" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Проверьте имя канала или запустите аудит всей системы" })
+          ] }) })
+        ] }),
+        namedPipesList.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-between border-b border-border pb-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { className: "w-4 h-4 text-red-400" }),
+            "Обнаруженные системные каналы (",
+            namedPipesList.length,
+            ")"
+          ] }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left text-xs font-mono", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "border-b border-border text-zinc-400", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "pb-2", children: "Named Pipe" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "pb-2", children: "Энтропия" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "pb-2", children: "Уровень риска" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "pb-2", children: "Классификация" })
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-border/40", children: namedPipesList.map((pipe, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-zinc-900/50 transition-colors", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 text-zinc-200 font-bold", children: pipe.pipe_name }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 text-cyan-400", children: pipe.entropy.toFixed(2) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "span",
+                {
+                  className: `px-2 py-0.5 rounded text-[10px] font-bold uppercase ${pipe.severity === "critical" ? "bg-red-500/20 text-red-400" : pipe.severity === "high" ? "bg-amber-500/20 text-amber-400" : "bg-emerald-500/20 text-emerald-400"}`,
+                  children: pipe.severity
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "py-2.5 text-zinc-400 text-[11px] font-sans", children: pipe.description })
+            ] }, idx)) })
+          ] }) })
         ] })
       ] })
     ] }),
@@ -18951,71 +19832,71 @@ function ForensicsTab() {
               className: "w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md",
               children: quishingLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
-                "Сканирование и трейсинг..."
+                "Декодирование и проверка редиректов..."
               ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4" }),
-                "Распознать QR и оценить риск"
+                "Запустить Quishing Guard"
               ] })
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300 font-semibold", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border space-y-2 text-xs text-zinc-400", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 font-medium text-zinc-300", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-4 h-4 text-primary" }),
-            "Что проверяет Quishing Guard:"
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Как работает Quishing Guard:" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc list-inside space-y-1 text-zinc-400", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Декодирование через буфер OpenCV (устойчиво к путям на кириллице);" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Безопасный трейсинг цепочки редиректов без загрузки вредоносного тела (stream=True);" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Детекция Meta Refresh и обфусцированных JS-перенаправлений;" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "Сверка домена с чёрными списками abuse.ch URLhaus." })
-          ] })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Модуль нативно сканирует битовую матрицу QR-кода, извлекает целевой URL, без перехода в браузере раскручивает цепочку HTTP 301/302 редиректов и проверяет конечный TLD/домен на фишинг." })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: quishingResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 font-mono", children: "Домен назначения:" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-bold text-zinc-100 font-mono flex items-center gap-2", children: quishingResult.domain || "Не определен" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 space-y-4", children: quishingResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Результат аудита QR-кода" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
             "span",
             {
-              className: `px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 ${quishingResult.risk_score >= 50 ? "bg-red-500/10 text-red-400 border-red-500/30" : quishingResult.risk_score >= 20 ? "bg-amber-500/10 text-amber-400 border-amber-500/30" : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"}`,
-              children: [
-                quishingResult.risk_score >= 50 ? /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldAlert, { className: "w-3.5 h-3.5" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-3.5 h-3.5" }),
-                "Риск Quishing: ",
-                quishingResult.risk_score,
-                "%"
-              ]
+              className: `px-3 py-1 rounded-full text-xs font-bold font-mono border ${quishingResult.risk_score >= 50 ? "bg-red-500/10 text-red-400 border-red-500/30" : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"}`,
+              children: quishingResult.risk_score >= 50 ? "HIGH RISK" : "SAFE / LOW RISK"
             }
-          ) })
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Оценка угрозы" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-3xl font-black font-mono text-zinc-100", children: [
+              quishingResult.risk_score,
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-500 font-normal", children: " / 100" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Конечный домен" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-bold font-mono text-zinc-100 truncate", children: quishingResult.domain || "N/A" })
+          ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Цепочка перенаправлений (Redirect Chain):" }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border space-y-2 text-xs font-mono", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400", children: "QR Payload" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: quishingResult.initial_url })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-zinc-400 truncate", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-500", children: "QR Raw: " }),
+              quishingResult.initial_url
             ] }),
-            quishingResult.redirect_chain.map((step, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-amber-300 pl-4 border-l border-border/80", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 shrink-0 text-zinc-500" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: step })
+            quishingResult.redirect_chain.map((url, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-primary", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 shrink-0" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: url })
             ] }, idx)),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-primary font-bold pl-4 border-l border-primary/50", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 shrink-0 text-primary" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "truncate", children: quishingResult.final_url })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pt-1 text-zinc-200 font-bold truncate", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-zinc-500 font-normal", children: "Финал: " }),
+              quishingResult.final_url
             ] })
           ] })
         ] }),
-        quishingResult.flags && quishingResult.flags.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Индикаторы компрометации (IoC Flags):" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-2", children: quishingResult.flags.map((flag, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        quishingResult.flags.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Обнаруженные маркеры риска:" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: quishingResult.flags.map((flag, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "div",
             {
-              className: "p-2.5 rounded-xl bg-amber-500/5 border border-amber-500/20 text-xs text-amber-200 flex items-start gap-2",
+              className: "p-2.5 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-400 flex items-center gap-2",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-4 h-4 text-amber-400 shrink-0 mt-0.5" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-4 h-4 shrink-0" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: flag })
               ]
             },
@@ -19024,8 +19905,8 @@ function ForensicsTab() {
         ] })
       ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(QrCode, { className: "w-12 h-12 mb-3 opacity-20 text-primary" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Нет данных для отображения" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-600 mt-1 max-w-sm", children: "Укажите путь к изображению с QR-кодом или запустите тестовый сэмпл для визуализации маршрута редиректа." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Ожидание сканирования QR-кода" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-600 mt-1 max-w-sm", children: "Укажите путь к изображению с подозрительным QR-кодом слева или нажмите «Тестовый сэмпл» для симуляции проверки." })
       ] }) })
     ] }),
     activeSubTab === "voice" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
@@ -19034,7 +19915,7 @@ function ForensicsTab() {
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Mic, { className: "w-4 h-4 text-primary" }),
-              "Аудио-файл голосовой записи"
+              "Анализ голосового аудио"
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "button",
@@ -19054,7 +19935,7 @@ function ForensicsTab() {
               "input",
               {
                 type: "text",
-                placeholder: "D:\\\\Recordings\\\\incoming_call.wav",
+                placeholder: "D:\\\\Downloads\\\\suspicious_voice_msg.wav",
                 value: audioPath,
                 onChange: (e) => setAudioPath(e.target.value),
                 className: "w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-border text-sm text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-primary transition-colors font-mono"
@@ -19069,99 +19950,64 @@ function ForensicsTab() {
               className: "w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-medium text-sm flex items-center justify-center gap-2 disabled:opacity-50 transition-all shadow-md",
               children: voiceLoading ? /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-4 h-4 animate-spin" }),
-                "Вычисление спектра и MFCC..."
+                "БПФ-спектральный анализ и MFCC..."
               ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-4 h-4" }),
-                "Построить спектрограмму и оценить синтез"
+                "Анализировать спектрограмму"
               ] })
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300 font-semibold", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border space-y-2 text-xs text-zinc-400", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1.5 font-medium text-zinc-300", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-4 h-4 text-primary" }),
-            "Физика детекции аудио-дипфейков:"
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Признаки синтезированного голоса:" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc list-inside space-y-1 text-zinc-400", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Частотный срез (Rolloff):" }),
-              " нейросетевые вокодеры (HiFi-GAN) резко обрезают спектр выше 7.5–8 кГц;"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Вариативность MFCC:" }),
-              " монотонность синтеза выдаёт неестественно гладкую артикуляцию;"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Цифровая тишина (RMS):" }),
-              " отсутствие микропауз дыхания и фонового шума помещения между словами;"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Кэш SHA-256:" }),
-              " мгновенный повторный вывод (0.7 мс)."
-            ] })
-          ] })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Нейросетевые генераторы речи (ElevenLabs, Bark, HiFi-GAN) оставляют артефакты: резкий спад частот (Rolloff) выше 7–8 кГц, неестественно монотонную дисперсию формант и ровную плотность спектра." })
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7", children: voiceResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 font-mono", children: "Акустический отпечаток:" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-base font-bold text-zinc-100 flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(FileAudio, { className: "w-4 h-4 text-primary" }),
-              "Запись ",
-              voiceResult.duration_sec,
-              " сек • ",
-              voiceResult.sample_rate,
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 space-y-4", children: voiceResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Результаты акустической форензики" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "span",
+            {
+              className: `px-3 py-1 rounded-full text-xs font-bold font-mono border ${voiceResult.synthetic_threat_score >= 50 ? "bg-red-500/10 text-red-400 border-red-500/30" : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"}`,
+              children: voiceResult.synthetic_threat_score >= 50 ? "SYNTHETIC / DEEPFAKE" : "NATURAL HUMAN"
+            }
+          )
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Синтез-индекс" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-2xl font-black font-mono text-zinc-100", children: [
+              voiceResult.synthetic_threat_score,
+              "%"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Частотный срез" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-bold font-mono text-zinc-100", children: [
+              voiceResult.avg_rolloff_hz.toFixed(0),
               " Гц"
             ] })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-            voiceResult.cached && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-2 py-0.5 rounded-full text-[10px] bg-primary/10 text-primary border border-primary/20 flex items-center gap-1 font-mono", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-3 h-3" }),
-              " кэш SHA-256"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "span",
-              {
-                className: `px-3 py-1 rounded-full text-xs font-bold border flex items-center gap-1.5 ${voiceResult.synthetic_threat_score >= 60 ? "bg-red-500/10 text-red-400 border-red-500/30" : voiceResult.synthetic_threat_score >= 30 ? "bg-amber-500/10 text-amber-400 border-amber-500/30" : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"}`,
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-3.5 h-3.5" }),
-                  "Риск синтеза: ",
-                  voiceResult.synthetic_threat_score,
-                  "%"
-                ]
-              }
-            )
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Длительность" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-lg font-bold font-mono text-zinc-100", children: [
+              voiceResult.duration_sec.toFixed(1),
+              " с"
+            ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Срез частот (Rolloff)" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-zinc-100 font-mono", children: [
-              voiceResult.avg_rolloff_hz,
-              " Гц"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-amber-400 block mt-0.5", children: voiceResult.avg_rolloff_hz < 7500 ? "⚠️ Срез вокодера" : "🟢 Естественный диапазон" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Вариативность MFCC" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base font-bold text-zinc-100 font-mono", children: voiceResult.mfcc_variance }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400 block mt-0.5", children: voiceResult.mfcc_variance < 1.2 ? "⚠️ Монотонность" : "🟢 Живая речь" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Цифровая тишина (RMS)" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-base font-bold text-zinc-100 font-mono", children: voiceResult.digital_silence_ratio !== void 0 ? `${voiceResult.digital_silence_ratio}%` : "0.0%" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[10px] text-zinc-400 block mt-0.5", children: (voiceResult.digital_silence_ratio || 0) > 30 ? "⚠️ Нет дыхания" : "🟢 Фоновый шум" })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Обнаруженные спектральные аномалии:" }),
+        voiceResult.anomalies.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Акустические аномалии:" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-1.5", children: voiceResult.anomalies.map((anom, idx) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
             "div",
             {
-              className: "p-2.5 rounded-xl bg-zinc-900 border border-border text-xs text-zinc-300 flex items-center gap-2",
+              className: "p-2.5 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-400 flex items-center gap-2",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-3.5 h-3.5 text-amber-400 shrink-0" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-4 h-4 shrink-0" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: anom })
               ]
             },
@@ -19169,151 +20015,88 @@ function ForensicsTab() {
           )) })
         ] })
       ] }) : /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full min-h-[300px] flex flex-col items-center justify-center p-8 rounded-2xl bg-card border border-border text-center text-zinc-500", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-12 h-12 mb-3 opacity-20 text-primary" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Нет данных для отображения" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-600 mt-1 max-w-sm", children: "Укажите путь к аудиозаписи или нажмите «Тестовый сэмпл» для расчёта акустических признаков нейросетевого голоса." })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(FileAudio, { className: "w-12 h-12 mb-3 opacity-20 text-primary" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-medium text-zinc-400", children: "Ожидание аудиозаписи" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-600 mt-1 max-w-sm", children: "Укажите путь к аудиофайлу слева или нажмите «Тестовый сэмпл» для демонстрации спектрального детектора дипфейков." })
       ] }) })
     ] }),
     activeSubTab === "cleanpixel" && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "lg:col-span-6 space-y-4", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-4 h-4 text-primary" }),
-              "Lossless Metadata Stripper (Rust)"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              "button",
-              {
-                onClick: loadDemoCleanPixel,
-                className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
-                  "Тестовый образец с GPS"
-                ]
-              }
-            )
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-5 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-4 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { className: "w-4 h-4 text-primary" }),
+            "Моментальная очистка метаданных"
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "div",
+            "button",
             {
-              onDragOver: handleDragOver,
-              onDragLeave: handleDragLeave,
-              onDrop: handleDrop,
-              onClick: () => {
-                var _a;
-                return (_a = fileInputRef.current) == null ? void 0 : _a.click();
-              },
-              className: `relative border-2 border-dashed rounded-2xl p-8 flex flex-col items-center justify-center text-center cursor-pointer transition-all ${isDragging ? "border-primary bg-primary/10 scale-[1.01]" : "border-border/80 hover:border-primary/50 bg-zinc-900/40 hover:bg-zinc-900/80"}`,
+              onClick: loadDemoCleanPixel,
+              className: "text-xs text-primary hover:underline flex items-center gap-1 font-medium",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "input",
-                  {
-                    type: "file",
-                    ref: fileInputRef,
-                    onChange: handleFileChange,
-                    accept: ".jpg,.jpeg,.png",
-                    className: "hidden"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 shadow-inner", children: cleanPixelLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-7 h-7 text-primary animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(CloudUpload, { className: "w-7 h-7 text-primary" }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "text-sm font-bold text-zinc-100 mb-1", children: cleanPixelLoading ? "Очистка байтового контейнера..." : "Перетащите сюда фото (JPEG / PNG)" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-zinc-400 max-w-xs mb-3", children: "или нажмите для выбора файла на диске. 0% потери качества, пиксели не пережимаются." }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-mono bg-zinc-800 text-zinc-300 border border-border", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Flame, { className: "w-3 h-3 text-amber-400" }),
-                  "1000+ фото/сек • CleanPixel Rust Core"
-                ] })
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3 h-3" }),
+                "Тестовый образец с GPS"
               ]
             }
           )
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 rounded-2xl bg-zinc-900/50 border border-border/80 text-xs text-zinc-400 space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-zinc-300 font-semibold", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-4 h-4 text-primary" }),
-            "Что удаляет CleanPixel:"
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "list-disc list-inside space-y-1 text-zinc-400", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "GPS координаты:" }),
-              " точная геолокация съёмки (широта, долгота, высота);"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Google & Adobe GUID:" }),
-              " скрытые теги XMP/Gaia ID, привязывающие фото к аккаунту;"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Скрытая EXIF-миниатюра:" }),
-              " оригинальное превью, остающееся даже после замазывания;"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "100% сохранение качества:" }),
-              " таблицы квантования и энтропийные пиксели остаются нетронутыми."
-            ] })
-          ] })
-        ] })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-6", children: cleanPixelResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            onDragOver: handleDragOver,
+            onDragLeave: handleDragLeave,
+            onDrop: handleDrop,
+            onClick: () => {
+              var _a;
+              return (_a = fileInputRef.current) == null ? void 0 : _a.click();
+            },
+            className: `border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-3 ${isDragging ? "border-primary bg-primary/10" : "border-border hover:border-zinc-500 bg-zinc-900/40"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "input",
+                {
+                  ref: fileInputRef,
+                  type: "file",
+                  accept: "image/jpeg,image/png,image/webp",
+                  onChange: handleFileChange,
+                  className: "hidden"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400", children: cleanPixelLoading ? /* @__PURE__ */ jsxRuntimeExports.jsx(RefreshCw, { className: "w-6 h-6 text-primary animate-spin" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(CloudUpload, { className: "w-6 h-6 text-primary" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs font-semibold text-zinc-200", children: cleanPixelLoading ? "Очистка метаданных..." : "Перетащите изображение сюда или кликните" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[11px] text-zinc-500 mt-0.5", children: "Поддерживаются JPEG, PNG, WebP (Lossless очистка без пересжатия)" })
+              ] })
+            ]
+          }
+        )
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-7 space-y-4", children: cleanPixelResult ? /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-5 rounded-2xl bg-card border border-border space-y-5 shadow-sm", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between border-b border-border pb-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 font-mono", children: "Обработанный файл:" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-base font-bold text-zinc-100 flex items-center gap-2 truncate max-w-[280px]", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(FileCheck, { className: "w-4 h-4 text-emerald-400" }),
-              cleanPixelResult.file_path
-            ] })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider block", children: "Отчет байтовой очистки (CleanPixel Core)" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-mono text-zinc-400", children: cleanPixelResult.file_path })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-3 py-1 rounded-full text-xs font-bold border bg-emerald-500/10 text-emerald-400 border-emerald-500/30 flex items-center gap-1.5", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-3.5 h-3.5" }),
-            "Метаданные очищены"
-          ] })
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "px-3 py-1 rounded-full text-xs font-bold font-mono border bg-emerald-500/10 text-emerald-400 border-emerald-500/30", children: "100% CLEANED" })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-3 gap-3", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Исходный размер" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-zinc-100 font-mono", children: [
-              (cleanPixelResult.original_size_bytes / 1024).toFixed(1),
-              " КБ"
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Очищенный размер" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-emerald-400 font-mono", children: [
-              (cleanPixelResult.cleaned_size_bytes / 1024).toFixed(1),
-              " КБ"
-            ] })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[11px] text-zinc-400 block mb-1", children: "Сэкономлено" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-base font-bold text-primary font-mono", children: [
-              "-",
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Сэкономлено" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xl font-bold font-mono text-emerald-400", children: [
               (cleanPixelResult.saved_bytes / 1024).toFixed(1),
               " КБ"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] text-emerald-400 block mt-0.5", children: [
-              "(-",
-              cleanPixelResult.saved_percent,
-              "%)"
             ] })
-          ] })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-bold text-zinc-400 uppercase tracking-wider", children: "Гарантии приватности и целостности:" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-4 h-4 text-emerald-400 shrink-0" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GPS-координаты дома удалены" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { className: "w-4 h-4 text-emerald-400 shrink-0" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Google & Adobe GUID стёрты" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-emerald-300 flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Trash2, { className: "w-4 h-4 text-emerald-400 shrink-0" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Скрытая EXIF-миниатюра вырезана" })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-2.5 rounded-xl bg-primary/5 border border-primary/20 text-primary flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 text-primary shrink-0" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "0% потери качества (Lossless)" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Сжатие метаданных" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xl font-bold font-mono text-zinc-100", children: [
+              "-",
+              cleanPixelResult.saved_percent.toFixed(1),
+              "%"
             ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3.5 rounded-xl bg-zinc-900 border border-border", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-zinc-400 block mb-1", children: "Формат файла" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl font-bold font-mono text-zinc-100", children: cleanPixelResult.format })
           ] })
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-2", children: [
@@ -19334,7 +20117,16 @@ function ForensicsTab() {
       {
         isOpen: isDossierOpen,
         onClose: () => setIsDossierOpen(false),
-        dossier: buildIncidentDossier(quishingResult, voiceResult, cleanPixelResult)
+        dossier: buildIncidentDossier(
+          quishingResult,
+          voiceResult,
+          cleanPixelResult,
+          {
+            dga: dgaResult,
+            httpC2: httpC2Result,
+            namedPipe: pipeSingleResult
+          }
+        )
       }
     )
   ] });
@@ -19937,4 +20729,4 @@ ${dossier.red_flags.length === 0 ? "_Критических факторов р�
 ReactDOM.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(React.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(App, {}) })
 );
-//# sourceMappingURL=index-EnEOCgnx.js.map
+//# sourceMappingURL=index-DVQjG5Ak.js.map

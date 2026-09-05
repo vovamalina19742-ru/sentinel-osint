@@ -6,6 +6,7 @@ use plugins::db::{delete_dossier, get_history, save_dossier, DbState, Investigat
 use plugins::phash::{compare_images_bytes, compute_phash_from_bytes, ImageComparisonResult};
 use plugins::sidecar::{execute_maigret, run_investigation, InvestigationDossier, ProfileFinding};
 use plugins::radar::{self, SnifferState};
+use plugins::c2_hunter;
 use tauri::State;
 
 #[tauri::command]
@@ -140,7 +141,12 @@ pub fn run() {
             delete_investigation_dossier,
             radar::check_admin_privileges,
             radar::start_radio_sniffer,
-            radar::stop_radio_sniffer
+            radar::stop_radio_sniffer,
+            c2_hunter::check_entropy_score,
+            c2_hunter::check_domain_dga,
+            c2_hunter::check_http_c2,
+            c2_hunter::scan_named_pipes,
+            c2_hunter::check_named_pipe_name
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

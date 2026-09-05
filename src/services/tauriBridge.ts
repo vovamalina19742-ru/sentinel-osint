@@ -457,3 +457,260 @@ export async function cleanPixelIPC(filePath: string, inPlace: boolean = false):
     error: null,
   };
 }
+
+// ---------------------------------------------------------------------------
+// DFIR C2 HUNTER & SHANNON ENTROPY TYPES & IPC
+// ---------------------------------------------------------------------------
+
+export interface EntropyAnalysisResult {
+  input_length: number;
+  entropy: number;
+  max_possible_entropy: number;
+  entropy_ratio: number;
+  is_suspicious: boolean;
+  assessment: string;
+}
+
+export interface DgaDetectionResult {
+  domain: string;
+  sld: string;
+  entropy: number;
+  is_dga_suspected: boolean;
+  confidence_percent: number;
+  reasons: string[];
+  mitre_technique: string;
+}
+
+export interface HttpC2AnalysisResult {
+  url: string;
+  url_entropy: number;
+  is_url_suspicious: boolean;
+  headers_entropy: Array<[string, number, boolean]>;
+  is_c2_suspected: boolean;
+  reasons: string[];
+  mitre_technique: string;
+}
+
+export interface NamedPipeAlert {
+  pipe_name: string;
+  severity: 'info' | 'low' | 'medium' | 'high' | 'critical';
+  is_known_c2: boolean;
+  is_whitelisted: boolean;
+  entropy: number;
+  description: string;
+  mitre_technique: string;
+}
+
+export function calculateShannonEntropyClient(str: string): number {
+  if (!str || str.length === 0) return 0;
+  const map: Record<string, number> = {};
+  for (let i = 0; i < str.length; i++) {
+    const c = str[i];
+    map[c] = (map[c] || 0) + 1;
+  }
+  const len = str.length;
+  let entropy = 0;
+  for (const c in map) {
+    const p = map[c] / len;
+    entropy -= p * Math.log2(p);
+  }
+  return Math.round(entropy * 1000) / 1000;
+}
+
+export async function checkEntropyScoreIPC(data: string): Promise<EntropyAnalysisResult> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<EntropyAnalysisResult>('check_entropy_score', { data });
+  }
+  const ent = calculateShannonEntropyClient(data);
+  const maxEnt = data.length > 1 ? Math.min(8.0, Math.log2(data.length)) : 0;
+  const isSuspicious = ent >= 4.0;
+  return {
+    input_length: data.length,
+    entropy: ent,
+    max_possible_entropy: Math.round(maxEnt * 1000) / 1000,
+    entropy_ratio: maxEnt > 0 ? Math.round((ent / maxEnt) * 1000) / 1000 : 0,
+    is_suspicious: isSuspicious,
+    assessment: isSuspicious
+      ? '⚠️ Высокая энтропия: строка хаотична (возможен C2 токен, зашифрованный пейлоад или Base64 shellcode)'
+      : 'Нормальная энтропия человекочитаемого текста или стандартного пути',
+  };
+}
+
+export async function checkDomainDgaIPC(domain: string): Promise<DgaDetectionResult> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<DgaDetectionResult>('check_domain_dga', { domain });
+  }
+  const clean = domain.trim().toLowerCase().replace(/^https?:\/\//, '').split('/')[0];
+  const parts = clean.split('.');
+  const sld = parts.length >= 2 ? parts[parts.length - 2] : clean;
+  const ent = calculateShannonEntropyClient(sld);
+  const isDga = ent >= 3.85 || (sld.length >= 14 && ent >= 3.6);
+  const reasons: string[] = [];
+  if (ent >= 3.85) reasons.push(`Высокая энтропия SLD (${ent.toFixed(2)} ≥ 3.85)`);
+  if (sld.length >= 14) reasons.push(`Аномальная длина SLD (${sld.length} символов)`);
+  if (/[0-9]{4,}/.test(sld)) reasons.push('Пакетные числовые последовательности в домене');
+
+  return {
+    domain: clean,
+    sld,
+    entropy: ent,
+    is_dga_suspected: isDga,
+    confidence_percent: isDga ? Math.min(99, Math.round((ent / 4.5) * 100)) : 10,
+    reasons: reasons.length ? reasons : ['Энтропия и структура домена в пределах нормы'],
+    mitre_technique: 'T1568.002 (Dynamic Resolution: Domain Generation Algorithms)',
+  };
+}
+
+export async function checkHttpC2IPC(
+  url: string,
+  headers?: Record<string, string>,
+  body?: string
+): Promise<HttpC2AnalysisResult> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<HttpC2AnalysisResult>('check_http_c2', { url, headers, body });
+  }
+  const urlEnt = calculateShannonEntropyClient(url);
+  const isUrlSuspicious = urlEnt >= 4.4;
+  const headersEntropy: Array<[string, number, boolean]> = [];
+  const reasons: string[] = [];
+
+  if (isUrlSuspicious) {
+    reasons.push(`Энтропия URI (${urlEnt.toFixed(2)}) превышает порог 4.40`);
+  }
+
+  if (headers) {
+    for (const [k, v] of Object.entries(headers)) {
+      const hEnt = calculateShannonEntropyClient(v);
+      const isSusp = hEnt >= 4.8;
+      headersEntropy.push([k, hEnt, isSusp]);
+      if (isSusp) {
+        reasons.push(`Заголовок «${k}» содержит данные высокой энтропии (${hEnt.toFixed(2)})`);
+      }
+    }
+  }
+
+  const isC2 = isUrlSuspicious || headersEntropy.some(([, , susp]) => susp);
+
+  return {
+    url,
+    url_entropy: urlEnt,
+    is_url_suspicious: isUrlSuspicious,
+    headers_entropy: headersEntropy,
+    is_c2_suspected: isC2,
+    reasons: reasons.length ? reasons : ['Признаков маскировки C2 HTTP трафика не выявлено'],
+    mitre_technique: 'T1071.001 (Application Layer Protocol: Web Protocols)',
+  };
+}
+
+export async function scanNamedPipesIPC(): Promise<NamedPipeAlert[]> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<NamedPipeAlert[]>('scan_named_pipes');
+  }
+  // Sandbox Demo Pipes
+  return [
+    {
+      pipe_name: '\\\\.\\pipe\\spoolss',
+      severity: 'low',
+      is_known_c2: false,
+      is_whitelisted: true,
+      entropy: 2.12,
+      description: 'Легитимный системный канал Windows (Print Spooler)',
+      mitre_technique: 'T1570 (System Baseline)',
+    },
+    {
+      pipe_name: '\\\\.\\pipe\\samr',
+      severity: 'low',
+      is_known_c2: false,
+      is_whitelisted: true,
+      entropy: 2.0,
+      description: 'Легитимный системный канал Windows (Security Account Manager)',
+      mitre_technique: 'T1570 (System Baseline)',
+    },
+    {
+      pipe_name: '\\\\.\\pipe\\msagent_84f9',
+      severity: 'critical',
+      is_known_c2: true,
+      is_whitelisted: false,
+      entropy: 3.82,
+      description: '⚠️ ОБНАРУЖЕН АКТИВНЫЙ ХАКЕРСКИЙ C2 PIPE: Cobalt Strike Default Pipe Profile',
+      mitre_technique: 'T1570 (Lateral Movement: Lateral Tool Transfer)',
+    },
+    {
+      pipe_name: '\\\\.\\pipe\\sliver_session_01',
+      severity: 'critical',
+      is_known_c2: true,
+      is_whitelisted: false,
+      entropy: 3.75,
+      description: '⚠️ ОБНАРУЖЕН АКТИВНЫЙ ХАКЕРСКИЙ C2 PIPE: BishopFox Sliver C2 Framework Pipe',
+      mitre_technique: 'T1570 (Lateral Movement: Lateral Tool Transfer)',
+    },
+    {
+      pipe_name: '\\\\.\\pipe\\a9f4c2e1b8d3',
+      severity: 'high',
+      is_known_c2: false,
+      is_whitelisted: false,
+      entropy: 3.78,
+      description: 'Подозрительный канал с псевдослучайным именем (признак C2 Beacon)',
+      mitre_technique: 'T1570 (Lateral Movement)',
+    },
+  ];
+}
+
+export async function checkNamedPipeNameIPC(pipeName: string): Promise<NamedPipeAlert> {
+  if (isTauriEnvironment()) {
+    const { invoke } = await import('@tauri-apps/api/core');
+    return await invoke<NamedPipeAlert>('check_named_pipe_name', { pipeName });
+  }
+  const clean = pipeName.toLowerCase().replace(/^\\\\\\.\\pipe\\/, '').replace(/^\/pipe\//, '');
+  const ent = calculateShannonEntropyClient(clean);
+  const knownC2: Record<string, string> = {
+    msagent: 'Cobalt Strike Default Pipe',
+    status: 'Cobalt Strike Status Channel',
+    postex: 'Cobalt Strike Post-Exploitation Pipe',
+    meterpreter: 'Metasploit Meterpreter Pipe',
+    sliver: 'Sliver C2 Framework Pipe',
+    havoc: 'Havoc C2 Demon Pipe',
+  };
+
+  for (const [k, desc] of Object.entries(knownC2)) {
+    if (clean.includes(k)) {
+      return {
+        pipe_name: pipeName,
+        severity: 'critical',
+        is_known_c2: true,
+        is_whitelisted: false,
+        entropy: ent,
+        description: `⚠️ ОБНАРУЖЕН АКТИВНЫЙ ХАКЕРСКИЙ C2 PIPE: ${desc}`,
+        mitre_technique: 'T1570 (Lateral Movement: Lateral Tool Transfer)',
+      };
+    }
+  }
+
+  const whitelist = ['spoolss', 'samr', 'lsarpc', 'netlogon', 'wkssvc', 'srvsvc', 'epmapper'];
+  if (whitelist.includes(clean)) {
+    return {
+      pipe_name: pipeName,
+      severity: 'low',
+      is_known_c2: false,
+      is_whitelisted: true,
+      entropy: ent,
+      description: 'Легитимный системный канал Windows / ПО',
+      mitre_technique: 'T1570 (System Baseline)',
+    };
+  }
+
+  const isHex = clean.length >= 6 && /^[0-9a-f]+$/i.test(clean);
+  return {
+    pipe_name: pipeName,
+    severity: isHex || ent >= 3.6 ? 'high' : 'medium',
+    is_known_c2: false,
+    is_whitelisted: false,
+    entropy: ent,
+    description: isHex || ent >= 3.6 ? 'Подозрительный канал с псевдослучайным именем (признак C2 Beacon)' : 'Нестандартный канал',
+    mitre_technique: 'T1570 (Lateral Movement)',
+  };
+}

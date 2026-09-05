@@ -1,4 +1,11 @@
-import { QuishingReport, VoiceAnalysisReport, CleanPixelReport } from './tauriBridge';
+import {
+  QuishingReport,
+  VoiceAnalysisReport,
+  CleanPixelReport,
+  DgaDetectionResult,
+  HttpC2AnalysisResult,
+  NamedPipeAlert,
+} from './tauriBridge';
 
 export interface MitreTechnique {
   technique_id: string; // e.g. "T1566.002"
@@ -12,13 +19,13 @@ export interface TimelineEvent {
   id: string;
   timestamp: string;
   phase: string;
-  source_module: 'Quishing Guard' | 'Voice Spectrogram' | 'CleanPixel' | 'Wireless Radar' | 'pHash Matcher';
+  source_module: 'Quishing Guard' | 'Voice Spectrogram' | 'CleanPixel' | 'Wireless Radar' | 'pHash Matcher' | 'C2 Hunter';
   summary: string;
   severity: 'info' | 'warning' | 'critical';
 }
 
 export interface IoCEntry {
-  type: 'domain' | 'url' | 'sha256' | 'bssid' | 'email' | 'metadata';
+  type: 'domain' | 'url' | 'sha256' | 'bssid' | 'email' | 'metadata' | 'pipe';
   value: string;
   description: string;
   threat_level: 'Benign' | 'Suspicious' | 'Malicious';
@@ -41,6 +48,9 @@ export interface IncidentDossier {
     quishing?: QuishingReport | null;
     voice?: VoiceAnalysisReport | null;
     cleanpixel?: CleanPixelReport | null;
+    dga?: DgaDetectionResult | null;
+    httpC2?: HttpC2AnalysisResult | null;
+    namedPipe?: NamedPipeAlert | null;
   };
 }
 
@@ -52,6 +62,11 @@ export function buildIncidentDossier(
   quishing?: QuishingReport | null,
   voice?: VoiceAnalysisReport | null,
   cleanpixel?: CleanPixelReport | null,
+  c2Hunter?: {
+    dga?: DgaDetectionResult | null;
+    httpC2?: HttpC2AnalysisResult | null;
+    namedPipe?: NamedPipeAlert | null;
+  },
   customTitle?: string
 ): IncidentDossier {
   const caseId = crypto.randomUUID();
@@ -176,13 +191,92 @@ export function buildIncidentDossier(
     }
   }
 
+  // 4. Обработка улик DFIR C2 Hunter (DGA, HTTP C2, Named Pipes)
+  if (c2Hunter?.dga && c2Hunter.dga.is_dga_suspected) {
+    if (85 > highestScore) highestScore = 85;
+    mitre.push({
+      technique_id: 'T1568.002',
+      name: 'Dynamic Resolution: Domain Generation Algorithms (DGA)',
+      tactic: 'Command and Control',
+      severity: 'high',
+      evidence_description: `Обнаружен DGA домен «${c2Hunter.dga.domain}» с аномальной энтропией ${c2Hunter.dga.entropy.toFixed(2)}.`,
+    });
+    timeline.push({
+      id: 'tl-c2-dga',
+      timestamp: now,
+      phase: 'C2 Beacon Detection',
+      source_module: 'C2 Hunter',
+      summary: `DNS аудит: домен ${c2Hunter.dga.domain} определен как DGA алгоритм связи с C&C сервером.`,
+      severity: 'critical',
+    });
+    iocs.push({
+      type: 'domain',
+      value: c2Hunter.dga.domain,
+      description: `DGA домен (энтропия Шеннона: ${c2Hunter.dga.entropy.toFixed(2)})`,
+      threat_level: 'Malicious',
+    });
+  }
+
+  if (c2Hunter?.httpC2 && c2Hunter.httpC2.is_c2_suspected) {
+    if (80 > highestScore) highestScore = 80;
+    mitre.push({
+      technique_id: 'T1071.001',
+      name: 'Application Layer Protocol: Web Protocols (C2 Channel)',
+      tactic: 'Command and Control',
+      severity: 'high',
+      evidence_description: `Выявлены высокоэнтропийные HTTP метаданные C2 канала на URI «${c2Hunter.httpC2.url}».`,
+    });
+    timeline.push({
+      id: 'tl-c2-http',
+      timestamp: now,
+      phase: 'Traffic Anomaly Analysis',
+      source_module: 'C2 Hunter',
+      summary: `HTTP C2 аудит: зафиксирован обфусцированный сетевой трафик на ${c2Hunter.httpC2.url}`,
+      severity: 'warning',
+    });
+    iocs.push({
+      type: 'url',
+      value: c2Hunter.httpC2.url,
+      description: `Подозрительный URI C2 маяка (энтропия: ${c2Hunter.httpC2.url_entropy.toFixed(2)})`,
+      threat_level: 'Suspicious',
+    });
+  }
+
+  if (c2Hunter?.namedPipe && !c2Hunter.namedPipe.is_whitelisted) {
+    const isCritical = c2Hunter.namedPipe.severity === 'critical';
+    if (isCritical && 95 > highestScore) highestScore = 95;
+    mitre.push({
+      technique_id: 'T1570',
+      name: 'Lateral Movement: Lateral Tool Transfer (C2 Named Pipe)',
+      tactic: 'Lateral Movement',
+      severity: isCritical ? 'critical' : 'high',
+      evidence_description: `${c2Hunter.namedPipe.description}: канал ${c2Hunter.namedPipe.pipe_name}`,
+    });
+    timeline.push({
+      id: 'tl-c2-pipe',
+      timestamp: now,
+      phase: 'Host IPC Forensics',
+      source_module: 'C2 Hunter',
+      summary: `Аудит Named Pipes: обнаружен ${c2Hunter.namedPipe.pipe_name} (${c2Hunter.namedPipe.description})`,
+      severity: isCritical ? 'critical' : 'warning',
+    });
+    iocs.push({
+      type: 'pipe',
+      value: c2Hunter.namedPipe.pipe_name,
+      description: c2Hunter.namedPipe.description,
+      threat_level: isCritical ? 'Malicious' : 'Suspicious',
+    });
+  }
+
   // Определение общего уровня угрозы
   const overallThreatLevel =
     highestScore >= 70 ? 'Critical' : highestScore >= 45 ? 'High' : highestScore >= 20 ? 'Medium' : 'Low';
 
   const title =
     customTitle ||
-    (quishing?.domain
+    (c2Hunter?.namedPipe?.is_known_c2
+      ? `Расследование инцидента: обнаружен активный C2 канал ${c2Hunter.namedPipe.pipe_name}`
+      : quishing?.domain
       ? `Расследование инцидента: фишинговая кампания через домен ${quishing.domain}`
       : voice
       ? `Аудит подлинности голосовой записи (Синтез: ${voice.synthetic_threat_score}%)`
@@ -205,6 +299,9 @@ export function buildIncidentDossier(
       quishing: quishing || null,
       voice: voice || null,
       cleanpixel: cleanpixel || null,
+      dga: c2Hunter?.dga || null,
+      httpC2: c2Hunter?.httpC2 || null,
+      namedPipe: c2Hunter?.namedPipe || null,
     },
   };
 }
